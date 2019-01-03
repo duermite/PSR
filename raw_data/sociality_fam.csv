@@ -1,0 +1,30 @@
+Family_Group,Order_Group,sociality,notes,ref
+COENOBITIDAE,ANOMURA,ovig_aggregates,B. latro solitary except ovigerous crab aggregate,663
+GALATHEIDAE,ANOMURA,aggregates,based on M. gregaria and P. monodom,"668, 669"
+LITHODIDAE,ANOMURA,aggregates,aggregations of various age groups noted in all species searched,NA
+CALAPPIDAE,BRACHYURA,NA,"can't find info on this, hunch is that they aren't social/don't aggregate based on personally rarely finding them, but apparently they are caught ""in great abundance"" as bycatch in shrimp fishery in Brazil, closest related family is Oregoniidae",NA
+CANCRIDAE,BRACHYURA,ovig_aggregates,several species found in aggregations only of ovigerous females,"653, 654"
+GERYONIDAE,BRACHYURA,aggregates,"""these species have a contagious behaviour and tend to aggregate in areas close to canyons and other bottom features"" especially mature females",670
+GRAPSIDAE,BRACHYURA,mixed,"two species form dense aggregates, one aggressive interspecific interactions",NA
+MAJIDAE,BRACHYURA,aggregates,"various life stages aggregate, dep. On species, ""Majid crabs are notorious for their greagarious behavior during the mating season""","677, 678, 679"
+OCYPODIDAE,BRACHYURA,solitary,"highly agonistic behaviors, but with aggregated burrows (based on environmental conditions and food availability)","683, 684"
+OREGONIIDAE,BRACHYURA,mating_aggregate,"other species in this genus (Hyas) known to aggregate, this one unknown but one ref said it does",685
+PLAGUSIIDAE,BRACHYURA,solitary,based on one species,NA
+PORTUNIDAE,BRACHYURA,solitary,many species very aggressive,661
+XANTHIDAE,BRACHYURA,mixed,"generally solitary, but one species forms mating aggregates",NA
+ARISTAEIDAE,NATANTIA,aggregates,"""most shrimps are gregarious""",664
+CRANGONIDAE,NATANTIA,aggregates,"based on C. crangon and N. antarcticus, ""most shrimps are gregarious""","665, 666"
+PALAEMONIDAE,NATANTIA,NA,"""most shrimps are gregarious"", Palaemon elegans is a gregarious and social species, but Machrobrachium species have a large claw, not finding much info on this groups",664
+PANDALIDAE,NATANTIA,aggregates,"""most shrimps are gregarious"", Palaemon elegans is a gregarious and social species, but Machrobrachium species have a large claw, not finding much info on this groups but those I found are gregarious",664
+PASIPHAEIDAE,NATANTIA,NA,"""most shrimps are gregarious"", and females of this species might be, but no real evidence, groups with Carideans, other groups within Carideans aggregate",664
+PENAEIDAE,NATANTIA,aggregates,"""most shrimps are gregarious"", little info on many species, those that I found info for aggregate at some point in life cycle",664
+SERGESTIDAE,NATANTIA,aggregates,based on genus Acetes,636
+SOLENOCERIDAE,NATANTIA,NA,"""most shrimps are gregarious"", one species aggregates, no info for rest of species",664
+ASTACIDAE,REPTANTIA,juv_agg_adult_solo,"hatchlings aggregate to receive protection from mother, adults ""are aggresive animals that exhibit ritualized gonistic behavior and form sustained dominance relationships""","643, 644"
+CALLIANASSIDAE,REPTANTIA,aggregates,"both species cited as having high densities and forming ""dense aggregates""","648, 649"
+CAMBARIDAE,REPTANTIA,juv_agg_adult_solo,"juveniles aggregate to receive protection from mother, adults ""are aggresive animals that exhibit ritualized gonistic behavior and form sustained dominance relationships""","643, 644"
+NEPHROPIDAE,REPTANTIA,mixed,"many references to agonistic encounters and H. gammarus never found cohabiting shelter except for mating, but Metanephrops aggregates? Not solid evidence...",655
+PALINURIDAE,REPTANTIA,aggregates,"aggregates in shelter and for mating, multiple species cited, ""In constrast to the clawed lobsters of the family Nephropidae, communal den occupancy and aggregation behavior occurs throughout the family Palinuridae""","645, 646, 647, 681"
+PARASTACIDAE,REPTANTIA,juv_agg_adult_solo,"juveniles aggregate to receive protection from mother, adults ""are aggresive animals that exhibit ritualized gonistic behavior and form sustained dominance relationships""","643, 644"
+SCYLLARIDAE,REPTANTIA,aggregates,"Another species in this family (Scyllarides latus) aggregates in shelters, but also has a dominance hierarchy, Thenus sp cited as contagious dispersion, but see Ibacus cites as ""not gregarious""","656, 657, 659, 670"
+UPOGEBIIDAE,REPTANTIA,solitary,found very little info on this family,728
