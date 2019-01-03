@@ -1,0 +1,163 @@
+sp_code,host_genus_species,search_terms,sp_quote,database,years,num_results,path_search_results,notes
+EKC,Acetes_americanus,"""Acetes americanus"" OR ""Acetes brasiliensis""          ","""Acetes americanus""","all, title",1864-2017,5,0,NA
+ESH,Acetes_chinensis,"""Acetes chinensis""           ","""Acetes chinensis""","all, title",1864-2017,26,1,NA
+EKN,Acetes_indicus,"""Acetes indicus"" OR ""Acetes spiniger""          ","""Acetes indicus""","all, title",1864-2017,14,0,NA
+EKI,Acetes_intermedius,"""Acetes intermedius""           ","""Acetes intermedius""","all, title",1864-2017,14,0,NA
+AKS,Acetes_japonicus,"""Acetes japonicus"" OR ""Acetes cochinensis"" OR "" Acetes dispar""         ","""Acetes japonicus""","all, title",1864-2017,18,0,NA
+RTQ,Achelous_spinimanus,"""Achelous spinimanus"" OR ""Achelous spinimanus smithii"" OR "" Lupa banksii"" OR "" Portunus spinimanus"" OR "" Portunus vossi""       ","""Achelous spinimanus""","all, title",1864-2017,22,0,NA
+RSQ,Arenaeus_cribrarius,"""Arenaeus cribrarius"" OR ""Portunus cribrarius"" OR "" Lupa maculata""         ","""Arenaeus cribrarius""","all, title",1864-2017,27,2,NA
+ARS,Aristaeomorpha_foliacea,"""Aristaeomorpha foliacea"" OR ""Aristaeomorpha giglioliana"" OR "" Aristaeomorpha mediterranea"" OR "" Aristaeomorpha rostridentata"" OR "" Aristeomorpha foliacea"" OR "" Aristeus japonicus"" OR "" Aristeus rostridentatus"" OR "" Penaeus foliacea"" OR "" Penaeus meridionalis""   ","""Aristaeomorpha foliacea""","all, title",1864-2017,87,0,NA
+SSH,Aristaeopsis_edwardsiana,"""Aristaeopsis edwardsiana"" OR ""Aristaeopsis edwardsianus"" OR "" Aristeus coralinus"" OR "" Aristeus splendens"" OR "" Penaeus edwardsianus"" OR "" Plesiopenaeus edwardsianus""      ","""Aristaeopsis edwardsiana""","all, title",1864-2017,12,0,NA
+ARA,Aristeus_antennatus,"""Aristeus antennatus"" OR ""Penaeus antemarius"" OR "" Penaeus antennatus"" OR "" Sicyonia duvernoii""        ","""Aristeus antennatus""","all, title",1864-2017,165,0,NA
+ASH,Artemesia_longinaris,"""Artemesia longinaris""           ","""Artemesia longinaris""","all, title",1864-2017,66,6,NA
+AIG,Astacopsis_gouldi,"""Astacopsis gouldi""           ","""Astacopsis gouldi""","all, title",1864-2017,11,0,NA
+AAS,Astacus_astacus,"""Astacus astacus"" OR ""Astacus fluviatilis "" OR "" Cancer astacus "" OR "" Potamobius fluviatilis balcanicus""        ","""Astacus astacus""","all, title",1864-2017,825,68,NA
+AUP,Austropotamobius_pallipes,"""Austropotamobius pallipes"" OR ""Astacus fontinalis"" OR "" Astacus pallipes""         ","""Austropotamobius pallipes""","all, title",1864-2017,466,39,NA
+UTT,Austropotamobius_torrentium,"""Austropotamobius torrentium"" OR ""Astacus torrentium "" OR "" Austropotamobius torrentium macedonicus "" OR "" Cancer torrentium""        ","""Austropotamobius torrentium""","all, title",1864-2017,119,16,NA
+BQL,Birgus_latro,"""Birgus latro"" OR ""Birgus laticauda"" OR "" Cancer latro""         ","""Birgus latro""","all, title",1864-2017,129,1,NA
+ISK,Callichirus_kraussi,"""Callichirus kraussi"" OR ""Callianassa kraussi""          ","""Callichirus kraussi""","all, title",1864-2017,30,0,NA
+KLU,Callinectes_arcuatus,"""Callinectes arcuatus"" OR ""Callinectes dubia"" OR "" Callinectes nitidus "" OR "" Callinectes pleuriticus""        ","""Callinectes arcuatus""","all, title",1864-2017,30,2,NA
+KLI,Callinectes_bellicosus,"""Callinectes bellicosus"" OR ""Callinectes ochoterenai""          ","""Callinectes bellicosus""","all, title",1864-2017,20,0,NA
+CRZ,Callinectes_danae,"""Callinectes danae"" OR ""Callinectes maracaiboensis""          ","""Callinectes danae""","all, title",1864-2017,113,3,NA
+KLO,Callinectes_ornatus,"""Callinectes ornatus"" OR ""Callinectes humphreyi""          ","""Callinectes ornatus""","all, title",1864-2017,55,3,NA
+CRB,Callinectes_sapidus,"""Callinectes sapidus"" OR ""Callinectes sapidus acutidens"" OR "" Portunus diacantha""         ","""Callinectes sapidus""","all, title",1864-2017,1705,259,NA
+CRC,Callinectes_toxotes,"""Callinectes toxotes"" OR ""Callinectes diacanthus robustus""          ","""Callinectes toxotes""","all, title",1864-2017,3,0,NA
+MBO,Cambarus_bartonii,"""Cambarus bartonii"" OR ""Cambarus bartonii bartonii "" OR "" Cambarus bartonii cavatus""         ","""Cambarus bartonii""","all, title",1864-2017,26,0,NA
+CRK,Cancer_irroratus,"""Cancer irroratus"" OR ""Cancer sayi""          ","""Cancer irroratus""","all, title",1864-2017,195,5,NA
+CRE,Cancer_pagurus,"""Cancer pagurus"" OR ""Cancer fimbriatus"" OR "" Cancer incisocrenatus "" OR "" Cancer luederwaldti""        ","""Cancer pagurus""","all, title",1864-2017,379,47,NA
+ROC,Cancer_productus,"""Cancer productus"" OR ""Cancer brewerii "" OR "" Cancer perlatus""         ","""Cancer productus""","all, title",1864-2017,59,2,NA
+CMR,Carcinus_aestuarii,"""Carcinus aestuarii"" OR ""Carcinus mediterraneus "" OR "" Portunus menoides""         ","""Carcinus aestuarii""","all, title",1864-2017,159,4,NA
+CRG,Carcinus_maenas,"""Carcinus maenas"" OR ""Cancer granarius"" OR "" Cancer granulatus "" OR "" Cancer maenas "" OR "" Cancer pygmeus"" OR "" Cancer rhomboidalis "" OR "" Cancer viridis"" OR "" Megalopa montagui "" OR "" Portunus carcinoides""   ","""Carcinus maenas""","all, title",1864-2017,1970,205,NA
+CZJ,Cervimunida_johni,"""Cervimunida johni""           ","""Cervimunida johni""","all, title",1864-2017,17,6,NA
+CGE,Chaceon_maritae,"""Chaceon maritae"" OR ""Geryon chuni"" OR "" Geryon maritae""         ","""Chaceon maritae""","all, title",1864-2017,15,0,NA
+YFB,Charybdis_bimaculata,"""Charybdis bimaculata"" OR ""Charybdis subornata"" OR "" Gonioneptunus whiteleggei"" OR "" Goniosoma bimaculata""        ","""Charybdis bimaculata""","all, title",1864-2017,5,2,NA
+KHF,Charybdis_feriata,"""Charybdis feriata"" OR ""Charybdis feriatus "" OR "" Cancer cruciata"" OR "" Cancer crucifer"" OR "" Cancer feriata"" OR "" Cancer sexdentatus"" OR "" Charybdis cruciata"" OR "" Portunus crucifer""    ","""Charybdis feriata""","all, title",1864-2017,49,0,NA
+YVB,Charybdis_hellerii,"""Charybdis hellerii"" OR ""Charybdis merguiensis"" OR "" Goniosoma hellerii""         ","""Charybdis hellerii""","all, title",1864-2017,25,2,NA
+YBJ,Charybdis_japonica,"""Charybdis japonica"" OR ""Charybdis peitchihiliensis"" OR "" Charybdis sowerbyi"" OR "" Goniosoma japonica""        ","""Charybdis japonica""","all, title",1864-2017,108,3,NA
+CDT,Cherax_destructor,"""Cherax destructor""           ","""Cherax destructor""","all, title",1864-2017,226,24,NA
+CRP,Cherax_quadricarinatus,"""Cherax quadricarinatus""           ","""Cherax quadricarinatus""","all, title",1864-2017,446,103,NA
+CVB,Chionoecetes_bairdi,"""Chionoecetes bairdi""           ","""Chionoecetes bairdi""","all, title",1864-2017,150,47,NA
+CRQ,Chionoecetes_opilio,"""Chionoecetes opilio"" OR ""Cancer opilio"" OR "" Cancer phalangivm"" OR "" Chionoecetes behringianus"" OR "" Chionoecetes chilensis"" OR "" Peloplastus pallasi""      ","""Chionoecetes opilio""","all, title",1864-2017,486,37,NA
+CSH,Crangon_crangon,"""Crangon crangon"" OR ""Cancer crangon"" OR "" Cancer schillinus"" OR "" Crangon maculosus"" OR "" Crangon rubro "" OR "" Crangon vulgaris"" OR "" Steiracrangon orientalis""     ","""Crangon crangon""","all, title",1864-2017,472,24,NA
+GQF,Crangon_franciscorum,"""Crangon franciscorum""           ","""Crangon franciscorum""","all, title",1864-2017,24,1,NA
+ERS,Eriocheir_sinensis,"""Eriocheir sinensis"" OR ""Eriocheir sinensis acutifrons"" OR "" Eriocheir sinensis rostrata"" OR "" Eriocheir sinensis rotundifrons "" OR "" Eriocheir sinensis trilobata "" OR "" Grapsus nankin""      ","""Eriocheir sinensis""","all, title",1864-2017,1267,157,NA
+AYA,Euastacus_armatus,"""Euastacus armatus""           ","""Euastacus armatus""","all, title",1864-2017,20,0,NA
+EXO,Exopalaemon_modestus,"""Exopalaemon modestus""           ","""Exopalaemon modestus""","all, title",1864-2017,29,0,NA
+IFJ,Grapsus_adscensionis,"""Grapsus adscensionis"" OR ""Cancer adscensionis"" OR "" Grapsus adscencionis"" OR "" Grapsus pictus ocellatus "" OR "" Grapsus webbi""       ","""Grapsus adscensionis""","all, title",1864-2017,7,0,NA
+JAQ,Haliporoides_sibogae,"""Haliporoides sibogae"" OR ""Haliporus sibogae"" OR "" Parahaliporus sibogae""         ","""Haliporoides sibogae""","all, title",1864-2017,12,0,NA
+HUY,Hepatus_pudibundus,"""Hepatus pudibundus"" OR ""Calappa angustata"" OR "" Cancer princeps"" OR "" Cancer pudibundus"" OR "" Hepatus calappoides"" OR "" Hepatus fasciatus"" OR "" Hepatus tuberculatus""     ","""Hepatus pudibundus""","all, title",1864-2017,29,2,NA
+CHS,Heterocarpus_reedi,"""Heterocarpus reedi""           ","""Heterocarpus reedi""","all, title",1864-2017,31,0,NA
+LBA,Homarus_americanus,"""Homarus americanus"" OR ""Astacus americanus"" OR "" Homarus mainensis""         ","""Homarus americanus""","all, title",1864-2017,2095,132,NA
+LBE,Homarus_gammarus,"""Homarus gammarus"" OR ""Astacus europaeus"" OR "" Astacus gammarus"" OR "" Cancer gammarus"" OR "" Homarus marinus"" OR "" Homarus vulgaris""      ","""Homarus gammarus""","all, title",1864-2017,536,21,NA
+MVH,Hyas_coarctatus,"""Hyas coarctatus"" OR ""Hyas coarctatus coarctatus"" OR "" Hyas serratus"" OR "" Lissa fissirostra""        ","""Hyas coarctatus""","all, title",1864-2017,20,1,NA
+IBE,Ibacus_peronii,"""Ibacus peronii"" OR ""Ibacus incisus""          ","""Ibacus peronii""","all, title",1864-2017,10,0,NA
+LBC,Jasus_lalandii,"""Jasus lalandii"" OR ""Palinurus lalandii "" OR "" Palinostus lalandii"" OR "" Palinosytus lalandii""        ","""Jasus lalandii""","all, title",1864-2017,177,1,NA
+LKG,Leptochela_gracilis,"""Leptochela gracilis"" OR ""Leptochela pellucida""          ","""Leptochela gracilis""","all, title",1864-2017,3,0,NA
+KCR,Lithodes_santolla,"""Lithodes santolla"" OR ""Lithodes antarctica"" OR "" Pseudolithodes zenkevitchi""         ","""Lithodes santolla""","all, title",1864-2017,61,8,NA
+MBA,Macrobrachium_amazonicum,"""Macrobrachium amazonicum""           ","""Macrobrachium amazonicum""","all, title",1864-2017,173,6,NA
+BKI,Macrobrachium_intermedium,"""Macrobrachium intermedium"" OR ""Leander intermedius""          ","""Macrobrachium intermedium""","all, title",1864-2017,3,0,NA
+BKB,Macrobrachium_macrobrachion,"""Macrobrachium macrobrachion"" OR ""Palaemon africanus"" OR "" Palemon macrobrachion""         ","""Macrobrachium macrobrachion""","all, title",1864-2017,26,0,NA
+MNX,Macrobrachium_nipponense,"""Macrobrachium nipponense""           ","""Macrobrachium nipponense""","all, title",1864-2017,377,22,NA
+BJD,Macrobrachium_raridens,"""Macrobrachium raridens"" OR ""Palaemon raridens""          ","""Macrobrachium raridens""","all, title",1864-2017,0,0,NA
+BJH,Macrobrachium_vollenhovenii,"""Macrobrachium vollenhovenii""           ","""Macrobrachium vollenhovenii""","all, title",1864-2017,60,2,NA
+SCR,Maja_squinado,"""Maja squinado"" OR ""Cancer cornutus"" OR "" Cancer squinado"" OR "" Maja tuberculata""        ","""Maja squinado""","all, title",1864-2017,82,1,NA
+STC,Menippe_mercenaria,"""Menippe mercenaria"" OR ""Cancer mercenaria"" OR "" Pseudocarcinus ocellatus""         ","""Menippe mercenaria""","all, title",1864-2017,108,4,NA
+DUN,Metacarcinus_magister,"""Metacarcinus magister"" OR ""Cancer_magister""          ","""Metacarcinus magister""","all, title",1864-2017,476,27,NA
+MFL,Metanephrops_australiensis,"""Metanephrops australiensis"" OR ""Nephrops australiensis""          ","""Metanephrops australiensis""","all, title",1864-2017,3,0,NA
+MFO,Metanephrops_boschmai,"""Metanephrops boschmai"" OR ""Nephrops boschmai""          ","""Metanephrops boschmai""","all, title",1864-2017,1,0,NA
+MEC,Metanephrops_challengeri,"""Metanephrops challengeri"" OR ""Nephrops challengeri""          ","""Metanephrops challengeri""","all, title",1864-2017,5,2,NA
+MFV,Metanephrops_velutinus,"""Metanephrops velutinus"" OR ""Metanephrops andamanicus""          ","""Metanephrops velutinus""","all, title",1864-2017,4,0,NA
+MJB,Metapenaeopsis_barbata,"""Metapenaeopsis barbata"" OR ""Parapenaeus akayebi"" OR "" Penaeus barbatus""         ","""Metapenaeopsis barbata""","all, title",1864-2017,15,0,NA
+MTJ,Metapenaeus_affinis,"""Metapenaeus affinis"" OR ""Hymenopenaeus affinis "" OR "" Metapenaeus ivanovi"" OR "" Metapenaeus mutatus"" OR "" Metapenaeus necopinans"" OR "" Penaeus affinis"" OR "" Penaeus mutatis""     ","""Metapenaeus affinis""","all, title",1864-2017,66,3,NA
+MPD,Metapenaeus_dobsoni,"""Metapenaeus dobsoni"" OR ""Penaeus dobsoni""          ","""Metapenaeus dobsoni""","all, title",1864-2017,79,4,NA
+MPE,Metapenaeus_ensis,"""Metapenaeus ensis"" OR ""Metapenaeus mastersii"" OR "" Metapenaeus philippinensis"" OR "" Penaeus incisipes"" OR "" Penaeus mastersii"" OR "" Penoeus ensis""      ","""Metapenaeus ensis""","all, title",1864-2017,138,14,NA
+SHI,Metapenaeus_joyneri,"""Metapenaeus joyneri""           ","""Metapenaeus joyneri""","all, title",1864-2017,15,1,NA
+MPN,Metapenaeus_monoceros,"""Metapenaeus monoceros"" OR ""Metapenaeus cognatus"" OR "" Metapenaeus deschampsi"" OR "" Penaeopsis spinulicauda"" OR "" Penaeus monoceros""       ","""Metapenaeus monoceros""","all, title",1864-2017,202,7,NA
+MNG,Metapenaeus_stebbingi,"""Metapenaeus stebbingi""           ","""Metapenaeus stebbingi""","all, title",1864-2017,15,0,NA
+UDQ,Munida_gregaria,"""Munida gregaria"" OR ""Galathea gregaria"" OR "" Galathea subrugosa "" OR "" Grimothea gregaria"" OR "" Grimothea novae zealandiae "" OR "" Munida australiensis"" OR "" Munida subrugosa"" OR "" Munida subrugosa australiensis""    ","""Munida gregaria""","all, title",1864-2017,51,1,NA
+LIO,Necora_puber,"""Necora puber"" OR ""Macropipus puber "" OR "" Liocarcinus puber "" OR "" Cancer puber"" OR "" Cancer velutinus"" OR "" Polybius puber""      ","""Necora puber""","all, title",1864-2017,90,8,NA
+NLH,Nematopalaemon_hastatus,"""Nematopalaemon hastatus"" OR ""Palaemon hastatus""          ","""Nematopalaemon hastatus""","all, title",1864-2017,7,1,NA
+ISF,Neotrypaea_californiensis,"""Neotrypaea californiensis"" OR ""Callianassa californiensis "" OR "" Callianassa occidentalis""         ","""Neotrypaea californiensis""","all, title",1864-2017,50,4,NA
+NEP,Nephrops_norvegicus,"""Nephrops norvegicus"" OR ""Cancer norvegicus""          ","""Nephrops norvegicus""","all, title",1864-2017,627,111,NA
+NCM,Notocrangon_antarcticus,"""Notocrangon antarcticus"" OR ""Crangon antarcticus""          ","""Notocrangon antarcticus""","all, title",1864-2017,4,0,NA
+OKI,Orconectes_immunis,"""Orconectes immunis""           ","""Orconectes immunis""","all, title",1864-2017,45,2,NA
+ORL,Orconectes_limosus,"""Orconectes limosus""           ","""Orconectes limosus""","all, title",1864-2017,381,42,NA
+OKN,Orconectes_nais,"""Orconectes nais""           ","""Orconectes nais""","all, title",1864-2017,17,1,NA
+OKO,Orconectes_propinquus,"""Orconectes propinquus""           ","""Orconectes propinquus""","all, title",1864-2017,57,2,NA
+OKR,Orconectes_rusticus,"""Orconectes rusticus""           ","""Orconectes rusticus""","all, title",1864-2017,224,10,NA
+OKV,Orconectes_virilis,"""Orconectes virilis""           ","""Orconectes virilis""","all, title",1864-2017,247,10,NA
+OVP,Ovalipes_punctatus,"""Ovalipes punctatus"" OR ""Corystes punctatus "" OR "" Platyonichus bipustulatus""         ","""Ovalipes punctatus""","all, title",1864-2017,29,0,NA
+YGM,Pachygrapsus_marmoratus,"""Pachygrapsus marmoratus"" OR ""Cancer femoralis"" OR "" Cancer marmoratus"" OR "" Grapsus savignyi"" OR "" Grapsus varius"" OR "" Leptograpsus bertheloti"" OR "" Pachygrapsus pubescens""     ","""Pachygrapsus marmoratus""","all, title",1864-2017,103,8,NA
+PCL,Pacifastacus_leniusculus,"""Pacifastacus leniusculus""           ","""Pacifastacus leniusculus""","all, title",1864-2017,266,261,NA
+PAA,Palaemon_adspersus,"""Palaemon adspersus"" OR ""Cancer squilla"" OR "" Leander adspersus"" OR "" Leander brandti"" OR "" Leander rectirostris"" OR "" Palaemon communis"" OR "" Palaemon fabricii"" OR "" Palaemon foliirostris"" OR "" Palaemon imbellis"" OR "" Palaemon rectirostris"" OR "" Palaemon leachii"" OR "" Palaemon squilla""","""Palaemon adspersus""","all, title",1864-2017,50,2,NA
+PVK,Palaemon_gravieri,"""Palaemon gravieri"" OR ""Leander gravieri""          ","""Palaemon gravieri""","all, title",1864-2017,3,0,NA
+PMZ,Palaemon_macrodactylus,"""Palaemon macrodactylus""           ","""Palaemon macrodactylus""","all, title",1864-2017,32,3,NA
+OUI,Palaemon_pacificus,"""Palaemon pacificus"" OR ""Leander okiensis"" OR "" Leander pacificus""         ","""Palaemon pacificus""","all, title",1864-2017,12,0,NA
+PMW,Palaemon_paucidens,"""Palaemon paucidens""           ","""Palaemon paucidens""","all, title",1864-2017,16,1,NA
+OSK,Palaemon_serrifer,"""Palaemon serrifer"" OR ""Leander fagei"" OR "" Leander serrifer""         ","""Palaemon serrifer""","all, title",1864-2017,1,2,NA
+OXH,Palaemon_xiphias,"""Palaemon xiphias"" OR ""Leander xiphias"" OR "" Palaemon crenulatus"" OR "" Palaemon sogiontii"" OR "" Palemon trisetaceus"" OR "" Palemon xiphias""      ","""Palaemon xiphias""","all, title",1864-2017,3,0,NA
+MPQ,Palaemonetes_paludosus,"""Palaemonetes paludosus""           ","""Palaemonetes paludosus""","all, title",1864-2017,14,11,NA
+SLO,Palinurus_elephas,"""Palinurus elephas"" OR ""Astacus elephas""          ","""Palinurus elephas""","all, title",1864-2017,57,0,NA
+SLS,Palinurus_gilchristi,"""Palinurus gilchristi""           ","""Palinurus gilchristi""","all, title",1864-2017,11,0,NA
+NDD,Pandalopsis_dispar,"""Pandalopsis dispar""           ","""Pandalopsis dispar""","all, title",1864-2017,6,1,NA
+PRA,Pandalus_borealis,"""Pandalus borealis"" OR ""Dymas typus"" OR "" Pandalus borealis "" OR "" Pandalus edinticulatus""        ","""Pandalus borealis""","all, title",1864-2017,190,23,NA
+PYX,Pandalus_hypsinotus,"""Pandalus hypsinotus""           ","""Pandalus hypsinotus""","all, title",1864-2017,8,1,NA
+AES,Pandalus_montagui,"""Pandalus montagui"" OR ""Astacus maculatus"" OR "" Boreocaris mobiusi"" OR "" Pandalus annulicornis"" OR "" Pandalus leptorhynchus"" OR "" Pandalus levigatus""      ","""Pandalus montagui""","all, title",1864-2017,14,1,NA
+SLC,Panulirus_argus,"""Panulirus argus"" OR ""Palinurus americanus"" OR "" Palinurus argus"" OR "" Palinurus ricordi""        ","""Panulirus argus""","all, title",1864-2017,360,50,NA
+LOA,Panulirus_cygnus,"""Panulirus cygnus"" OR ""Panulirus longipes cygnus""          ","""Panulirus cygnus""","all, title",1864-2017,140,8,NA
+NUT,Panulirus_interruptus,"""Panulirus interruptus"" OR ""Palinurus interruptus""          ","""Panulirus interruptus""","all, title",1864-2017,143,5,NA
+NUP,Panulirus_penicillatus,"""Panulirus penicillatus"" OR ""Astacus penicillatus""          ","""Panulirus penicillatus""","all, title",1864-2017,20,1,NA
+LMS,Panulirus_polyphagus,"""Panulirus polyphagus"" OR ""Cancer polyphagus"" OR "" Palinurus fasciatus"" OR "" Panulirus fasciatus"" OR "" Panulirus orientalis""       ","""Panulirus polyphagus""","all, title",1864-2017,8,0,NA
+KCD,Paralithodes_camtschaticus,"""Paralithodes camtschaticus"" OR ""Lithodes japonicus"" OR "" Lithodes spinosissimus"" OR "" Maja camtschatica"" OR "" Paralithodes camtschatica"" OR "" Paralithodes rostrofalcatus""      ","""Paralithodes camtschaticus""","all, title",1864-2017,192,15,NA
+KCI,Paralithodes_platypus,"""Paralithodes platypus""           ","""Paralithodes platypus""","all, title",1864-2017,26,14,NA
+NFF,Paranephrops_planifrons,"""Paranephrops planifrons""           ","""Paranephrops planifrons""","all, title",1864-2017,21,0,NA
+NAW,Parapenaeopsis_hardwickii,"""Parapenaeopsis hardwickii"" OR ""Parapenaeopsis cultirostris""          ","""Parapenaeopsis hardwickii""","all, title",1864-2017,18,0,NA
+NAY,Parapenaeopsis_stylifera,"""Parapenaeopsis stylifera"" OR ""Penaeus stylifera""          ","""Parapenaeopsis stylifera""","all, title",1864-2017,15,9,NA
+NIT,Parapenaeopsis_tenella,"""Parapenaeopsis tenella""           ","""Parapenaeopsis tenella""","all, title",1864-2017,0,0,NA
+DPS,Parapenaeus_longirostris,"""Parapenaeus longirostris"" OR ""Penaeus bocagei"" OR "" Penaeus lividus"" OR "" Penaeus longirostris"" OR "" Peneus cocco""       ","""Parapenaeus longirostris""","all, title",1864-2017,101,5,NA
+ABS,Penaeus_aztecus,"""Penaeus aztecus"" OR ""Farfantepenaeus aztecus""          ","""Penaeus aztecus""","all, title",1864-2017,151,18,NA
+PNB,Penaeus_brasiliensis,"""Penaeus brasiliensis"" OR ""Farfantepenaeus brasiliensis""          ","""Penaeus brasiliensis""","all, title",1864-2017,42,10,NA
+YPS,Penaeus_californiensis,"""Penaeus californiensis"" OR ""Farfantepenaeus californiensis""          ","""Penaeus californiensis""","all, title",1864-2017,59,13,NA
+APS,Penaeus_duorarum,"""Penaeus duorarum"" OR ""Farfantepenaeus duorarum""          ","""Penaeus duorarum""","all, title",1864-2017,100,9,NA
+PNI,Penaeus_indicus,"""Penaeus indicus"" OR ""Fenneropenaeus indicus"" OR "" Palaemon longicornis""        ","""Penaeus indicus""","all, title",1864-2017,269,111,NA
+KUP,Penaeus_japonicus,"""Penaeus japonicus"" OR ""Marsupenaeus japonicas "" OR "" Penaeus canaliculatus""         ","""Penaeus japonicus""","all, title",1864-2017,400,280,NA
+TGS,Penaeus_kerathurus,"""Penaeus kerathurus"" OR ""Alpheus caramote"" OR "" Alpheus punctulatus"" OR "" Alpheus trisulcatus"" OR "" Cancer kerathurus"" OR "" Melicertus kerathurus"" OR "" Melicertus tigrinus"" OR "" Palaemon sulcatus"" OR "" Penaeus trisulcatus "" OR "" Peneus cristatus"" OR "" Peneus mars"" ","""Penaeus kerathurus""","all, title",1864-2017,70,1,NA
+WKP,Penaeus_latisulcatus,"""Penaeus latisulcatus"" OR ""Melicertus latisulcatus""          ","""Penaeus latisulcatus""","all, title",1864-2017,33,5,NA
+ELY,Penaeus_longistylus,"""Penaeus longistylus"" OR ""Melicertus longistylus"" OR "" Penaeus caesius"" OR "" Penaeus jejunus""        ","""Penaeus longistylus""","all, title",1864-2017,3,1,NA
+PBA,Penaeus_merguiensis,"""Penaeus merguiensis"" OR ""Fenneropenaeus merguiensis""          ","""Penaeus merguiensis""","all, title",1864-2017,273,52,NA
+GIT,Penaeus_monodon,"""Penaeus monodon"" OR ""Penaeus bubulus"" OR "" Penaeus carinatus"" OR "" Penaeus coeruleus"" OR "" Penaeus durbani"" OR "" Penaeus semisulcatus "" OR "" Penaeus tahitensis""     ","""Penaeus monodon""","all, title",1864-2017,2834,1958,NA
+SOP,Penaeus_notialis,"""Penaeus notialis"" OR ""Farfantepenaeus notialis""          ","""Penaeus notialis""","all, title",1864-2017,85,2,NA
+PPS,Penaeus_paulensis,"""Penaeus paulensis"" OR ""Farfantepenaeus paulensis""          ","""Penaeus paulensis""","all, title",1864-2017,148,7,NA
+TIP,Penaeus_semisulcatus,"""Penaeus semisulcatus"" OR ""Penaeus ashiaka"" OR "" Penaeus manilensis""         ","""Penaeus semisulcatus""","all, title",1864-2017,261,29,NA
+PST,Penaeus_setiferus,"""Penaeus setiferus"" OR ""Cancer setiferus"" OR "" Litopenaeus setiferus"" OR "" Paeneus orbignyanus"" OR "" Penaeus fluviatilis"" OR "" Penaeus gracilirostris""      ","""Penaeus setiferus""","all, title",1864-2017,258,33,NA
+PNS,Penaeus_stylirostris,"""Penaeus stylirostris"" OR ""Litopenaeus stylirostris""          ","""Penaeus stylirostris""","all, title",1864-2017,235,137,NA
+PNU,Penaeus_subtilis,"""Penaeus subtilis"" OR ""Farfantepenaeus subtilis""          ","""Penaeus subtilis""","all, title",1864-2017,43,2,NA
+PNV,Penaeus_vannamei,"""Penaeus vannamei"" OR ""Litopenaeus vannamei""          ","""Penaeus vannamei""","all, title",1864-2017,4041,1668,NA
+UIS,Plagusia_depressa,"""Plagusia depressa"" OR ""Cancer depressa"" OR "" Plagusia depressa depressa"" OR "" Plagusia gracilis"" OR "" Plagusia sayi""       ","""Plagusia depressa""","all, title",1864-2017,12,0,NA
+LAA,Pleoticus_muelleri,"""Pleoticus muelleri"" OR ""Parartemesia carinata"" OR "" Philonicus mulleri""         ","""Pleoticus muelleri""","all, title",1864-2017,80,3,NA
+LKW,Plesionika_edwardsii,"""Plesionika edwardsii"" OR ""Pandalus longirostris"" OR "" Pandalus edwardsii"" OR "" Pandalus guerinii"" OR "" Plesionika longirostris""       ","""Plesionika edwardsii""","all, title",1864-2017,13,0,NA
+PVJ,Plesionika_narval,"""Plesionika narval"" OR ""Astacus narual"" OR "" Nisea formosa"" OR "" Palaemon tarentinum"" OR "" Palemon pristis"" OR "" Pandalus escatilis"" OR "" Pandalus stylopus"" OR "" Parapandalus narval""    ","""Plesionika narval""","all, title",1864-2017,20,0,NA
+PQG,Pleuroncodes_monodon,"""Pleuroncodes monodon"" OR ""Galathea monodon"" OR "" Grimothea duperreii"" OR "" Munida cokeri""        ","""Pleuroncodes monodon""","all, title",1864-2017,35,2,NA
+CRD,Pontastacus_leptodactylus,"""Pontastacus leptodactylus"" OR ""Astacus leptodactylus "" OR "" Astacus leptodactylus kessleri "" OR "" Astacus leptodactylus eichwaldi""        ","""Pontastacus leptodactylus""","all, title",1864-2017,762,39,NA
+SCD,Portunus_pelagicus,"""Portunus pelagicus"" OR ""Cancer cedonulli"" OR "" Cancer pelagicus"" OR "" Lupa pelagica"" OR "" Neptunus pelagicus"" OR "" Portunus pelagicus sinensis"" OR "" Portunus denticulatus""     ","""Portunus pelagicus""","all, title",1864-2017,422,51,NA
+UNG,Portunus_sanguinolentus,"""Portunus sanguinolentus"" OR ""Cancer raihoae"" OR "" Lupa sanguinolentus""         ","""Portunus sanguinolentus""","all, title",1864-2017,103,7,NA
+GAZ,Portunus_trituberculatus,"""Portunus trituberculatus"" OR ""Neptunus trituberculatus""          ","""Portunus trituberculatus""","all, title",1864-2017,546,83,NA
+RQA,Procambarus_alleni,"""Procambarus alleni""           ","""Procambarus alleni""","all, title",1864-2017,12,2,NA
+RCW,Procambarus_clarkii,"""Procambarus clarkii"" OR ""Cambarus clarkii""          ","""Procambarus clarkii""","all, title",1864-2017,1888,254,NA
+RKX,Procambarus_fallax,"""Procambarus fallax""           ","""Procambarus fallax""","all, title",1864-2017,28,10,NA
+TKN,Rimapenaeus_constrictus,"""Rimapenaeus constrictus"" OR ""Parapenaeus constrictus"" OR "" Penaeopsis agassizii"" OR "" Penaeus constrictus"" OR "" Trachypenaeus constrictus""       ","""Rimapenaeus constrictus""","all, title",1864-2017,8,0,NA
+KKN,Romaleon_antennarium,"""Romaleon antennarium"" OR ""Cancer antennarius "" OR "" Cancer antennarium""         ","""Romaleon antennarium""","all, title",1864-2017,51,0,NA
+LOG,Sagmariasus_verreauxi,"""Sagmariasus verreauxi"" OR ""Jasus verreauxi "" OR "" Palinurus verreauxi""         ","""Sagmariasus verreauxi""","all, title",1864-2017,65,3,NA
+YLW,Scylla_olivacea,"""Scylla olivacea"" OR ""Cancer olivacea""          ","""Scylla olivacea""","all, title",1864-2017,62,2,NA
+MUD,Scylla_serrata,"""Scylla serrata"" OR ""Achelous crassimanus"" OR "" Cancer serrata"" OR "" Lupa lobifrons"" OR "" Scylla tranquebarica oceanica""       ","""Scylla serrata""","all, title",1864-2017,871,106,NA
+ONJ,Solenocera_acuminata,"""Solenocera acuminata""           ","""Solenocera acuminata""","all, title",1864-2017,1,0,NA
+SKK,Solenocera_choprai,"""Solenocera choprai""           ","""Solenocera choprai""","all, title",1864-2017,5,2,NA
+SQH,Solenocera_melantho,"""Solenocera melantho"" OR ""Solenocera prominentis""          ","""Solenocera melantho""","all, title",1864-2017,20,0,NA
+TZI,Thenus_indicus,"""Thenus indicus""           ","""Thenus indicus""","all, title",1864-2017,0,0,NA
+THQ,Thenus_orientalis,"""Thenus orientalis"" OR ""Sagaritis orientalis"" OR "" Scyllarus orientalis"" OR "" Scyllibacus orientalis""        ","""Thenus orientalis""","all, title",1864-2017,59,0,NA
+TRV,Trachysalambria_curvirostris,"""Trachysalambria curvirostris"" OR ""Metapenaeus palaestinensis"" OR "" Penaeus curvirostris"" OR "" Trachypenaeus curvirostris""        ","""Trachysalambria curvirostris""","all, title",1864-2017,41,0,NA
+UCC,Ucides_cordatus,"""Ucides cordatus"" OR ""Cancer cordatus"" OR "" Cancer uca"" OR "" Ocypode fossor "" OR "" Uca pilosipes""       ","""Ucides cordatus""","all, title",1864-2017,243,9,NA
+UCD,Ucides_occidentalis,"""Ucides occidentalis"" OR ""Oedipleura occidentalis""          ","""Ucides occidentalis""","all, title",1864-2017,5,0,NA
+UPJ,Upogebia_pusilla,"""Upogebia pusilla"" OR ""Astacus pusillus"" OR "" Gebia lacustris"" OR "" Gebia litoralis"" OR "" Gebia littoralis"" OR "" Gebia venetiarum"" OR "" Gebios littoralis"" OR "" Thalassina littoralis"" OR "" Upogebia litoralis"" OR "" Upogebia littoralis"" OR "" Upogebia pusilla"" ","""Upogebia pusilla""","all, title",1864-2017,46,3,NA
+JLA,Xantho_poressa,"""Xantho poressa"" OR ""Alpheus tinctor"" OR "" Cancer levifrons"" OR "" Cancer poressa"" OR "" Cancer tinctor"" OR "" Xantho rivulosa"" OR "" Xantho rivulosus""     ","""Xantho poressa""","all, title",1864-2017,7,0,NA
+BOB,Xiphopenaeus_kroyeri,"""Xiphopenaeus kroyeri"" OR ""Penaeus kroyeri"" OR "" Xiphopenaeus hartii""         ","""Xiphopenaeus kroyeri""","all, title",1864-2017,110,0,NA
