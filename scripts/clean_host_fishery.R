@@ -1,10 +1,17 @@
 ##ALL CLEANING TASKS FOR HOST_FISHERY###
 
 library(dplyr)
+source <- read.csv("raw_data/fao_global_production/CL_FI_PRODUCTION_SOURCE.csv")
+production <- read.csv("raw_data/fao_global_production/TS_FI_PRODUCTION.csv")
+host_fishery <- read_csv("~/Google Drive/PSR/raw_data/host_fishery.csv")
 
 #TASKS
-##1-
+##1-delete unneeded data from TS_FI_PRODUCTION
 ##
+
+
+#1
+##Delete unneeded data from production
 
 #This is incomplete but something to start from
 #Has not been edited recently
