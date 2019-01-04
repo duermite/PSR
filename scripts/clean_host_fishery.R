@@ -1,17 +1,25 @@
 ##ALL CLEANING TASKS FOR HOST_FISHERY###
 
 library(dplyr)
-source <- read.csv("raw_data/fao_global_production/CL_FI_PRODUCTION_SOURCE.csv")
-production <- read.csv("raw_data/fao_global_production/TS_FI_PRODUCTION.csv")
-host_fishery <- read_csv("~/Google Drive/PSR/raw_data/host_fishery.csv")
+source <- read.csv("raw_data/CL_FI_PRODUCTION_SOURCE.csv")
+production <- read.csv("raw_data/TS_FI_PRODUCTION.csv")
+host_fishery <- read.csv("~/Google Drive/PSR/raw_data/host_fishery.csv")
 
 #TASKS
 ##1-delete unneeded data from TS_FI_PRODUCTION
-##
+##2-Change source code to something useful
+##3-Remove rows where Quantitiy=0
+##4-Group by sp-code and source
+##5-...
 
 
 #1
 ##Delete unneeded data from production
+#right join below includes all observations in fao_hosts matched to those in production by sp_code
+production_join <- right_join(production,fao_hosts, by="sp_code") %>% 
+  select(1:7)
+
+
 
 #This is incomplete but something to start from
 #Has not been edited recently
