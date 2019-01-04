@@ -9,6 +9,7 @@ fao_hosts <- read.csv("raw_data/fao_hosts.csv")
 ##2-Make sure all path_abbr are in pathogen
 ##3-Verify all host_genus_species in fao_hosts, remove if not
 ##4-complete in_wild to best of ability??
+##final-save into clean data folder
 
 #1
 ###Checking for duplicates##
@@ -43,9 +44,31 @@ path_in_path_hosts <- pathogen_hosts %>%
 #now I need to make all the abbr in pathogen_hosts are also in pathogen
 #setdiff(x,y) gives the elements in x but not in y
 setdiff(path_in_path_hosts,path_in_pathogen)
+#fixed this, changes in version control
 
-
+##3
+#Verify all host_genus_species in fao_hosts, remove if not
+hosts_in_path_hosts <- pathogen_hosts %>% 
+  arrange(host_genus_species) %>% 
+  distinct(host_genus_species)
+hosts_in_fao_hosts <-  fao_hosts %>% 
+  arrange(host_genus_species) %>% 
+  distinct(host_genus_species)
+#get hosts in pathogen_hosts that are not in fao_hosts
+setdiff(hosts_in_path_hosts,hosts_in_fao_hosts)
+#remove these extra hosts from pathogen_hosts
+#join the two tables
+path_hosts_clean <- right_join(pathogen_hosts,fao_hosts, by="host_genus_species") %>% 
+  filter(path_abbr!="NA") %>% 
+  select(1:6) %>% 
+  rename(ref=ref.x)
+#test that extras are really gone
+hosts_in_clean_path_hosts <- path_hosts_clean %>% 
+  arrange(host_genus_species) %>% 
+  distinct(host_genus_species)
+setdiff(hosts_in_clean_path_hosts,hosts_in_fao_hosts)
+#empty!
 
 #save final file in clean_data folder
-write.csv(pathogen_hosts_clean,"clean_data/pathogen_hosts_clean.csv",
+write.csv(path_hosts_clean,"clean_data/path_hosts_clean.csv",
           row.names=FALSE) #this line prevents adding a new column each time
