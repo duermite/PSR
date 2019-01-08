@@ -112,3 +112,6 @@ host_fishery_clean <- host_fishery_clean %>%
   rowwise() %>% #this iterates a function over many rows!! don't need for loops!!!!!
   mutate(production_type=combo_prod(aquaculture,capture))
 
+##final-save host_fishery in clean data
+write.csv(host_fishery_clean,"clean_data/host_fishery_clean.csv",
+          row.names=FALSE)
