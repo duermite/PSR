@@ -77,3 +77,30 @@ invasives4 <- invasives3 %>%
          latest_dist=rem_semicolon(latest_dist),
          env=rem_semicolon(env))
 #nearly there, a few random ; but they will have to stay for now
+
+#2-
+#Create new status/impact to denote only high impact spp?
+#Rule: If "High" OR "Established", new impact is "high", otherwise "Low/Unk"
+impact_names <- function(original){
+  if(grepl("High",original)){
+    impact <- "High"
+  } else if (grepl("Established",original)){
+    impact <- "High"
+  } else {
+    impact <- "Low/Unk"
+  }
+  return(impact)
+}
+#testing function:
+impact_names("High")
+impact_names("High; Low")
+impact_names("Low")
+impact_names("Established")
+#fix this column
+invasives5 <- invasives4 %>% 
+  rowwise() %>% 
+  mutate(impact=impact_names(impact))
+
+#3-
+#Fix sources and add to reference list
+
