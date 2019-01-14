@@ -45,6 +45,7 @@ hosts_in_clean_invasives <- invasives2 %>%
   distinct(host_genus_species)
 setdiff(hosts_in_clean_invasives,hosts_in_fao_hosts) #empty
 
+
 #1-
 #Find duplicates and combine info
 dup_search <- data.frame(table(invasives2$host_genus_species))
@@ -103,4 +104,57 @@ invasives5 <- invasives4 %>%
 
 #3-
 #Fix sources and add to reference list
+#add sources to reference list
+#EASIN = 521
+#AquaNIS = 522
+#http://www.ciesm.org/atlas/appendix2.html = 527
+#http://issg.org/database/species/search.asp?sts=sss&st=sss&fr=1&x=26&y=13&sn=&rn=&hci=-1&ei=156&lang=EN
+##=611
+source_to_ref <- function(source){
+  if(source=="EASIN"){
+    ref <- "521"
+  } else if(source==" EASIN"){
+    ref <- "521"
+  }else if(source=="AquaNIS"){
+    ref <- "522"
+  } else if(source=="http://www.ciesm.org/atlas/appendix2.html"){
+    ref <- "527"
+  } else if(source=="http://issg.org/database/species/search.asp?sts=sss&st=sss&fr=1&x=26&y=13&sn=&rn=&hci=-1&ei=156&lang=EN"|
+            source=="GISD"){
+    ref <- "611"
+  } else {
+    ref <- source
+  }
+  return(ref)
+}
+#testing function
+source_to_ref("EASIN")
+source_to_ref("AquaNIS")
+source_to_ref("AquaNIS; EASIN")
+source_to_ref("GISD")
+source_to_ref("689")
+source_to_ref(NA)
+#fix refs
+
+invasives6 <- invasives5 %>% 
+  separate(source, c("s1","s2","s3","s4","s5"),sep="; ") 
+invasives6[is.na(invasives6)] <- ""
+invasives7 <- invasives6 %>% 
+  rowwise() %>% 
+  mutate(s1=source_to_ref(s1),
+         s2=source_to_ref(s2),
+         s3=source_to_ref(s3),
+         s4=source_to_ref(s4),
+         s5=source_to_ref(s5)) %>% 
+  unite("ref",c("s1","s2","s3","s4","s5"),sep=", ")#too many commas!!
+#function from stackoverflow to trim any character:
+#https://stackoverflow.com/questions/23274035/removing-multiple-commas-and-trailing-commas-using-gsub
+TrimMult <- function(x, char=" ") {
+  return(gsub(paste0("^", char, "*|(?<=", char, ")", char, "|", char, "*$"),
+              "", x, perl=T))
+}
+invasives8 <- invasives7 %>% 
+  rowwise() %>% 
+  mutate(ref=TrimMult(ref,char=", "))
+#there's still a trailing comma, but whatever
 
