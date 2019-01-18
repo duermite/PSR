@@ -11,7 +11,7 @@ fao_hosts <- read.csv("raw_data/fao_hosts.csv") #is this needed?
 #1-Find duplicates and combine info
 #2-Create new status/impact to denote only high impact spp?
 #3-Fix sources and add to reference list
-#4-Check how many hosts are listed and ensure list is complete
+#4-Check how many hosts are listed and ensure list is complete <--
 #5-Use Environment data to check fao_hosts?
 #final-Save to clean data folder
 
@@ -158,3 +158,20 @@ invasives8 <- invasives7 %>%
   mutate(ref=TrimMult(ref,char=", "))
 #there's still a trailing comma, but whatever
 
+#4-
+#Check how many hosts are listed and ensure list is complete 
+#AquaNIS website
+#ADD:
+#Crangon_crangon, established low prevelence, Iceland, origin Atlantic, 2003
+#Penaeus_stylirostris, China, 2002, level of certainty: possible
+#Penaeus_vannamei, 2005, China, level of certainty: possible
+#Palaemon_adspersus, to Canada and Russia, 2011 and 1936, 
+colnames(invasives8)
+Cc <- c("Crangon_crangon", "Iceland","Low/Unk","Atlantic","",522,"")
+Ps <- c("Penaeus_stylirostris","China","Low/Unk","","",522,"")
+Pv <- c("Penaeus_vannamei","China","Low/Unk","","",522,"")
+Pa <- c("Palaemon_adspersus","Canada; Russia","Low/Unk","","",522,"")
+invasives9 <- rbind(invasives8,Cc,Ps,Pv,Pa)
+
+#final-
+#Save to clean data folder
