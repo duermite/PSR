@@ -1,0 +1,163 @@
+"host_genus_species","Family_Group","sociality","social_score","fam_soc_score","notes","ref"
+"Aristaeomorpha_foliacea","ARISTAEIDAE","aggregates",4,4,"""...higher aggregations for recruits than for spawners. Big and rather stable aggregations of both life stages...""","639"
+"Aristaeopsis_edwardsiana","ARISTAEIDAE",NA,2,2,"""highly concentrated"" at 700m depth, likely has reproductive aggregates","730"
+"Aristeus_antennatus","ARISTAEIDAE","mating_aggregate",2,2,"""reproductive aggregations…are well defined""","730"
+"Astacus_astacus","ASTACIDAE","juv_agg_adult_solo",3,3,"juveniles aggregate to receive protection from mother",NA
+"Austropotamobius_pallipes","ASTACIDAE","juv_agg_adult_solo",3,3,"adults are aggressive and solitary, ""hatchlings remain attached to or near their mother for 2-3 weeks""","732, 733"
+"Austropotamobius_torrentium","ASTACIDAE","juv_agg_adult_solo",3,3,"adults aggressively defend shelter","734"
+"Pacifastacus_leniusculus","ASTACIDAE","juv_agg_adult_solo",3,3,"juveniles remain with mother for several weeks, adults have agonistic and aggressive interactions","735, 736"
+"Pontastacus_leptodactylus","ASTACIDAE","juv_agg_adult_solo",3,3,NA,NA
+"Hepatus_pudibundus","CALAPPIDAE",NA,0,1,"Captured as by-catch ""in great abundance"", but can find very little info on this species",NA
+"Callichirus_kraussi","CALLIANASSIDAE","aggregates",4,4,"""occurs in dense aggregates (up to 200 ind./m2) spanning several kilometers""","648"
+"Neotrypaea_californiensis","CALLIANASSIDAE","aggregates",4,4,"From 230-450 shrimp/m2","649"
+"Cambarus_bartonii","CAMBARIDAE",NA,1,1,"adults are aggressive",NA
+"Orconectes_immunis","CAMBARIDAE",NA,1,1,"agonistic",NA
+"Orconectes_limosus","CAMBARIDAE",NA,1,1,"agonistic",NA
+"Orconectes_nais","CAMBARIDAE",NA,1,1,"agonistic",NA
+"Orconectes_propinquus","CAMBARIDAE",NA,1,1,"agonistic",NA
+"Orconectes_rusticus","CAMBARIDAE",NA,1,1,"agonistic",NA
+"Orconectes_virilis","CAMBARIDAE",NA,0,3,"""gregarious use of burrows was observed"", sounds like mating pairs though","737"
+"Procambarus_alleni","CAMBARIDAE",NA,1,1,"agonistic",NA
+"Procambarus_clarkii","CAMBARIDAE","juv_agg_adult_solo",3,3,"juveniles aggregate to receive protection from mother","643"
+"Procambarus_fallax","CAMBARIDAE",NA,1,1,"agonistic",NA
+"Cancer_irroratus","CANCRIDAE","solitary",1,1,"aggressive displays and formation of dominance hierarchies","661"
+"Cancer_pagurus","CANCRIDAE","ovig_aggregates",2,2,"ovigerous crabs aggregate but do not enter traps","654"
+"Cancer_productus","CANCRIDAE",NA,0,2,"not finding info on this spp.",NA
+"Metacarcinus_magister","CANCRIDAE","ovig_aggregates",2,2,"dispersion non-random, only ovigerous crabs were found in aggregations","653"
+"Romaleon_antennarium","CANCRIDAE",NA,0,2,"not finding info on this spp.",NA
+"Birgus_latro","COENOBITIDAE","ovig_aggregates",2,2,"solitary except ovigerous females, which use similar habitat and occur in densities ""often so great that crabs were observed climbing over each other or that crevices and holes were occurpied by more than one crab""","663"
+"Crangon_crangon","CRANGONIDAE","aggregates",4,4,"""high densities"", ""huge numbers""","665"
+"Crangon_franciscorum","CRANGONIDAE",NA,0,4,"not finding info on this spp.",NA
+"Notocrangon_antarcticus","CRANGONIDAE","aggregates",4,4,"patchy distribution, ""indicates that the two species aggregate in patches…""","666"
+"Cervimunida_johni","GALATHEIDAE",NA,0,4,"no info on this",NA
+"Munida_gregaria","GALATHEIDAE","juv_aggregates",3,3,"""massive shoals of the post-metamorphic phase (juveniles)...are present in continental shelf surface waters of southeastern New Zealand""","668"
+"Pleuroncodes_monodon","GALATHEIDAE","aggregates",4,4,"""two persistent adult aggregations""","669"
+"Chaceon_maritae","GERYONIDAE","aggregates",4,4,"""these species have a contagious behaviour and tend to aggregate in areas close to canyons and other bottom features"" especially mature females","670"
+"Eriocheir_sinensis","GRAPSIDAE","solitary",1,1,"""aggressive instinct...results in a frequent autotomy among juvenile crabs""","671"
+"Grapsus_adscensionis","GRAPSIDAE","aggregates",4,4,"""many were...often tightly packed, touching, but with no aggression....They were spaced apart...but with little interaction. When a large crab walked through the group, all the smaller ones moved slowly out of its way; the large crabs were never overtly aggressive. If a crab hahepend to touch a similar sized one there was sometimes a brief confrontation, but they then separated""","334"
+"Pachygrapsus_marmoratus","GRAPSIDAE","aggregates",4,4,"""...the marked crabs were packed together where the refuge density was higher...the territories of larger males never overlapped, but were divided into many small areas also occupied by smaller males and females""","673"
+"Lithodes_santolla","LITHODIDAE","juv_aggregates",3,3,"early benthic phase is solitary for 2 years, then ""social-aggregative behavior, termed 'podding' displayed by older juveniles""","674"
+"Paralithodes_camtschaticus","LITHODIDAE","aggregates",4,4,"ovigerous females aggregates, juveniles aggregate","675"
+"Paralithodes_platypus","LITHODIDAE","aggregates",4,4,"many references to crab aggregations","676"
+"Chionoecetes_bairdi","MAJIDAE","mating_aggregate",2,2,"""the aggregation consisted primarily of oldshell, multiparous female crabs...contained hundreds of crabs each at densities >100/m2. Male crabs were found mating with females at the periphery of the aggregation""","677"
+"Chionoecetes_opilio","MAJIDAE","female_aggregates",3,3,"females aggregate in groups based on life history stage, e.g. juvi together, mature females together","678"
+"Maja_squinado","MAJIDAE","aggregates",4,4,"pod forming, ""these pods were made up mainly of juveniles, except for the aggregation...where 72% ...were adults. Predominance of females...large number of premoult or postmoult stage would suggest that these pods serve as a form of protection""","679"
+"Homarus_americanus","NEPHROPIDAE","solitary",1,1,"""cohabitation in the same shelter occurred only during periods of pair formation""","655"
+"Homarus_gammarus","NEPHROPIDAE","solitary",1,1,"many agonistic encounters",NA
+"Metanephrops_australiensis","NEPHROPIDAE","aggregates",4,4,"""high aggregations""","680"
+"Metanephrops_boschmai","NEPHROPIDAE","aggregates",4,4,"""high aggregations""","680"
+"Metanephrops_challengeri","NEPHROPIDAE","aggregates",4,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""","497"
+"Metanephrops_velutinus","NEPHROPIDAE","aggregates",0,1,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""","497"
+"Nephrops_norvegicus","NEPHROPIDAE","solitary",1,1,"burrows are aggregated, juveniles tend to use adult burrows, but create a separate part of the burrow to inhabit, seems like something between solitary and aggregate…","682"
+"Ucides_cordatus","OCYPODIDAE","solitary",1,1,"larvae use adult chemical cues to trigger metamorphosis, and adult and juvenile burrows are in high density, but they have ""high competition for burrows that show tha tU. Cordatus is territorial""","683"
+"Ucides_occidentalis","OCYPODIDAE","solitary",1,1,"""engages in a great deal of highly ritualized agonistic behavior""","684"
+"Hyas_coarctatus","OREGONIIDAE","mating_aggregate",2,2,"other species in this genus known to aggregate, this one unknown but one ref said it does","685"
+"Exopalaemon_modestus","PALAEMONIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Macrobrachium_amazonicum","PALAEMONIDAE","female_aggregates",2,2,"""females aggregate in breeding grounds…""","687"
+"Macrobrachium_intermedium","PALAEMONIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Macrobrachium_macrobrachion","PALAEMONIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Macrobrachium_nipponense","PALAEMONIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Macrobrachium_raridens","PALAEMONIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Macrobrachium_vollenhovenii","PALAEMONIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Nematopalaemon_hastatus","PALAEMONIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Palaemon_adspersus","PALAEMONIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Palaemon_gravieri","PALAEMONIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Palaemon_macrodactylus","PALAEMONIDAE","solitary",1,1,"adults are solitary, eggs are gregarious??","522"
+"Palaemon_pacificus","PALAEMONIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Palaemon_paucidens","PALAEMONIDAE",NA,0,4,"little info, brief mention of cannibalism in aquaculture setting",NA
+"Palaemon_serrifer","PALAEMONIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Palaemon_xiphias","PALAEMONIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Palaemonetes_paludosus","PALAEMONIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Jasus_lalandii","PALINURIDAE","aggregates",4,4,"""In constrast to the clawed lobsters of the family Nephropidae, communal den occupancy and aggregation behavior occurs throughout the family Palinuridae"", ""Spiny lobsters are known to be gregarious"" in relation to culturing this species","681, 697"
+"Palinurus_elephas","PALINURIDAE","aggregates",4,4,"""In constrast to the clawed lobsters of the family Nephropidae, communal den occupancy and aggregation behavior occurs throughout the family Palinuridae"", ""Spiny lobsters are known to be gregarious"" in relation to culturing this species, females including large adults are gregarious but adult males may be less so","681, 698"
+"Palinurus_gilchristi","PALINURIDAE","aggregates",4,4,"""In constrast to the clawed lobsters of the family Nephropidae, communal den occupancy and aggregation behavior occurs throughout the family Palinuridae"", not finding info on this species","681"
+"Panulirus_argus","PALINURIDAE","aggregates",4,4,"""In constrast to the clawed lobsters of the family Nephropidae, communal den occupancy and aggregation behavior occurs throughout the family Palinuridae""","645, 681"
+"Panulirus_cygnus","PALINURIDAE","aggregates",4,4,"""In constrast to the clawed lobsters of the family Nephropidae, communal den occupancy and aggregation behavior occurs throughout the family Palinuridae""","646, 681"
+"Panulirus_interruptus","PALINURIDAE","aggregates",4,4,"""In constrast to the clawed lobsters of the family Nephropidae, communal den occupancy and aggregation behavior occurs throughout the family Palinuridae""","647, 681"
+"Panulirus_penicillatus","PALINURIDAE","aggregates",4,4,"""In constrast to the clawed lobsters of the family Nephropidae, communal den occupancy and aggregation behavior occurs throughout the family Palinuridae"", ""This species is gregarious and may often be foun in groups of more than 20 individuals of different sizes, in submerged caves and lava tunnels""","681, 699"
+"Panulirus_polyphagus","PALINURIDAE","juv_aggregates",4,4,"""In constrast to the clawed lobsters of the family Nephropidae, communal den occupancy and aggregation behavior occurs throughout the family Palinuridae"", ""juveniles…were observed to be gregarious""","681, 700"
+"Sagmariasus_verreauxi","PALINURIDAE","aggregates",4,4,"""In constrast to the clawed lobsters of the family Nephropidae, communal den occupancy and aggregation behavior occurs throughout the family Palinuridae"", ""is the largest of the world's spiny lobsters…is gregarious (less cannibalistic than tropical species)","681, 701"
+"Heterocarpus_reedi","PANDALIDAE","aggregates",4,4,"""aggregated spatial distribution"", ""when the stock is highly aggregated""","692"
+"Pandalopsis_dispar","PANDALIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Pandalus_borealis","PANDALIDAE","aggregates",4,4,"berried females, but also somewhat unpredicatable","694"
+"Pandalus_hypsinotus","PANDALIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Pandalus_montagui","PANDALIDAE",NA,0,4,"no info on this sp. but paper says this genus has ""aggregated distribution that allows their capture in commercially attractive quantities also suggests a rather gregarious habit similar to that of their sister genera Nephrops""",NA
+"Plesionika_edwardsii","PANDALIDAE","aggregates",4,4,"""P. edwardsii is a gregarious species""","695"
+"Plesionika_narval","PANDALIDAE","aggregates",4,4,"""large swarms of the pandalid shrimp Plesionika narval inhabiting the cave""","696"
+"Astacopsis_gouldi","PARASTACIDAE",NA,1,1,"Builds burrows, may defend home range, population was in decline due to fishing, probably does not aggregate, but not sure",NA
+"Cherax_destructor","PARASTACIDAE","juv_aggregates",3,3,"""juvenile C. destructor exhibited gregarious behavior, tending to co-occupy burrow and being physically near each other"" but adults have agonistic behaviors","703"
+"Cherax_quadricarinatus","PARASTACIDAE","aggregates",4,4,"""It is a gregarious and non-aggressive species, amenable to stocking at relatively high densities"" as cited","702"
+"Euastacus_armatus","PARASTACIDAE","solitary",1,1,"agonistic","703"
+"Paranephrops_planifrons","PARASTACIDAE","solitary",1,1,"aggressive and cannibalistic",NA
+"Leptochela_gracilis","PASIPHAEIDAE",NA,0,4,"females might be gregarious, but not much info","704"
+"Artemesia_longinaris","PENAEIDAE",NA,0,4,"unable to find specific info on sociality/aggregation",NA
+"Metapenaeopsis_barbata","PENAEIDAE","spawning_aggregates",2,2,"another spp in genus ""adults aggregate to spawn""","706"
+"Metapenaeus_affinis","PENAEIDAE",NA,0,4,"no info on this",NA
+"Metapenaeus_dobsoni","PENAEIDAE","juv_aggregates",3,3,"""postlarvae tend to aggrgate in the close inshore water during monsoon season""","708"
+"Metapenaeus_ensis","PENAEIDAE",NA,0,4,"another spp in genus forms large schoolsno info on this",NA
+"Metapenaeus_joyneri","PENAEIDAE",NA,0,4,"another spp in genus forms large schoolsno info on this",NA
+"Metapenaeus_monoceros","PENAEIDAE",NA,0,4,"another spp in genus forms large schoolsno info on this",NA
+"Metapenaeus_stebbingi","PENAEIDAE",NA,0,4,"another spp in genus forms large schoolsno info on this",NA
+"Parapenaeopsis_hardwickii","PENAEIDAE",NA,0,4,"no info on this",NA
+"Parapenaeopsis_stylifera","PENAEIDAE","juv_aggregates",3,3,"""postlarvae tend to aggrgate in the close inshore water during monsoon season""","708"
+"Parapenaeopsis_tenella","PENAEIDAE",NA,0,4,"no info on this",NA
+"Parapenaeus_longirostris","PENAEIDAE","aggregates",4,4,"""young of the year and mature females aggregate where retention and enrichment processes occur""","709"
+"Penaeus_aztecus","PENAEIDAE","aggregates",4,4,"""whose gregarious schooling behavior was already known""","710"
+"Penaeus_brasiliensis","PENAEIDAE",NA,0,4,"no info on this sp.",NA
+"Penaeus_californiensis","PENAEIDAE",NA,0,4,"no info on this sp.",NA
+"Penaeus_duorarum","PENAEIDAE",NA,0,4,"no info on this sp.",NA
+"Penaeus_indicus","PENAEIDAE","aggregates",4,4,"""has been observed to aggregate more in sandy soil…""","712"
+"Penaeus_japonicus","PENAEIDAE","juv_aggregates",4,4,"larvae aggregate","715"
+"Penaeus_kerathurus","PENAEIDAE",NA,0,4,"no info on this sp.",NA
+"Penaeus_latisulcatus","PENAEIDAE",NA,0,4,"no info on this sp.",NA
+"Penaeus_longistylus","PENAEIDAE",NA,0,4,"no info on this sp.",NA
+"Penaeus_merguiensis","PENAEIDAE","aggregates",4,4,"""can form shoals when the population density is high""","664"
+"Penaeus_monodon","PENAEIDAE","spawning_aggregates",2,2,"""although this species is not gregarious it appears they congregate during spawning""","711"
+"Penaeus_notialis","PENAEIDAE",NA,0,4,"no info on this sp.",NA
+"Penaeus_paulensis","PENAEIDAE",NA,0,4,"no info on this sp.",NA
+"Penaeus_semisulcatus","PENAEIDAE","aggregates",4,4,"""can form shoals when the population density is high""","664"
+"Penaeus_setiferus","PENAEIDAE","aggregates",4,4,"""because of the fact that shrimp are gragrious, accumulating at times in very large schools"" in a paper specifically about P. setiferus in Louisiana","713"
+"Penaeus_stylirostris","PENAEIDAE","aggregates",4,4,"adult and juvenile gregarious, larvae and eggs solitary??","522"
+"Penaeus_subtilis","PENAEIDAE",NA,0,4,"no info on this sp.",NA
+"Penaeus_vannamei","PENAEIDAE","aggregates",4,4,"""increasing gregariousness and benthic habits of the shrimp is consistent with observations of wild PLs in estuaries where congregations are great enough that their commercial harvest for aquaculture purposes is feasible""","714"
+"Rimapenaeus_constrictus","PENAEIDAE",NA,0,4,"no info on this sp.",NA
+"Trachysalambria_curvirostris","PENAEIDAE",NA,0,4,"no info on this sp.",NA
+"Xiphopenaeus_kroyeri","PENAEIDAE",NA,0,4,"no info on this sp.",NA
+"Plagusia_depressa","PLAGUSIIDAE","solitary",1,1,"evidence of agonistic displays",NA
+"Achelous_spinimanus","PORTUNIDAE",NA,0,1,"no info on this sp.",NA
+"Arenaeus_cribrarius","PORTUNIDAE","solitary",1,1,"I think it's solo, no repro agg or anything, but not certain","716"
+"Callinectes_arcuatus","PORTUNIDAE",NA,0,1,"no info on this sp.",NA
+"Callinectes_bellicosus","PORTUNIDAE",NA,0,1,"no info on this sp.",NA
+"Callinectes_danae","PORTUNIDAE","solitary",1,1,"agonistic",NA
+"Callinectes_ornatus","PORTUNIDAE",NA,0,1,"no info on this sp.",NA
+"Callinectes_sapidus","PORTUNIDAE","solitary",1,1,"agonistic",NA
+"Callinectes_toxotes","PORTUNIDAE",NA,0,1,"""relatively scarce""",NA
+"Carcinus_aestuarii","PORTUNIDAE","solitary",1,1,"agonistic",NA
+"Carcinus_maenas","PORTUNIDAE","solitary",1,1,"aggressive displays and formation of dominance hierarchies","661"
+"Charybdis_bimaculata","PORTUNIDAE",NA,0,1,"no info on this sp.",NA
+"Charybdis_feriata","PORTUNIDAE",NA,0,1,"no info on this sp.",NA
+"Charybdis_hellerii","PORTUNIDAE","solitary",1,1,"high rate of regenerating appendages suggests agonistic interactions","717"
+"Charybdis_japonica","PORTUNIDAE",NA,2,2,"solitary, aggressive, but female in pot attracted others to be caught","721"
+"Necora_puber","PORTUNIDAE","solitary",1,1,"very aggressive, fighting heavily studied in this species","662"
+"Ovalipes_punctatus","PORTUNIDAE",NA,0,1,"O. ocellatus very aggressive","661"
+"Portunus_pelagicus","PORTUNIDAE","solitary",1,1,"highly cannibalistic","722"
+"Portunus_sanguinolentus","PORTUNIDAE","solitary",1,1,"agonistic mating encounters","718"
+"Portunus_trituberculatus","PORTUNIDAE","solitary",1,1,"high rate of limb autotomy, suggests agonistic interactions, but in culture ponds","723"
+"Scylla_olivacea","PORTUNIDAE","solitary",1,1,"aggressive, particularly in mating","719"
+"Scylla_serrata","PORTUNIDAE","solitary",1,1,"highly aggressive",NA
+"Ibacus_peronii","SCYLLARIDAE","solitary",1,1,"cited as ""not gregarious""","338"
+"Thenus_indicus","SCYLLARIDAE","aggregates",4,4,"""the spatial distribution...was highly contagious in all moths"" but this paper indicates it's more a matter of habitat preference and there's ""no evidence of behaviourally stimulated aggregation for reproductive or migratory purposes""","659"
+"Thenus_orientalis","SCYLLARIDAE","aggregates",4,4,"""the spatial distribution...was highly contagious in all moths"" but this paper indicates it's more a matter of habitat preference and there's ""no evidence of behaviourally stimulated aggregation for reproductive or migratory purposes""","659"
+"Acetes_americanus","SERGESTIDAE","aggregates",4,4,"""Spectacular schools and/or swarms of Acetes...are the bases of important commercial fisheries..."" 636","636"
+"Acetes_chinensis","SERGESTIDAE","aggregates",4,4,"""Spectacular schools and/or swarms of Acetes...are the bases of important commercial fisheries..."" 636","636"
+"Acetes_indicus","SERGESTIDAE","aggregates",4,4,"""Spectacular schools and/or swarms of Acetes...are the bases of important commercial fisheries..."" 636","636"
+"Acetes_intermedius","SERGESTIDAE","aggregates",4,4,"""Spectacular schools and/or swarms of Acetes...are the bases of important commercial fisheries..."" 636","636"
+"Acetes_japonicus","SERGESTIDAE","aggregates",4,4,"""Spectacular schools and/or swarms of Acetes...are the bases of important commercial fisheries..."" 636","636"
+"Haliporoides_sibogae","SOLENOCERIDAE",NA,0,4,"no info on this sp.",NA
+"Pleoticus_muelleri","SOLENOCERIDAE","aggregates",4,4,"reproductive and non-reproductive aggregations","725"
+"Solenocera_acuminata","SOLENOCERIDAE",NA,0,4,"no info on this sp.",NA
+"Solenocera_choprai","SOLENOCERIDAE",NA,0,4,"no info on this sp.",NA
+"Solenocera_melantho","SOLENOCERIDAE",NA,0,4,"""one of the most abundant species in the East China Sea and the Yellow Sea""",NA
+"Upogebia_pusilla","UPOGEBIIDAE","solitary",1,1,"burrowing, occur in high densities but ""Burrows are always inhabited by a single shrimp. Although they overlap, they are never interconnected""","728"
+"Menippe_mercenaria","XANTHIDAE","solitary",1,1,"may settle gregariously, but solitary",NA
+"Xantho_poressa","XANTHIDAE","mating_aggregate",2,2,"found one male with several females sharing refuge, may aggregate?","729"
