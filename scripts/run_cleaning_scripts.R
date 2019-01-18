@@ -4,3 +4,7 @@
 source("scripts/clean_pathogen_hosts.R")
 
 source("scripts/clean_host_fishery.R")
+
+source("scripts/clean_invasives.R")
+
+source("scripts/clean_sociality.R")
