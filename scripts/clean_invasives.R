@@ -173,5 +173,10 @@ Pv <- c("Penaeus_vannamei","China","Low/Unk","","",522,"")
 Pa <- c("Palaemon_adspersus","Canada; Russia","Low/Unk","","",522,"")
 invasives9 <- rbind(invasives8,Cc,Ps,Pv,Pa)
 
+#5-
+#Use Environment data to check fao_hosts?
+
 #final-
 #Save to clean data folder
+write.csv(invasives9,"clean_data/invasives_clean.csv",
+          row.names=FALSE)
