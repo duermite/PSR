@@ -1,34 +1,30 @@
-"pathogen_type","transmission","notes","ref"
-"acanthocephalan",NA,NA,NA
-"amoeba",NA,NA,NA
-"annelid",NA,NA,NA
-"apicomplexan",NA,NA,NA
-"ascomycete",NA,NA,NA
-"bacteria",NA,NA,NA
-"barnacle",NA,NA,NA
-"cestode",NA,NA,NA
-"ciliate",NA,NA,NA
-"ciliophoran",NA,NA,NA
-"copepod",NA,NA,NA
-"dinoflagellate",NA,NA,NA
-"fungi",NA,NA,NA
-"fungus",NA,NA,NA
-"halacarid",NA,NA,NA
-"haplosporidian",NA,NA,NA
-"helminth",NA,NA,NA
-"isopod",NA,NA,NA
-"leech",NA,NA,NA
-"lung fluke",NA,NA,NA
-"mesomycetozoan",NA,NA,NA
-"microsporidian",NA,NA,NA
-"mikrocytid",NA,NA,NA
-"mussel",NA,NA,NA
-"myxosporidia",NA,NA,NA
-"nematode",NA,NA,NA
-"nemertean",NA,NA,NA
-"oomycotic",NA,NA,NA
-"polychaete",NA,NA,NA
-"protist",NA,NA,NA
-"rhizocephalan barnacle",NA,NA,NA
-"trematode",NA,NA,NA
-"virus",NA,NA,NA
+pathogen_type,transmission,notes,ref
+acanthocephalan,complex,intermediate hosts,"617, 660"
+amoeba,direct,can be transmitted by cohabitation,121
+branchiobdellid,direct,many are facultative and some commensal,276
+apicomplexan,direct,NA,NA
+ascomycete,direct,NA,NA
+bacteria,direct,NA,672
+barnacle,direct,NA,672
+cestode,complex,NA,660
+ciliate,direct,free living and parasitic phases,NA
+copepod,direct,NA,672
+dinoflagellate,direct,free living and parasitic phases,NA
+fungi,direct,NA,NA
+halacarid,direct,NA,NA
+haplosporidian,direct,NA,NA
+helminth,both,nematomorpha as free living and parasitic stages,NA
+isopod,direct,NA,672
+leech,direct,NA,NA
+mesomycetozoan,direct,encysting stages,738
+microsporidian,direct,"obligate intracellular parasites, vertical and horizontal transmission",739
+mikrocytid,direct,NA,NA
+mussel,direct,NA,672
+myxosporidia,complex,typically requires fish host and invertebrate host,NA
+nematode,both,NA,660
+nemertean,direct,NA,NA
+polychaete,direct,NA,NA
+protist,direct,NA,NA
+rhizocephalan barnacle,direct,NA,NA
+trematode,complex,NA,660
+virus,direct,NA,660
