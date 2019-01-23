@@ -10,3 +10,5 @@ source("scripts/clean_invasives.R")
 source("scripts/clean_sociality.R")
 
 source("scripts/clean_pathogen.R")
+
+source("scripts/clean_fao_hosts.R") #this one must be done AFTER several of above
