@@ -35,6 +35,11 @@ dup_search
 #did this to a minor extent
 #note: virus_type is sometimes ORder and sometimes Family
 
+#final-
+#Save in clean data folder
+write.csv(pathogen2,"clean_data/pathogen_clean.csv",
+          row.names=FALSE)
+
 
 
 
