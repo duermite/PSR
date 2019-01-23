@@ -31,10 +31,18 @@ interpolate_social <- function(social_score,fam_score){
   return(fam_soc_score)
 }
 
+sociality_sp2 <- left_join(sociality_sp,sociality_fam,by="Family_Group") %>% 
+  rename(fam_score=social_score.y) %>% 
+  rowwise() %>% 
+  mutate(fam_soc_score=interpolate_social(social_score.x,fam_score)) %>% 
+  select(1:4,13,5:6) %>% 
+  rename(sociality=sociality.x,
+         social_score=social_score.x,
+         notes=notes.x,
+         ref=ref.x)
 
 
 
 
-
-write.csv(sociality,"clean_data/sociality_clean.csv",
+write.csv(sociality_sp2,"clean_data/sociality_clean.csv",
           row.names=FALSE)
