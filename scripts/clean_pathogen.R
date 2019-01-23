@@ -15,3 +15,9 @@ path_transmission <- read.csv("raw_data/path_transmission.csv")
 #1-
 #Search ways each pathogen type is transmitted
 #doing this in the excel sheet
+
+#2-
+#Add path_transmission into pathogen table
+pathogen2 <- left_join(pathogen,path_transmission,by="pathogen_type") %>% 
+  unite(ref,c("ref.x","ref.y"),sep=", ") %>% 
+  select(1:6,13,7:10)
