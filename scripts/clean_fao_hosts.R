@@ -4,10 +4,11 @@ hosts <- read.csv("raw_data/fao_hosts.csv")
 db_search <- read.csv("raw_data/db_search.csv")
 host_depth <- read.csv("raw_data/host_depth.csv")
 host_extent <- read.csv("raw_data/host_extent.csv")
-host_fishery <- read.csv("raw_data/host_fishery.csv")
+host_fishery <- read.csv("clean_data/host_fishery_clean.csv")
 host_size <- read.csv("raw_data/host_size.csv")
-invasives <- read.csv("raw_data/invasives.csv")
-sociality <- read.csv("raw_data/sociality.csv")
+invasives <- read.csv("clean_data/invasives_clean.csv")
+sociality <- read.csv("clean_data/sociality_clean.csv")
+
 
 #Tasks
 ##1-Change host type to something recognizeable
@@ -19,7 +20,7 @@ sociality <- read.csv("raw_data/sociality.csv")
 ###host_size
 ###invasives
 ###sociality
-##3-save to clean data folder
+##final-save to clean data folder
 
 
 
@@ -43,10 +44,41 @@ calling_host_type <- function(order){
   return(host_type)
 }
 #adjusting family and host type
-hosts <- hosts %>% 
+hosts2 <- hosts %>% 
   mutate(family=tolower(Family_Group)) %>% 
-  mutate(host_type=unlist(lapply(Order_Group,calling_host_type))) #need lapply so work for each row separately
-#haven't deleted original two columns yet
+  mutate(host_type=unlist(lapply(Order_Group,calling_host_type))) %>% #need lapply so work for each row separately
+  select(1,16:17,4:15)
 
-write.csv(hosts,"clean_data/hosts_clean.csv",
+##2-
+#Add data
+hosts3 <- left_join(hosts2,db_search,by="host_genus_species") %>% 
+  left_join(host_depth,by="host_genus_species") %>% 
+  left_join(host_extent,by="sp_code") %>% 
+  left_join(host_fishery,by="sp_code") %>% 
+  left_join(host_size,by="sp_code") %>% 
+  left_join(invasives,by="host_genus_species") %>% 
+  left_join(sociality,by="host_genus_species") %>% 
+  unite(ref,c("ref.x","ref.y","ref.x.x","ref.y.y","ref.x.x.x","ref.y.y.y"),sep=", ") %>% 
+  select(1:10,21:22,24:25,28,31:35,37:38,41,47:48,11:14) %>% 
+  rename(sp_code=sp_code.x)
+
+#SKIP#
+#############################
+#tried and failed to remove NAs before combining refs, so just combining in script above
+#if i decide to make this work, have to stop before unite() in previous script
+#remove NAs
+hosts3$ref.x[is.na(hosts3$ref.x)] <- ""
+hosts3$ref.y[is.na(hosts3$ref.y)] <- ""
+hosts3$ref.x.x[is.na(hosts3$ref.x.x)] <- ""
+hosts3$ref.y.y[is.na(hosts3$ref.y.y)] <- ""
+hosts3$ref.x.x.x[is.na(hosts3$ref.x.x.x)] <- ""
+hosts3$ref.y.y.y[is.na(hosts3$ref.y.y.y)] <- ""
+#combine ref columns
+hosts4 <- hosts3 %>%  
+  unite(ref,c("ref.x","ref.y","ref.x.x","ref.y.y","ref.x.x.x","ref.y.y.y"),sep=", ")
+############################### 
+
+#RESUME
+##final-save to clean data folder
+write.csv(hosts3,"clean_data/hosts_clean.csv",
           row.names=FALSE)
