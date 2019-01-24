@@ -1,5 +1,4 @@
 #Preliminary Analyses and Plotting
-#I have not looked at this recently, when I get back here, need to check everything
 
 library(ggplot2)
 library(dplyr)
@@ -180,6 +179,7 @@ ggplot(data=decapods, aes(x=as.factor(social_score),y=num_viruses))+
   labs(x="Social Score",y="Number of Viruses",title="Decapod Crustacean Viruses and Sociality")+
   scale_x_discrete(labels=xlab_soc_vir)
 
+##HAVE NOT LOOKED AT THIS##
 ###################################
 #anovas
 htype_numpaths <- aov(num_pathogens~host_type,data=decapods_na.rm)
