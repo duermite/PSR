@@ -1,7 +1,7 @@
 library(dplyr)
 
-decapod_hosts <- read.csv("clean_data/fao_hosts_clean.csv")
-pathogen_hosts_clean <- read.csv("clean_data/pathogen_hosts_clean.csv")
+decapod_hosts <- read.csv("clean_data/hosts_clean.csv")
+pathogen_hosts_clean <- read.csv("clean_data/path_hosts_clean.csv")
 pathogen <- read.csv("clean_data/pathogen_clean.csv") 
 
 #Fill in columns for number of pathogens and viruses on decapod_hosts spreadsheet
@@ -35,18 +35,31 @@ num_rhiz <- data.frame(table(
   path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="rhizocephalan barnacle"]))
 colnames(num_rhiz) <- c("host_genus_species","num_rhiz")
 
+#count number of bacteria per host
+num_bacteria <- data.frame(table(
+  path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="bacteria"]))
+colnames(num_bacteria) <- c("host_genus_species","num_bacteria")
+
+#count number of microsporidians per host
+num_microsp <- data.frame(table(
+  path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="microsporidian"]))
+colnames(num_microsp) <- c("host_genus_species","num_microsp")
+
+
 #add data to decapod_hosts file - only if host in fao db
-decapod_hosts_clean <- left_join(decapod_hosts,num_pathogen,by="host_genus_species")
-decapod_hosts_clean <- left_join(decapod_hosts_clean,num_viruses,by="host_genus_species")
-decapod_hosts_clean <- left_join(decapod_hosts_clean,num_isopods,by="host_genus_species")
-decapod_hosts_clean <- left_join(decapod_hosts_clean,num_rhiz,by="host_genus_species")
+decapod_hosts2 <- left_join(decapod_hosts,num_pathogen,by="host_genus_species") %>% 
+  left_join(num_viruses,by="host_genus_species") %>% 
+  left_join(num_isopods,by="host_genus_species") %>% 
+  left_join(num_rhiz,by="host_genus_species") %>% 
+  left_join(num_bacteria,by="host_genus_species") %>% 
+  left_join(num_microsp,by="host_genus_species")
 
 ##can add more counts here##
 
 #order by species name
-decapod_hosts_clean <- decapod_hosts_clean %>% 
+decapod_hosts3 <- decapod_hosts2 %>% 
   arrange(host_genus_species)
 
 #save to new file name
-write.csv(decapod_hosts_clean,"clean_data/hosts_clean_pathcounts.csv",
+write.csv(decapod_hosts3,"analyze_data/hosts_clean_pathcounts.csv",
           row.names=FALSE)
