@@ -1,4 +1,4 @@
-#Preliminary Analyses and Plotting
+#Preliminary Plotting
 
 library(ggplot2)
 library(dplyr)
@@ -24,7 +24,6 @@ pathogens <- read.csv("clean_data/path_hosts_clean.csv")
 #12-Graph number pathogens by sociality
 ##*need to add what the scores mean
 #13-Graph number of viruses by sociality
-#Anovas
 
 levels(pathogen$pathogen_type)
 
@@ -179,25 +178,4 @@ ggplot(data=decapods, aes(x=as.factor(social_score),y=num_viruses))+
   labs(x="Social Score",y="Number of Viruses",title="Decapod Crustacean Viruses and Sociality")+
   scale_x_discrete(labels=xlab_soc_vir)
 
-##HAVE NOT LOOKED AT THIS##
-###################################
-#anovas
-htype_numpaths <- aov(num_pathogens~host_type,data=decapods_na.rm)
-summary(htype_numpaths)
-plot(htype_numpaths) #doesn't look normal
-#need to examine residuals
-TukeyHSD(htype_numpaths)
-#transform data
-htype_numpaths_trans <- aov(log(num_pathogens)~host_type,data=decapods_na.rm)
-summary(htype_numpaths_trans) #barely significant
-plot(htype_numpaths_trans) #I don't know if this is normal!
-TukeyHSD(htype_numpaths_trans) #but no pairwise difference...huh?
 
-htype_numvirus <- aov(num_viruses~host_type,data=decapods_na.rm)
-summary(htype_numvirus)
-TukeyHSD(htype_numvirus)
-plot(htype_numvirus)
-#need to examine residuals
-
-longev_vir <- glm(num_viruses~longev_max,data=decapods)
-summary(longev_vir)
