@@ -1,8 +1,10 @@
 #Cleaning for pathogen table
 
 library(dplyr)
+library(tidyr)
 pathogen <- read.csv("raw_data/pathogen.csv")
 path_transmission <- read.csv("raw_data/path_transmission.csv")
+path_hosts <- read.csv("clean_data/path_hosts_clean.csv")
 
 
 #Tasks
@@ -10,6 +12,7 @@ path_transmission <- read.csv("raw_data/path_transmission.csv")
 #2-Add path_transmission into pathogen table
 #3-check for path_abbr dups
 #4-complete virus_type and QAQC
+#5-Limit to only those pathogens that have hosts in fao_hosts
 #final-Save in clean data folder
 
 #1-
@@ -18,6 +21,8 @@ path_transmission <- read.csv("raw_data/path_transmission.csv")
 
 #2-
 #Add path_transmission into pathogen table
+levels(pathogen$pathogen_type)
+
 pathogen2 <- left_join(pathogen,path_transmission,by="pathogen_type") %>% 
   unite(ref,c("ref.x","ref.y"),sep=", ") %>% 
   select(1:6,13,7:10)
@@ -35,9 +40,12 @@ dup_search
 #did this to a minor extent
 #note: virus_type is sometimes ORder and sometimes Family
 
+#5-Limit to only those pathogens that have hosts in fao_hosts
+pathogen3 <- semi_join(pathogen2,path_hosts,by="path_abbr")
+
 #final-
 #Save in clean data folder
-write.csv(pathogen2,"clean_data/pathogen_clean.csv",
+write.csv(pathogen3,"clean_data/pathogen_clean.csv",
           row.names=FALSE)
 
 
