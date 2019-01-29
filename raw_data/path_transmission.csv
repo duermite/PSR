@@ -1,30 +1,25 @@
-pathogen_type,transmission,notes,ref
-acanthocephalan,complex,intermediate hosts,"617, 660"
-amoeba,direct,can be transmitted by cohabitation,121
-branchiobdellid,direct,many are facultative and some commensal,276
-apicomplexan,direct,NA,NA
-ascomycete,direct,NA,NA
-bacteria,direct,NA,672
-barnacle,direct,NA,672
-cestode,complex,NA,660
-ciliate,direct,free living and parasitic phases,NA
-copepod,direct,NA,672
-dinoflagellate,direct,free living and parasitic phases,NA
-fungi,direct,NA,NA
-halacarid,direct,NA,NA
-haplosporidian,direct,NA,NA
-helminth,both,nematomorpha as free living and parasitic stages,NA
-isopod,direct,NA,672
-leech,direct,NA,NA
-mesomycetozoan,direct,encysting stages,738
-microsporidian,direct,"obligate intracellular parasites, vertical and horizontal transmission",739
-mikrocytid,direct,NA,NA
-mussel,direct,NA,672
-myxosporidia,complex,typically requires fish host and invertebrate host,NA
-nematode,both,NA,660
-nemertean,direct,NA,NA
-polychaete,direct,NA,NA
-protist,direct,NA,NA
-rhizocephalan barnacle,direct,NA,NA
-trematode,complex,NA,660
-virus,direct,NA,660
+pathogen_type,transmission,requirement,size,notes,ref
+acanthocephalan,complex,obligate,macro,intermediate hosts,"617, 660"
+amoeba,direct,opportunist,micro,can be transmitted by cohabitation,121
+apicomplexan,direct,obligate,micro,NA,NA
+bacteria_extra,direct,opportunist,micro,NA,672
+bacteria_intra,direct,obligate,micro,NA,NA
+barnacle,direct,obligate,macro,NA,672
+branchiobdellid,direct,opportunist,macro,many are facultative and some commensal,276
+cestode,complex,obligate,macro,NA,660
+ciliate,direct,opportunist,micro,free living and parasitic phases,NA
+copepod,direct,opportunist,macro,NA,672
+dinoflagellate,direct,opportunist,micro,free living and parasitic phases,NA
+fungi,direct,opportunist,micro,NA,NA
+halacarid,direct,opportunist,macro,NA,NA
+haplosporidian,direct,obligate,micro,NA,NA
+isopod,direct,obligate,macro,NA,672
+leech,direct,opportunist,macro,NA,NA
+mesomycetozoan,direct,opportunist,micro,encysting stages,738
+microsporidian,direct,obligate,micro,"obligate intracellular parasites, vertical and horizontal transmission",739
+nematode,both,opportunist,macro,NA,660
+nematomorpha,direct,opportunist,macro,free living and parasitic stages,NA
+nemertean,direct,opportunist,macro,NA,NA
+oomycete,direct,opportunist,micro,NA,NA
+trematode,complex,obligate,macro,NA,660
+virus,direct,obligate,micro,NA,660
