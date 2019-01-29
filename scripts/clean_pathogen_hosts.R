@@ -10,6 +10,7 @@ fao_hosts <- read.csv("raw_data/fao_hosts.csv")
 ##3-Verify all host_genus_species in fao_hosts, remove if not
 ##4-complete in_wild to best of ability?? (NOT COMPLETED)
 ##5-Look for potential dups when how has unknown sp and known sp from same genus
+#6-Limit to only those hosts in fao_hosts
 ##final-save into clean data folder
 
 #1
@@ -79,6 +80,11 @@ path_hosts_clean <- path_hosts_clean %>%
   arrange(host_genus,host_species,path_abbr)
 #looked through and deleted, committed in version control
 
+#6-Limit to only those hosts in fao_hosts
+#this keeps only things from path_hosts that are also found in fao_hosts
+path_hosts_clean2 <- semi_join(path_hosts_clean,fao_hosts,by="host_genus_species")
+
+
 #save final file in clean_data folder
-write.csv(path_hosts_clean,"clean_data/path_hosts_clean.csv",
+write.csv(path_hosts_clean2,"clean_data/path_hosts_clean.csv",
           row.names=FALSE) #this line prevents adding a new column each time
