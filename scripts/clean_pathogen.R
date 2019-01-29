@@ -9,7 +9,7 @@ path_hosts <- read.csv("clean_data/path_hosts_clean.csv")
 
 #Tasks
 #1-Search ways each pathogen type is transmitted
-#2-Add path_transmission into pathogen table
+#2-Add path_transmission, pathogen requirements, and pathogen size into pathogen table
 #3-check for path_abbr dups
 #4-complete virus_type and QAQC
 #5-Limit to only those pathogens that have hosts in fao_hosts
@@ -20,12 +20,12 @@ path_hosts <- read.csv("clean_data/path_hosts_clean.csv")
 #doing this in the excel sheet
 
 #2-
-#Add path_transmission into pathogen table
+#Add path_transmission, pathogen requirements, and pathogen size into pathogen table
 levels(pathogen$pathogen_type)
 
 pathogen2 <- left_join(pathogen,path_transmission,by="pathogen_type") %>% 
   unite(ref,c("ref.x","ref.y"),sep=", ") %>% 
-  select(1:6,13,7:10)
+  select(1:6,13:15,7:10)
 
 #3-
 #check for path_abbr dups
@@ -42,6 +42,7 @@ dup_search
 
 #5-Limit to only those pathogens that have hosts in fao_hosts
 pathogen3 <- semi_join(pathogen2,path_hosts,by="path_abbr")
+
 
 #final-
 #Save in clean data folder

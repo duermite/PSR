@@ -32,27 +32,64 @@ colnames(num_isopods) <- c("host_genus_species","num_isopods")
 
 #count number of rhizocephalan barnacles per host
 num_rhiz <- data.frame(table(
-  path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="rhizocephalan barnacle"]))
+  path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="barnacle"]))
 colnames(num_rhiz) <- c("host_genus_species","num_rhiz")
 
 #count number of bacteria per host
 num_bacteria <- data.frame(table(
-  path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="bacteria"]))
+  path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="bacteria_extra"|path_type_join_hosts$pathogen_type=="bacteria_intra"]))
 colnames(num_bacteria) <- c("host_genus_species","num_bacteria")
+
+#count number of intracellular bacteria per host
+num_bacteria_intra <- data.frame(table(
+  path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="bacteria_intra"]))
+colnames(num_bacteria_intra) <- c("host_genus_species","num_bacteria_intra")
 
 #count number of microsporidians per host
 num_microsp <- data.frame(table(
   path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="microsporidian"]))
 colnames(num_microsp) <- c("host_genus_species","num_microsp")
 
+#count by path transmission type
+num_direct <- data.frame(table(
+  path_type_join_hosts$host_genus_species[path_type_join_hosts$transmission=="direct"|
+                                            path_type_join_hosts$transmission=="both"]))
+colnames(num_direct) <- c("host_genus_species","num_direct")
+num_complex <- data.frame(table(
+  path_type_join_hosts$host_genus_species[path_type_join_hosts$transmission=="complex"|
+                                            path_type_join_hosts$transmission=="both"]))
+colnames(num_complex) <- c("host_genus_species","num_complex")
+
+#count by path requirements
+num_obligate <- data.frame(table(
+  path_type_join_hosts$host_genus_species[path_type_join_hosts$requirement=="obligate"]))
+colnames(num_obligate) <- c("host_genus_species","num_obligate")
+num_opportunist <- data.frame(table(
+  path_type_join_hosts$host_genus_species[path_type_join_hosts$requirement=="opportunist"]))
+colnames(num_opportunist) <- c("host_genus_species","num_opportunist")
+
+#count by path size
+num_macro <- data.frame(table(
+  path_type_join_hosts$host_genus_species[path_type_join_hosts$size=="macro"]))
+colnames(num_macro) <- c("host_genus_species","num_macro")
+num_micro <- data.frame(table(
+  path_type_join_hosts$host_genus_species[path_type_join_hosts$size=="micro"]))
+colnames(num_micro) <- c("host_genus_species","num_micro")
 
 #add data to decapod_hosts file - only if host in fao db
 decapod_hosts2 <- left_join(decapod_hosts,num_pathogen,by="host_genus_species") %>% 
   left_join(num_viruses,by="host_genus_species") %>% 
   left_join(num_isopods,by="host_genus_species") %>% 
   left_join(num_rhiz,by="host_genus_species") %>% 
-  left_join(num_bacteria,by="host_genus_species") %>% 
-  left_join(num_microsp,by="host_genus_species")
+  left_join(num_bacteria,by="host_genus_species") %>%
+  left_join(num_bacteria_intra,by="host_genus_species") %>% 
+  left_join(num_microsp,by="host_genus_species") %>% 
+  left_join(num_direct,by="host_genus_species") %>% 
+  left_join(num_complex,by="host_genus_species") %>% 
+  left_join(num_obligate,by="host_genus_species") %>% 
+  left_join(num_opportunist,by="host_genus_species") %>% 
+  left_join(num_macro,by="host_genus_species") %>% 
+  left_join(num_micro,by="host_genus_species") 
 
 ##can add more counts here##
 
