@@ -26,8 +26,6 @@ sociality <- read.csv("clean_data/sociality_clean.csv")
 
 #1
 #function loop for host type
-levels(decapod_hosts_clean$ISSCAAP_Group) #this doesn't work bcuzz fw crustaceans are from all orders
-#but could be used for aquatic habitat parameter
 #create function
 calling_host_type <- function(order){
   if(order=="REPTANTIA"){
@@ -67,15 +65,16 @@ hosts3 <- left_join(hosts2,db_search,by="host_genus_species") %>%
 #tried and failed to remove NAs before combining refs, so just combining in script above
 #if i decide to make this work, have to stop before unite() in previous script
 #remove NAs
-hosts3$ref.x[is.na(hosts3$ref.x)] <- ""
-hosts3$ref.y[is.na(hosts3$ref.y)] <- ""
-hosts3$ref.x.x[is.na(hosts3$ref.x.x)] <- ""
-hosts3$ref.y.y[is.na(hosts3$ref.y.y)] <- ""
-hosts3$ref.x.x.x[is.na(hosts3$ref.x.x.x)] <- ""
-hosts3$ref.y.y.y[is.na(hosts3$ref.y.y.y)] <- ""
+#commenting out begins next line
+#hosts3$ref.x[is.na(hosts3$ref.x)] <- ""
+#hosts3$ref.y[is.na(hosts3$ref.y)] <- ""
+#hosts3$ref.x.x[is.na(hosts3$ref.x.x)] <- ""
+#hosts3$ref.y.y[is.na(hosts3$ref.y.y)] <- ""
+#hosts3$ref.x.x.x[is.na(hosts3$ref.x.x.x)] <- ""
+#hosts3$ref.y.y.y[is.na(hosts3$ref.y.y.y)] <- ""
 #combine ref columns
-hosts4 <- hosts3 %>%  
-  unite(ref,c("ref.x","ref.y","ref.x.x","ref.y.y","ref.x.x.x","ref.y.y.y"),sep=", ")
+#hosts4 <- hosts3 %>%  
+  #unite(ref,c("ref.x","ref.y","ref.x.x","ref.y.y","ref.x.x.x","ref.y.y.y"),sep=", ")
 ############################### 
 
 #RESUME

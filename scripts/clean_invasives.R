@@ -113,10 +113,10 @@ invasives5 <- invasives4 %>%
 source_to_ref <- function(source){
   if(source=="EASIN"){
     ref <- "521"
-  } else if(source==" EASIN"){
-    ref <- "521"
   }else if(source=="AquaNIS"){
     ref <- "522"
+  }else if(source=="AquaNIS; EASIN"){
+    ref <- "522, 521"
   } else if(source=="http://www.ciesm.org/atlas/appendix2.html"){
     ref <- "527"
   } else if(source=="http://issg.org/database/species/search.asp?sts=sss&st=sss&fr=1&x=26&y=13&sn=&rn=&hci=-1&ei=156&lang=EN"|
