@@ -24,8 +24,11 @@ pathogens <- read.csv("clean_data/path_hosts_clean.csv")
 #12-Graph number pathogens by sociality
 ##*need to add what the scores mean
 #13-Graph number of viruses by sociality
+#14-Graph tranmission by taxa
+#15-Graph requirements by taxa
+#16-Graph size by taxa
 
-levels(pathogen$pathogen_type)
+levels(pathogens$pathogen_type)
 
 ####################################
 #PLOTS
@@ -178,4 +181,23 @@ ggplot(data=decapods, aes(x=as.factor(social_score),y=num_viruses))+
   labs(x="Social Score",y="Number of Viruses",title="Decapod Crustacean Viruses and Sociality")+
   scale_x_discrete(labels=xlab_soc_vir)
 
+#14-Graph tranmission by taxa
+xlab_trans <- paste(levels(decapods$host_type),"\n(n=",table(decapods$host_type),")",sep="")
+ggplot(data=decapods, aes(x=host_type,y=prop_direct))+
+  geom_boxplot()+
+  labs(x="Taxon",y="Proportion with Direct Transmission",title="Decapod Crustacean Parasite Tranmission Type")+
+  scale_x_discrete(labels=xlab_trans)
 
+#15-Graph requirements by taxa
+xlab_req <- paste(levels(decapods$host_type),"\n(n=",table(decapods$host_type),")",sep="")
+ggplot(data=decapods, aes(x=host_type,y=prop_obligate))+
+  geom_boxplot()+
+  labs(x="Taxon",y="Proportion Obligate Parasites",title="Decapod Crustacean Parasite Tranmission Type")+
+  scale_x_discrete(labels=xlab_req)
+
+#16-Graph size by taxa
+xlab_pathsize <- paste(levels(decapods$host_type),"\n(n=",table(decapods$host_type),")",sep="")
+ggplot(data=decapods, aes(x=host_type,y=prop_macro))+
+  geom_boxplot()+
+  labs(x="Taxon",y="Proportion Macro Parasites",title="Decapod Crustacean Parasite Tranmission Type")+
+  scale_x_discrete(labels=xlab_pathsize)
