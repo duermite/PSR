@@ -55,6 +55,7 @@ num_direct <- data.frame(table(
   path_type_join_hosts$host_genus_species[path_type_join_hosts$transmission=="direct"|
                                             path_type_join_hosts$transmission=="both"]))
 colnames(num_direct) <- c("host_genus_species","num_direct")
+
 num_complex <- data.frame(table(
   path_type_join_hosts$host_genus_species[path_type_join_hosts$transmission=="complex"|
                                             path_type_join_hosts$transmission=="both"]))
@@ -64,6 +65,7 @@ colnames(num_complex) <- c("host_genus_species","num_complex")
 num_obligate <- data.frame(table(
   path_type_join_hosts$host_genus_species[path_type_join_hosts$requirement=="obligate"]))
 colnames(num_obligate) <- c("host_genus_species","num_obligate")
+
 num_opportunist <- data.frame(table(
   path_type_join_hosts$host_genus_species[path_type_join_hosts$requirement=="opportunist"]))
 colnames(num_opportunist) <- c("host_genus_species","num_opportunist")
@@ -72,6 +74,7 @@ colnames(num_opportunist) <- c("host_genus_species","num_opportunist")
 num_macro <- data.frame(table(
   path_type_join_hosts$host_genus_species[path_type_join_hosts$size=="macro"]))
 colnames(num_macro) <- c("host_genus_species","num_macro")
+
 num_micro <- data.frame(table(
   path_type_join_hosts$host_genus_species[path_type_join_hosts$size=="micro"]))
 colnames(num_micro) <- c("host_genus_species","num_micro")
@@ -91,10 +94,16 @@ decapod_hosts2 <- left_join(decapod_hosts,num_pathogen,by="host_genus_species") 
   left_join(num_macro,by="host_genus_species") %>% 
   left_join(num_micro,by="host_genus_species") 
 
+#calculate proportions of pathogen types
+decapod_hosts3 <- decapod_hosts2 %>% 
+  mutate(prop_direct=num_direct/(num_direct+num_complex)) %>% 
+  mutate(prop_obligate=num_obligate/(num_obligate+num_opportunist)) %>% 
+  mutate(prop_macro=num_macro/(num_macro+num_micro))
+
 ##can add more counts here##
 
 #order by species name
-decapod_hosts3 <- decapod_hosts2 %>% 
+decapod_hosts4 <- decapod_hosts3 %>% 
   arrange(host_genus_species)
 
 #save to new file name
