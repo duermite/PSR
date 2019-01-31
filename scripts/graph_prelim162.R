@@ -13,7 +13,8 @@ library(cowplot)
 
 
 decapods <- read.csv("analyze_data/hosts_clean_pathcounts162.csv")
-pathogens <- read.csv("clean_data/path_hosts_clean.csv")
+path_hosts <- read.csv("clean_data/path_hosts_clean.csv")
+pathogens <- read.csv("clean_data/pathogen_clean.csv")
 
 #Tasks
 #1-Graph total number of pathogens per taxa
@@ -36,6 +37,11 @@ pathogens <- read.csv("clean_data/path_hosts_clean.csv")
 #16-Graph size by taxa
 
 levels(pathogens$pathogen_type)
+#number of different types of pathogens
+path_type_count <- pathogens %>% 
+  group_by(pathogen_type) %>% 
+  count(pathogen_type) %>% 
+  rename(n_paths=n)
 
 ####################################
 #PLOTS
@@ -53,7 +59,7 @@ ggplot(data=decapods, aes(x=host_type,y=num_pathogens))+
 #these numbers aren't right
 
 #1.5 Pathogens per taxon per citation (pathogen index)
-ggplot(data=decapods, aes(x=host_type,y=path_index))+
+ggplot(data=decapods, aes(x=host_type,y=num_pathogens/num_results))+
   geom_boxplot()+
   labs(x="Taxon",y="Pathogen Index",title="Decapod Crustacean Pathogens")+
   scale_x_discrete(labels=xlab_path)
@@ -63,6 +69,10 @@ ggplot(data=decapods2, aes(x=host_type,y=num_pathogens/path_search_results))+
   geom_boxplot()+
   labs(x="Taxon",y="Pathogen Index 2.0",title="Decapod Crustacean Pathogens")+
   scale_x_discrete(labels=xlab_path)
+
+############
+#Path groups by taxon
+############
 
 #2-
 #Graph # viruses per host type
@@ -90,6 +100,11 @@ ggplot(data=decapods, aes(x=host_type,y=num_isopods))+
   geom_boxplot()+
   labs(x="Host Type",y="Number of Isopods",title="Decapod Crustacean Bopyrid Isopods")+
   scale_x_discrete(labels=xlab_isopod)
+#isopod index
+ggplot(data=decapods, aes(x=host_type,y=(num_isopods/path_search_results)))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Isopod Index",title="Decapod Crustacean Bopyrid Isopods")+
+  scale_x_discrete(labels=xlab_isopod)
 
 #4-
 #rhizocephalan barnacles per taxa
@@ -98,7 +113,12 @@ xlab_rhiz <- paste(levels(decapods$host_type),"\n(N=",
                    table(decapods$host_type[decapods$num_rhiz>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=num_rhiz))+
   geom_boxplot()+
-  labs(x="Host Type",y="Number of Rhizocephalan Barnacles",title="Decapod Crustacean Rhizocephalan Barnacles")+
+  labs(x="Host Type",y="Number of Barnacles",title="Decapod Crustacean Rhizocephalan Barnacles")+
+  scale_x_discrete(labels=xlab_rhiz)
+#barnacle index
+ggplot(data=decapods, aes(x=host_type,y=(num_rhiz/path_search_results)))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Barnacle Index",title="Decapod Crustacean Rhizocephalan Barnacles")+
   scale_x_discrete(labels=xlab_rhiz)
 
 #5-
@@ -109,7 +129,41 @@ ggplot(data=decapods, aes(x=host_type,y=num_bacteria))+
   geom_boxplot()+
   labs(x="Host Type",y="Number of Bacteria Species",title="Decapod Crustacean Bacterial Parasites")+
   scale_x_discrete(labels=xlab_bacteria)
-
+#bacteria index
+ggplot(data=decapods, aes(x=host_type,y=(num_bacteria/path_search_results)))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Bacteria Index",title="Decapod Crustacean Bacterial Parasites")+
+  scale_x_discrete(labels=xlab_bacteria)
+#5.1
+#Graph # intracellular bacteria
+xlab_bact_intra <- paste(levels(decapods$host_type),"\n(N=",
+                         table(decapods$host_type[decapods$num_bacteria_intra>0]),")",sep="")
+ggplot(data=decapods, aes(x=host_type,y=num_bacteria_intra))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Number of Intracellular Bacteria Species",
+       title="Decapod Crustacean Intracellular Bacterial Parasites")+
+  scale_x_discrete(labels=xlab_bact_intra)
+#intracellular bacteria index
+ggplot(data=decapods, aes(x=host_type,y=(num_bacteria_intra/path_search_results)))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Intracellular Bacteria Index",
+       title="Decapod Crustacean Intracellular Bacterial Parasites")+
+  scale_x_discrete(labels=xlab_bact_intra)
+#5.2
+#Graph # extracellular bacteria
+xlab_bact_extra <- paste(levels(decapods$host_type),"\n(N=",
+                         table(decapods$host_type[decapods$num_bacteria_extra>0]),")",sep="")
+ggplot(data=decapods, aes(x=host_type,y=num_bacteria_extra))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Number of Extracellular Bacteria Species",
+       title="Decapod Crustacean Extracellular Bacterial Parasites")+
+  scale_x_discrete(labels=xlab_bact_extra)
+#intracellular  index
+ggplot(data=decapods, aes(x=host_type,y=(num_bacteria_extra/path_search_results)))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Intracellular Bacteria Index",
+       title="Decapod Crustacean Extracellular Bacterial Parasites")+
+  scale_x_discrete(labels=xlab_bact_extra)
 #6-
 #Graph # microsporidians per taxa
 xlab_microsp <- paste(levels(decapods$host_type),"\n(N=",
@@ -118,6 +172,77 @@ ggplot(data=decapods, aes(x=host_type,y=num_microsp))+
   geom_boxplot()+
   labs(x="Host Type",y="Number of Microsporidians",title="Decapod Crustacean Microsporidian Parasites")+
   scale_x_discrete(labels=xlab_microsp)
+#microsporidian index
+ggplot(data=decapods, aes(x=host_type,y=(num_microsp/path_search_results)))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Microsporidian Index",title="Decapod Crustacean Microsporidian Parasites")+
+  scale_x_discrete(labels=xlab_microsp)
+
+#Graph # apicomplexans
+xlab_api <- paste(levels(decapods$host_type),"\n(N=",
+                      table(decapods$host_type[decapods$num_api>0]),")",sep="")
+ggplot(data=decapods, aes(x=host_type,y=num_api))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Number of Apicomplexans",title="Decapod Crustacean Apicomplexan Parasites")+
+  scale_x_discrete(labels=xlab_api)
+#apicomplexan index
+ggplot(data=decapods, aes(x=host_type,y=num_api/path_search_results))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Apicomplexan Index",title="Decapod Crustacean Apicomplexan Parasites")+
+  scale_x_discrete(labels=xlab_api)
+
+#graph # cestodes
+xlab_cestode <- paste(levels(decapods$host_type),"\n(N=",
+                  table(decapods$host_type[decapods$num_cestode>0]),")",sep="")
+ggplot(data=decapods, aes(x=host_type,y=num_cestode))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Number of Cestodes",title="Decapod Crustacean Cestode Parasites")+
+  scale_x_discrete(labels=xlab_cestode)
+#apicomplexan index
+ggplot(data=decapods, aes(x=host_type,y=num_cestode/path_search_results))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Cestode Index",title="Decapod Crustacean Cestode Parasites")+
+  scale_x_discrete(labels=xlab_cestode)
+
+#graph # fungi
+xlab_fungi <- paste(levels(decapods$host_type),"\n(N=",
+                      table(decapods$host_type[decapods$num_fungi>0]),")",sep="")
+ggplot(data=decapods, aes(x=host_type,y=num_fungi))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Number of Fungi",title="Decapod Crustacean Fungi Parasites")+
+  scale_x_discrete(labels=xlab_fungi)
+#apicomplexan index
+ggplot(data=decapods, aes(x=host_type,y=num_fungi/path_search_results))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Fungi Index",title="Decapod Crustacean Fungi Parasites")+
+  scale_x_discrete(labels=xlab_fungi)
+
+#graph # nematodes
+xlab_nematode <- paste(levels(decapods$host_type),"\n(N=",
+                    table(decapods$host_type[decapods$num_nematode>0]),")",sep="")
+ggplot(data=decapods, aes(x=host_type,y=num_nematode))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Number of Nematode",title="Decapod Crustacean Nematode Parasites")+
+  scale_x_discrete(labels=xlab_nematode)
+#apicomplexan index
+ggplot(data=decapods, aes(x=host_type,y=num_nematode/path_search_results))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Nematode Index",title="Decapod Crustacean Nematode Parasites")+
+  scale_x_discrete(labels=xlab_nematode)
+
+#graph # trematodes
+xlab_trematode <- paste(levels(decapods$host_type),"\n(N=",
+                       table(decapods$host_type[decapods$num_trematode>0]),")",sep="")
+ggplot(data=decapods, aes(x=host_type,y=num_trematode))+
+  geom_boxplot()+
+  labs(x="Host Type",y="Number of trematode",title="Decapod Crustacean trematode Parasites")+
+  scale_x_discrete(labels=xlab_trematode)
+#apicomplexan index
+ggplot(data=decapods, aes(x=host_type,y=num_trematode/path_search_results))+
+  geom_boxplot()+
+  labs(x="Host Type",y="trematode Index",title="Decapod Crustacean trematode Parasites")+
+  scale_x_discrete(labels=xlab_trematode)
+
 
 #7-
 #scatterplot of num_pathogens vs longev
