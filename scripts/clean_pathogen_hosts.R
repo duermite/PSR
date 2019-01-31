@@ -11,6 +11,7 @@ fao_hosts <- read.csv("raw_data/fao_hosts.csv")
 ##4-complete in_wild to best of ability?? (NOT COMPLETED)
 ##5-Look for potential dups when how has unknown sp and known sp from same genus
 #6-Limit to only those hosts in fao_hosts
+#7-remove passaged relationships
 ##final-save into clean data folder
 
 #1
@@ -84,6 +85,9 @@ path_hosts_clean <- path_hosts_clean %>%
 #this keeps only things from path_hosts that are also found in fao_hosts
 path_hosts_clean2 <- semi_join(path_hosts_clean,fao_hosts,by="host_genus_species")
 
+#7-remove passaged relationships
+path_hosts_clean3 <- path_hosts_clean2 %>% 
+  filter(in_wild!="lab")
 
 #save final file in clean_data folder
 write.csv(path_hosts_clean2,"clean_data/path_hosts_clean.csv",
