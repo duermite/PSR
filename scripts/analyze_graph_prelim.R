@@ -37,11 +37,20 @@ levels(pathogens$pathogen_type)
 #1-
 #Graph total number of pathogens per taxa
 #create vector with host_type levels and number of species in each
-xlab_path <- paste(levels(decapods$host_type),"\n(n=",table(decapods$host_type),")",sep="")
+xlab_path <- paste(levels(decapods$host_type),"\n(n=",
+                   table(decapods$host_type[decapods$num_pathogens>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=num_pathogens))+
   geom_boxplot()+
-  labs(x="Taxa",y="Number of Pathogens",title="Decapod Crustacean Pathogens")+
+  labs(x="Taxon",y="Number of Pathogens",title="Decapod Crustacean Pathogens")+
   scale_x_discrete(labels=xlab_path)
+
+#1.5 Pathogens per taxon per citation (pathogen index)
+xlab_path_index <- paste(levels(decapods$host_type),"\n(n=",
+                   table(decapods$host_type[decapods$num_pathogens>0]),")",sep="")
+ggplot(data=decapods, aes(x=host_type,y=path_index))+
+  geom_boxplot()+
+  labs(x="Taxon",y="Pathogen Index",title="Decapod Crustacean Pathogens")+
+  scale_x_discrete(labels=xlab_path_index)
 
 #2-
 #Graph # viruses per host type
@@ -51,8 +60,16 @@ xlab_vir <- paste(levels(decapods$host_type),"\n(n=",
                   table(decapods$host_type[decapods$num_viruses>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=num_viruses))+
   geom_boxplot()+
-  labs(x="Host Type",y="Number of Viruses",title="Decapod Crustacean Viruses")+
+  labs(x="Taxon",y="Number of Viruses",title="Decapod Crustacean Viruses")+
   scale_x_discrete(labels=xlab_vir)
+
+#2.5 virus index per host type
+xlab_virus_index <- paste(levels(decapods$host_type),"\n(n=",
+                         table(decapods$host_type[decapods$num_viruses>0]),")",sep="")
+ggplot(data=decapods, aes(x=host_type,y=virus_index))+
+  geom_boxplot()+
+  labs(x="Taxon",y="Virus Index",title="Decapod Crustacean Viruses")+
+  scale_x_discrete(labels=xlab_virus_index)
 
 #3-
 #graph isopods per taxa
@@ -94,16 +111,42 @@ ggplot(data=decapods, aes(x=host_type,y=num_microsp))+
 
 #7-
 #scatterplot of num_pathogens vs longev
-ggplot(data=decapods, aes(x=longev_max,y=num_pathogens))+
-  geom_point()
+ggplot(data=decapods, aes(x=longev_max,y=num_pathogens,fill=host_type))+
+  geom_point(pch=21,size=2,col="black",alpha=.85)+
+  labs(x="Longevity (years)", y="Number of Pathogens")+
+  scale_fill_manual(values=bem_colors,name="Host Type")
+
+
+#what does the data look like if I include num_pathogens that are 0
+if.na <- function(data){
+  if(is.na(data)){
+    output <- 0
+  }else{
+    output <- data
+  }
+  return(output)
+}
+temp <- decapods %>% 
+  rowwise() %>% 
+  mutate(num_pathogens=if.na(num_pathogens))
+ggplot(data=temp, aes(x=longev_max,y=num_pathogens,fill=host_type))+
+  geom_point(pch=21,size=2,col="black",alpha=.85)+
+  labs(x="Longevity (years)", y="Number of Pathogens")+
+  scale_fill_manual(values=bem_colors,name="Host Type")
 
 summary(lm(longev_max~num_pathogens,data=decapods_na.rm)) #not sure where these datasets are created
+
+#7.5 Longev and pathogen index
+ggplot(data=decapods, aes(x=longev_max,y=path_index,fill=host_type))+
+  geom_point(pch=21,size=1.5,col="black",alpha=.85)+
+  labs(x="Longevity (years)", y="Pathogen Index")+
+  scale_fill_manual(values=bem_colors,name="Host Type")
 
 #8-
 #scatterplot of num_viruses vs longev
 bem_colors <- c("#D1800B","#694008","#1D6295","#84ACB6")
 long_vir_plot <- ggplot(data=decapods, aes(x=longev_max,y=num_viruses,fill=host_type))+
-  geom_point(pch=21,size=4,col="black",alpha=.85)+
+  geom_point(pch=21,size=2,col="black",alpha=.85)+
   labs(x="Longevity (years)", y="Number of Viruses")+
   scale_fill_manual(values=bem_colors,name="Host Type")+
   scale_x_continuous(limit=c(0,70))+
@@ -115,6 +158,11 @@ ggsave("outputs/bem2018_virus_longev_plot.png",plot=long_vir_plot,
        height=6.7,
        unit=c("in"),
        scale=1)
+#8.5 Longevity and virus index
+ggplot(data=decapods, aes(x=longev_max,y=virus_index,fill=host_type))+
+  geom_point(pch=21,size=1.5,col="black",alpha=.85)+
+  labs(x="Longevity (years)", y="Virus Index")+
+  scale_fill_manual(values=bem_colors,name="Host Type")
 
 
 #9-
@@ -152,52 +200,62 @@ xlab_long <- paste(levels(decapods$host_type),"\n(n=",
 ggplot(data=decapods,aes(x=host_type,y=longev_max))+
   geom_boxplot()+
   scale_x_discrete(labels=xlab_long)+
-  labs(x="Taxa",y="Longevity")
+  labs(x="Taxon",y="Longevity")
   
 #12-
 #Graph number pathogens by sociality
 as.factor(decapods$social_score)
-#need to add what the scores mean
 xlab_soc_path <- paste(levels(decapods$social_score),
-                       "\n(n=",table(decapods$social_score),")",sep="")
+                       "\n(n=",table(decapods$social_score[decapods$num_pathogens>0]),")",sep="")
 ggplot(data=decapods, aes(x=as.factor(social_score),y=num_pathogens))+
   geom_boxplot()+
   labs(x="Social Score",y="Number of Pathogens",title="Decapod Crustacean Pathogens and Sociality")+
   scale_x_discrete(labels=xlab_soc_path)
 #extrapolated by family
 xlab_soc_fam_path <- paste(levels(decapods$social_score),
-                           "\n(n=",table(decapods$fam_soc_score),")",sep="")
+                           "\n(n=",table(decapods$fam_soc_score[decapods$num_pathogens>0]),")",sep="")
 ggplot(data=decapods, aes(x=as.factor(fam_soc_score),y=num_pathogens))+
   geom_boxplot()+
-  labs(x="Social Score",y="Number of Pathogens",title="Decapod Crustacean Pathogens and Sociality")+
+  labs(x="Sociality",y="Number of Pathogens",title="Decapod Crustacean Pathogens and Sociality")+
+  scale_x_discrete(labels=xlab_soc_path)
+#with path index instead of count
+ggplot(data=decapods, aes(x=as.factor(fam_soc_score),y=path_index))+
+  geom_boxplot()+
+  labs(x="Sociality",y="Number of Pathogens",title="Decapod Crustacean Pathogens and Sociality")+
   scale_x_discrete(labels=xlab_soc_path)
 
 #13-
 #Graph number of viruses by sociality
+#extrapolated by family
 xlab_soc_vir <- paste(levels(decapods$social_score),"\n(n=",
-                  table(decapods$social_score[decapods$num_viruses>0]),")",sep="")
-ggplot(data=decapods, aes(x=as.factor(social_score),y=num_viruses))+
+                  table(decapods$fam_soc_score[decapods$num_viruses>0]),")",sep="")
+ggplot(data=decapods, aes(x=fam_soc_score,y=num_viruses))+
   geom_boxplot()+
-  labs(x="Social Score",y="Number of Viruses",title="Decapod Crustacean Viruses and Sociality")+
+  labs(x="Sociality",y="Number of Viruses",title="Decapod Crustacean Viruses and Sociality")+
   scale_x_discrete(labels=xlab_soc_vir)
 
 #14-Graph tranmission by taxa
-xlab_trans <- paste(levels(decapods$host_type),"\n(n=",table(decapods$host_type),")",sep="")
+xlab_trans <- paste(levels(decapods$host_type),
+                    "\n(n=",table(decapods$host_type[decapods$num_pathogens>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=prop_direct))+
   geom_boxplot()+
   labs(x="Taxon",y="Proportion with Direct Transmission",title="Decapod Crustacean Parasite Tranmission Type")+
   scale_x_discrete(labels=xlab_trans)
 
 #15-Graph requirements by taxa
-xlab_req <- paste(levels(decapods$host_type),"\n(n=",table(decapods$host_type),")",sep="")
+xlab_req <- paste(levels(decapods$host_type),
+                  "\n(n=",table(decapods$host_type[decapods$num_pathogens>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=prop_obligate))+
   geom_boxplot()+
   labs(x="Taxon",y="Proportion Obligate Parasites",title="Decapod Crustacean Parasite Tranmission Type")+
   scale_x_discrete(labels=xlab_req)
 
 #16-Graph size by taxa
-xlab_pathsize <- paste(levels(decapods$host_type),"\n(n=",table(decapods$host_type),")",sep="")
+xlab_pathsize <- paste(levels(decapods$host_type),"\n(n=",
+                       table(decapods$host_type[decapods$num_pathogens>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=prop_macro))+
   geom_boxplot()+
   labs(x="Taxon",y="Proportion Macro Parasites",title="Decapod Crustacean Parasite Tranmission Type")+
   scale_x_discrete(labels=xlab_pathsize)
+
+
