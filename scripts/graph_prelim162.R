@@ -1,11 +1,18 @@
 #Preliminary Plotting
+######################
+#162 SPECIES
+######################
+
+#####################
+#SWEEP ENVIRONMENT
+#####################
 
 library(ggplot2)
 library(dplyr)
 library(cowplot)
 
 
-decapods <- read.csv("analyze_data/hosts_clean_pathcounts.csv")
+decapods <- read.csv("analyze_data/hosts_clean_pathcounts162.csv")
 pathogens <- read.csv("clean_data/path_hosts_clean.csv")
 
 #Tasks
@@ -38,19 +45,24 @@ levels(pathogens$pathogen_type)
 #Graph total number of pathogens per taxa
 #create vector with host_type levels and number of species in each
 xlab_path <- paste(levels(decapods$host_type),"\n(n=",
-                   table(decapods$host_type[decapods$num_pathogens>0]),")",sep="")
+                   table(decapods$host_type),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=num_pathogens))+
   geom_boxplot()+
   labs(x="Taxon",y="Number of Pathogens",title="Decapod Crustacean Pathogens")+
   scale_x_discrete(labels=xlab_path)
+#these numbers aren't right
 
 #1.5 Pathogens per taxon per citation (pathogen index)
-xlab_path_index <- paste(levels(decapods$host_type),"\n(n=",
-                   table(decapods$host_type[decapods$num_pathogens>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=path_index))+
   geom_boxplot()+
   labs(x="Taxon",y="Pathogen Index",title="Decapod Crustacean Pathogens")+
-  scale_x_discrete(labels=xlab_path_index)
+  scale_x_discrete(labels=xlab_path)
+
+#1.5.5 Try different index, divide by # pathogen citations instead
+ggplot(data=decapods2, aes(x=host_type,y=num_pathogens/path_search_results))+
+  geom_boxplot()+
+  labs(x="Taxon",y="Pathogen Index 2.0",title="Decapod Crustacean Pathogens")+
+  scale_x_discrete(labels=xlab_path)
 
 #2-
 #Graph # viruses per host type
@@ -64,12 +76,10 @@ ggplot(data=decapods, aes(x=host_type,y=num_viruses))+
   scale_x_discrete(labels=xlab_vir)
 
 #2.5 virus index per host type
-xlab_virus_index <- paste(levels(decapods$host_type),"\n(n=",
-                         table(decapods$host_type[decapods$num_viruses>0]),")",sep="")
-ggplot(data=decapods, aes(x=host_type,y=virus_index))+
+ggplot(data=decapods, aes(x=host_type,y=(num_viruses/path_search_results)))+
   geom_boxplot()+
   labs(x="Taxon",y="Virus Index",title="Decapod Crustacean Viruses")+
-  scale_x_discrete(labels=xlab_virus_index)
+  scale_x_discrete(labels=xlab_vir)
 
 #3-
 #graph isopods per taxa
@@ -117,18 +127,7 @@ ggplot(data=decapods, aes(x=longev_max,y=num_pathogens,fill=host_type))+
   scale_fill_manual(values=bem_colors,name="Host Type")
 
 
-#what does the data look like if I include num_pathogens that are 0
-if.na <- function(data){
-  if(is.na(data)){
-    output <- 0
-  }else{
-    output <- data
-  }
-  return(output)
-}
-temp <- decapods %>% 
-  rowwise() %>% 
-  mutate(num_pathogens=if.na(num_pathogens))
+
 ggplot(data=temp, aes(x=longev_max,y=num_pathogens,fill=host_type))+
   geom_point(pch=21,size=2,col="black",alpha=.85)+
   labs(x="Longevity (years)", y="Number of Pathogens")+
