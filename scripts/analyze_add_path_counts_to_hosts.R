@@ -127,7 +127,7 @@ decapod_hosts7 <- decapod_hosts5 %>%
   mutate(num_pathogens=if.na(num_pathogens))
 
 #save 100 sp to new file name
-write.csv(decapod_hosts6,"analyze_data/hosts_clean_pathcounts162.csv",
+write.csv(decapod_hosts6,"analyze_data/hosts_clean_pathcounts100.csv",
           row.names=FALSE)
 
 #save 162 sp to new file name
