@@ -1,4 +1,5 @@
 ##ALL CLEANING FOR FAO_HOSTS FILE
+library(tidyr)
 library(dplyr)
 hosts <- read.csv("raw_data/fao_hosts.csv")
 db_search <- read.csv("raw_data/db_search.csv")
@@ -20,6 +21,7 @@ sociality <- read.csv("clean_data/sociality_clean.csv")
 ###host_size
 ###invasives
 ###sociality
+##3-Change habitat to more manageable categories
 ##final-save to clean data folder
 
 
@@ -78,6 +80,29 @@ hosts3 <- left_join(hosts2,db_search,by="host_genus_species") %>%
 ############################### 
 
 #RESUME
+
+##3-
+#Change habitat to more manageable categories
+levels(hosts$aq_hab)
+simple_hab <- function(habitat){
+  if(habitat=="freshwater"){
+    new_hab <- "fw"
+  }else if(habitat=="marine"|habitat=="mar_ter"){
+    new_hab <- "marine"
+  }else {
+  new_hab <- "euryhaline"
+  }
+  return(new_hab)
+}
+simple_hab("freshwater")
+simple_hab("marine")
+simple_hab("mar_ter")
+simple_hab("splat")
+
+hosts4 <- hosts3 %>% 
+  rowwise() %>% 
+  mutate(aq_hab=simple_hab(aq_hab))
+
 ##final-save to clean data folder
-write.csv(hosts3,"clean_data/hosts_clean.csv",
+write.csv(hosts4,"clean_data/hosts_clean.csv",
           row.names=FALSE)
