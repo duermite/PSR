@@ -1,6 +1,6 @@
 #Preliminary Plotting
 ######################
-#162 SPECIES
+#100 SPECIES
 ######################
 
 #####################
@@ -13,7 +13,7 @@ library(cowplot)
 library(reshape)
 
 
-decapods <- read.csv("analyze_data/hosts_clean_pathcounts162.csv")
+decapods <- read.csv("analyze_data/hosts_clean_pathcounts100.csv")
 path_hosts <- read.csv("clean_data/path_hosts_clean.csv")
 pathogens <- read.csv("clean_data/pathogen_clean.csv")
 
@@ -125,7 +125,7 @@ ggplot(data=decapods, aes(x=host_type,y=(num_rhiz/path_search_results)))+
 #5-
 #Graph # bacteria per taxa
 xlab_bacteria <- paste(levels(decapods$host_type),"\n(N=",
-                   table(decapods$host_type[decapods$num_bacteria>0]),")",sep="")
+                       table(decapods$host_type[decapods$num_bacteria>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=num_bacteria))+
   geom_boxplot()+
   labs(x="Host Type",y="Number of Bacteria Species",title="Decapod Crustacean Bacterial Parasites")+
@@ -168,7 +168,7 @@ ggplot(data=decapods, aes(x=host_type,y=(num_bacteria_extra/path_search_results)
 #6-
 #Graph # microsporidians per taxa
 xlab_microsp <- paste(levels(decapods$host_type),"\n(N=",
-                       table(decapods$host_type[decapods$num_microsp>0]),")",sep="")
+                      table(decapods$host_type[decapods$num_microsp>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=num_microsp))+
   geom_boxplot()+
   labs(x="Host Type",y="Number of Microsporidians",title="Decapod Crustacean Microsporidian Parasites")+
@@ -181,7 +181,7 @@ ggplot(data=decapods, aes(x=host_type,y=(num_microsp/path_search_results)))+
 
 #Graph # apicomplexans
 xlab_api <- paste(levels(decapods$host_type),"\n(N=",
-                      table(decapods$host_type[decapods$num_api>0]),")",sep="")
+                  table(decapods$host_type[decapods$num_api>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=num_api))+
   geom_boxplot()+
   labs(x="Host Type",y="Number of Apicomplexans",title="Decapod Crustacean Apicomplexan Parasites")+
@@ -194,7 +194,7 @@ ggplot(data=decapods, aes(x=host_type,y=num_api/path_search_results))+
 
 #graph # cestodes
 xlab_cestode <- paste(levels(decapods$host_type),"\n(N=",
-                  table(decapods$host_type[decapods$num_cestode>0]),")",sep="")
+                      table(decapods$host_type[decapods$num_cestode>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=num_cestode))+
   geom_boxplot()+
   labs(x="Host Type",y="Number of Cestodes",title="Decapod Crustacean Cestode Parasites")+
@@ -207,7 +207,7 @@ ggplot(data=decapods, aes(x=host_type,y=num_cestode/path_search_results))+
 
 #graph # fungi
 xlab_fungi <- paste(levels(decapods$host_type),"\n(N=",
-                      table(decapods$host_type[decapods$num_fungi>0]),")",sep="")
+                    table(decapods$host_type[decapods$num_fungi>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=num_fungi))+
   geom_boxplot()+
   labs(x="Host Type",y="Number of Fungi",title="Decapod Crustacean Fungi Parasites")+
@@ -220,7 +220,7 @@ ggplot(data=decapods, aes(x=host_type,y=num_fungi/path_search_results))+
 
 #graph # nematodes
 xlab_nematode <- paste(levels(decapods$host_type),"\n(N=",
-                    table(decapods$host_type[decapods$num_nematode>0]),")",sep="")
+                       table(decapods$host_type[decapods$num_nematode>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=num_nematode))+
   geom_boxplot()+
   labs(x="Host Type",y="Number of Nematode",title="Decapod Crustacean Nematode Parasites")+
@@ -233,7 +233,7 @@ ggplot(data=decapods, aes(x=host_type,y=num_nematode/path_search_results))+
 
 #graph # trematodes
 xlab_trematode <- paste(levels(decapods$host_type),"\n(N=",
-                       table(decapods$host_type[decapods$num_trematode>0]),")",sep="")
+                        table(decapods$host_type[decapods$num_trematode>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=num_trematode))+
   geom_boxplot()+
   labs(x="Host Type",y="Number of trematode",title="Decapod Crustacean trematode Parasites")+
@@ -338,7 +338,7 @@ ggplot(data=decapods,aes(x=host_type,y=longev_max))+
 #boxplot of aq.hab vs num_pathogens
 levels(decapods$aq_hab)
 lab_hab <- paste(c("Freshwater","Euryhaline","Marine"),"\n(n=",
-                   table(decapods$aq_hab),")",sep="")
+                 table(decapods$aq_hab),")",sep="")
 ggplot(data=decapods, aes(x=aq_hab,y=num_pathogens))+
   geom_boxplot()+
   labs(x="Habitat",y="Number of Pathogens",title="Decapod Crustacean Pathogens")+
@@ -364,7 +364,7 @@ ggplot(data=decapods, aes(x=aq_hab,y=num_viruses/path_search_results))+
 ##################
 #Sociality
 ##################
-  
+
 #12-
 #Graph number pathogens by sociality
 as.factor(decapods$social_score)
@@ -391,7 +391,7 @@ ggplot(data=decapods, aes(x=as.factor(fam_soc_score),y=num_pathogens/path_search
 #Graph number of viruses by sociality
 #extrapolated by family
 xlab_soc_vir <- paste(levels(decapods$social_score),"\n(n=",
-                  table(decapods$fam_soc_score[decapods$num_viruses>0]),")",sep="")
+                      table(decapods$fam_soc_score[decapods$num_viruses>0]),")",sep="")
 ggplot(data=decapods, aes(x=fam_soc_score,y=num_viruses))+
   geom_boxplot()+
   labs(x="Sociality",y="Number of Viruses",title="Decapod Crustacean Viruses and Sociality")+
