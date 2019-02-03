@@ -483,4 +483,95 @@ ggplot(data=decapods, aes(x=host_type,y=prop_macro))+
   labs(x="Taxon",y="Proportion Macro Parasites",title="Decapod Crustacean Parasite Tranmission Type")+
   scale_x_discrete(labels=xlab_pathsize)
 
+######################
+#Host Summary Graphs
+######################
+blank_theme <- theme_minimal()+
+  theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.border = element_blank(),
+    panel.grid=element_blank(),
+    axis.ticks = element_blank(),
+    plot.title=element_text(size=14, face="bold")
+  )
+
+#Host Type
+ggplot(decapods,aes(x=factor(1),fill=host_type))+
+  geom_bar(width=1)+
+  coord_polar("y")+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())
+  
+#geom_text(aes(y=host_type + c(0,cumsum(host_type)[length(host_type)]), label=length(host_type)))
+#needs labels!!
+#habitat
+ggplot(decapods,aes(x=factor(1),fill=aq_hab))+
+  geom_bar(width=1)+
+  coord_polar("y")+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())
+
+#sociality
+ggplot(decapods,aes(x=factor(1),fill=fam_soc_score))+
+  geom_bar(width=1)+
+  coord_polar("y")+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())
+
+#production type
+ggplot(decapods,aes(x=factor(1),fill=production_type))+
+  geom_bar(width=1)+
+  coord_polar("y")+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())
+
+########################
+#Parasite summary graphs
+#######################
+#pathogen type
+ggplot(pathogens,aes(x=factor(1),fill=pathogen_type))+
+  geom_bar(width=1)+
+  coord_polar("y")+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())
+
+#virus type
+virus <- pathogens %>% 
+  filter(pathogen_type=="virus")
+#54 viruses
+ggplot(virus,aes(x=factor(1),fill=virus_type))+
+  geom_bar(width=1)+
+  coord_polar("y")+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())
+#transmission
+ggplot(pathogens,aes(x=factor(1),fill=transmission))+
+  geom_bar(width=1)+
+  coord_polar("y")+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())
+#requirements
+ggplot(pathogens,aes(x=factor(1),fill=requirement))+
+  geom_bar(width=1)+
+  coord_polar("y")+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())
+#size
+ggplot(pathogens,aes(x=factor(1),fill=size))+
+  geom_bar(width=1)+
+  coord_polar("y")+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())
+
+
 
