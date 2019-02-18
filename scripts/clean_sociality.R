@@ -36,14 +36,15 @@ interpolate_social <- function(social_score,fam_score){
 }
 
 sociality_sp2 <- left_join(sociality_sp,sociality_fam,by="Family_Group") %>% 
-  rename(fam_score=social_score.y) %>% 
+  rename(c(social_score.y="fam_score")) %>% 
   rowwise() %>% 
   mutate(fam_soc_score=interpolate_social(social_score.x,fam_score)) %>% 
   select(1:4,13,5:6) %>% 
-  rename(sociality=sociality.x,
-         social_score=social_score.x,
-         notes=notes.x,
-         ref=ref.x)
+  rename(c(sociality.x="sociality",
+           social_score.x="social_score",
+           notes.x="notes",
+           ref.x="ref"))
+
 
 ##3-change numbers to something meaningful
 social_naming <- function(social_score){
