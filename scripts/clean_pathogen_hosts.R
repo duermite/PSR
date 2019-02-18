@@ -1,5 +1,6 @@
 ###ALL CLEANING TASKS FOR PATHOGEN_HOSTS FILE###
 library(dplyr)
+library(reshape)
 pathogen_hosts <- read.csv("raw_data/pathogen_hosts.csv")
 pathogen <- read.csv("raw_data/pathogen.csv")
 fao_hosts <- read.csv("raw_data/fao_hosts.csv")
@@ -64,7 +65,7 @@ setdiff(hosts_in_path_hosts,hosts_in_fao_hosts)
 path_hosts_clean <- right_join(pathogen_hosts,fao_hosts, by="host_genus_species") %>% 
   filter(path_abbr!="NA") %>% 
   select(1:6) %>% 
-  rename(ref=ref.x)
+  rename(c(ref.x="ref"))
 #test that extras are really gone
 hosts_in_clean_path_hosts <- path_hosts_clean %>% 
   arrange(host_genus_species) %>% 
@@ -90,5 +91,5 @@ path_hosts_clean3 <- path_hosts_clean2 %>%
   filter(in_wild!="lab")
 
 #save final file in clean_data folder
-write.csv(path_hosts_clean2,"clean_data/path_hosts_clean.csv",
+write.csv(path_hosts_clean3,"clean_data/path_hosts_clean.csv",
           row.names=FALSE) #this line prevents adding a new column each time

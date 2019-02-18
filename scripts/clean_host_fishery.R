@@ -71,7 +71,7 @@ prod_cap <- production_spread %>%
 host_fishery_aq_cap <- left_join(host_fishery_aq,prod_cap,by="sp_code") %>% 
   arrange(sp_code) %>% 
   select(1:3,6) %>% 
-  rename(Cap_prod=Capture)
+  rename(c(Capture="Cap_prod"))
 
 ##7-
 #Add columns for 0/1 Aquaculture and Capture

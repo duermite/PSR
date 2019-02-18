@@ -59,8 +59,8 @@ hosts3 <- left_join(hosts2,db_search,by="host_genus_species") %>%
   left_join(invasives,by="host_genus_species") %>% 
   left_join(sociality,by="host_genus_species") %>% 
   unite(ref,c("ref.x","ref.y","ref.x.x","ref.y.y","ref.x.x.x","ref.y.y.y"),sep=", ") %>% 
-  select(1:10,21:22,24:25,28,31:35,37:38,41,47:48,11:14) %>% 
-  rename(sp_code=sp_code.x)
+  select(1:4,6:10,21:24,27,32:34,36:37,39:40,46:47,11:14) %>% 
+  rename(c(sp_code.x="sp.code"))
 
 #SKIP#
 #############################
@@ -106,3 +106,4 @@ hosts4 <- hosts3 %>%
 ##final-save to clean data folder
 write.csv(hosts4,"clean_data/hosts_clean.csv",
           row.names=FALSE)
+
