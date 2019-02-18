@@ -42,7 +42,8 @@ levels(pathogens$pathogen_type)
 path_type_count <- pathogens %>% 
   group_by(pathogen_type) %>% 
   count(pathogen_type) %>% 
-  rename(n_paths=n)
+  rename(c(n="n_paths"))
+path_type_count
 
 ####################################
 #PLOTS
