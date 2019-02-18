@@ -133,7 +133,7 @@ source_to_ref("AquaNIS")
 source_to_ref("AquaNIS; EASIN")
 source_to_ref("GISD")
 source_to_ref("689")
-source_to_ref(NA)
+source_to_ref("NA")
 #fix refs
 
 invasives6 <- invasives5 %>% 
