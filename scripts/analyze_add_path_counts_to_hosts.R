@@ -10,6 +10,11 @@ pathogen <- read.csv("clean_data/pathogen_clean.csv")
 ##count cases of each host_genus_species
 ##join pathogen type to pathogen_hosts
 ##count number of viruses for each host_genus_species
+##count other pathogen types
+#pathogen index
+#virus index
+#save 100 spp list
+#save 162 spp list
 
 #count cases of each host_genus_species
 num_pathogen <- data.frame(table(pathogen_hosts_clean$host_genus_species))
@@ -175,21 +180,39 @@ decapod_hosts4 <- decapod_hosts3 %>%
   mutate(prop_macro=if.na(prop_macro)) %>% 
   arrange(host_genus_species)
 
-#limit to the 100 sp with pathogens
+#pathogen and virus indices
+#change 0s in path_search_results to 0.5
+fn_no_zeros <- function(citations){
+  if(citations==0){
+    new_cit <- 0.5
+  } else{
+    new_cit <- citations
+  }
+  return(new_cit)
+}
+fn_no_zeros(5) #test
+
 decapod_hosts5 <- decapod_hosts4 %>% 
+  rowwise() %>% 
+  mutate(path_search_results=fn_no_zeros(path_search_results))%>% 
+  mutate(path_index=num_pathogens/path_search_results) %>% 
+  mutate(virus_index=num_viruses/path_search_results)
+
+#limit to the 100 sp with pathogens
+decapod_hosts6 <- decapod_hosts5 %>% 
   filter(!is.na(num_pathogens))
 
 #change sp with NA pathogens to 0 to include in 162 count
-decapod_hosts6 <- decapod_hosts4 %>% 
+decapod_hosts7 <- decapod_hosts5 %>% 
   rowwise() %>% 
   mutate(num_pathogens=if.na(num_pathogens))
 
 #save 100 sp to new file name
-write.csv(decapod_hosts5,"analyze_data/hosts_clean_pathcounts100.csv",
+write.csv(decapod_hosts6,"analyze_data/hosts_clean_pathcounts100.csv",
           row.names=FALSE)
 
 #save 162 sp to new file name
-write.csv(decapod_hosts6,"analyze_data/hosts_clean_pathcounts162.csv",
+write.csv(decapod_hosts7,"analyze_data/hosts_clean_pathcounts162.csv",
           row.names=FALSE)
 
 
