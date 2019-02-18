@@ -1,7 +1,178 @@
 library(ggplot2)
 library(dplyr)
 library(cowplot)
+library(reshape)
+library(scales)
+library(wesanderson)
 
+################
+#162
+################
+decapods <- read.csv("analyze_data/hosts_clean_pathcounts162.csv")
+path_hosts <- read.csv("clean_data/path_hosts_clean.csv")
+pathogens <- read.csv("clean_data/pathogen_clean.csv")
 
-decapods <- read.csv("analyze_data/hosts_clean_pathcounts.csv")
-pathogens <- read.csv("clean_data/path_hosts_clean.csv")
+######################
+#Host Summary Graphs
+######################
+blank_theme <- theme_minimal()+
+  theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.border = element_blank(),
+    panel.grid=element_blank(),
+    axis.ticks = element_blank(),
+    plot.title=element_text(size=14, face="bold")
+  )
+
+#Host Type
+host_value <- decapods %>% 
+  group_by(host_type) %>% 
+  count(host_type)
+
+ggplot(host_value,aes(x="",y=n,fill=host_type))+
+  geom_bar(width=1,stat="identity")+
+  coord_polar("y",start=0)+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  geom_text(aes(label=paste0(n)),
+            position=position_stack(vjust=.5))+
+  scale_fill_manual(name="Taxon",
+                    values=wes_palette("Darjeeling2"))
+
+#to get percent:
+#label=paste0(n," (",scales::percent(n/sum(n)),")"),
+
+#habitat
+habitat_value <- decapods %>% 
+  group_by(aq_hab) %>% 
+  count(aq_hab)
+ggplot(habitat_value,aes(x="",y=n,fill=aq_hab))+
+  geom_bar(width=1,stat="identity")+
+  coord_polar("y",start=0)+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  geom_text(aes(label=paste0(n)),
+            position=position_stack(vjust=.5))+
+  scale_fill_manual(name="Salinity",
+                    values=wes_palette("Darjeeling2")[c(1,2,4)],
+                    breaks=c("fw","euryhaline","marine"),
+                    labels=c("Freshwater","Euryhaline","Marine"))
+
+#sociality
+social_values <- decapods %>% 
+  group_by(fam_soc_score) %>% 
+  count(fam_soc_score)
+ggplot(social_values,aes(x="",y=n,fill=fam_soc_score))+
+  geom_bar(width=1,stat="identity")+
+  coord_polar("y",start=0)+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  geom_text(aes(label=paste0(n)),
+            position=position_stack(vjust=.5))+
+  scale_fill_manual(name="Sociality",
+                    values=wes_palette("Darjeeling2"),
+                    labels=c("Gregarious",
+                             "Ontogenetic aggregations",
+                             "Reproductive aggregations",
+                             "Solitary"))
+
+#production type
+production_values <- decapods %>% 
+  group_by(production_type) %>% 
+  count(production_type)
+ggplot(production_values,aes(x="",y=n,fill=production_type))+
+  geom_bar(width=1,stat="identity")+
+  coord_polar("y",start=0)+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  geom_text(aes(label=paste0(n)),
+            position=position_stack(vjust=.5))+
+  scale_fill_manual(name="Fishery Production",
+                    values=wes_palette("Darjeeling2"),
+                    breaks=c("capture","aquaculture","both","neither"),
+                    labels=c("Commercial capture","Aquaculture","Capture & Aquaculture","Neither"))
+########################
+#Parasite summary graphs
+#######################
+#pathogen type
+
+pathogen_value <- pathogens %>% 
+  group_by(pathogen_type) %>% 
+  count(pathogen_type) 
+
+ggplot(pathogens,aes(x=pathogen_type))+
+  geom_bar()
+
+ggplot(pathogen_value,aes(x="",y=n,fill=pathogen_type))+
+  geom_bar(width=1,stat="identity")+
+  coord_polar("y",start=0)+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  geom_text(aes(label=paste0(n)),
+            position=position_stack(vjust=.5))
+
+#virus type
+virus <- pathogens %>% 
+  filter(pathogen_type=="virus")
+#54 viruses
+ggplot(virus,aes(x=factor(1),fill=virus_type))+
+  geom_bar(width=1)+
+  coord_polar("y")+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())
+#transmission
+trans_value <- pathogens %>% 
+  group_by(transmission) %>% 
+  count(transmission)
+ggplot(trans_value,aes(x="",y=n,fill=transmission))+
+  geom_bar(width=1,stat="identity")+
+  coord_polar("y",start=0)+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  geom_text(aes(label=paste0(n)),
+            position=position_stack(vjust=.5))+
+  scale_fill_manual(name="Transmission",
+                    values=wes_palette("Darjeeling2")[c(1,4,2)],
+                    breaks=c("complex","direct","both"),
+                    labels=c("Complex","Direct","Both"))
+#requirements
+req_values <- pathogens %>% 
+  group_by(requirement) %>% 
+  count(requirement)
+ggplot(req_values,aes(x="",y=n,fill=requirement))+
+  geom_bar(width=1,stat="identity")+
+  coord_polar("y",start=0)+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  geom_text(aes(label=paste0(n)),
+            position=position_stack(vjust=.5))+
+  scale_fill_manual(name="Requirement",
+                    values=wes_palette("Darjeeling2"),
+                    breaks=c("opportunist","obligate"),
+                    labels=c("Opportunist","Obligate"))
+#size
+size_values <- pathogens %>% 
+  group_by(size) %>% 
+  count(size)
+  
+ggplot(size_values,aes(x="",y=n,fill=size))+
+  geom_bar(width=1,stat="identity")+
+  coord_polar("y",start=0)+
+  blank_theme+
+  theme(axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  geom_text(aes(label=paste0(n)),
+            position=position_stack(vjust=.5))+
+  scale_fill_manual(name="Requirement",
+                    values=wes_palette("Darjeeling2"),
+                    breaks=c("macro","micro"),
+                    labels=c("Macro","Micro"))
