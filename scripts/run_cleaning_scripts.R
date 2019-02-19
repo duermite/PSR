@@ -16,3 +16,5 @@ source("scripts/clean_fao_hosts.R") #this one must be done AFTER several of abov
 source("scripts/analyze_add_path_counts_to_hosts.R")
 #warnings (19) are from joining, shouldn't be an issue
 
+source("scripts/analyze_add_path_counts_inwildonly.R")
+
