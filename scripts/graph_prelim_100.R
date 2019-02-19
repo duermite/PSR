@@ -16,6 +16,8 @@ library(reshape)
 decapods <- read.csv("analyze_data/hosts_clean_pathcounts100.csv")
 path_hosts <- read.csv("clean_data/path_hosts_clean.csv")
 pathogens <- read.csv("clean_data/pathogen_clean.csv")
+path_hosts_wild <- read.csv("clean_data/path_hosts_clean_wild.csv")
+decapods_wild <- read.csv("analyze_data/hosts_clean_pathcounts100_wild.csv")
 
 #Tasks
 #1-Graph total number of pathogens per taxa
@@ -57,7 +59,13 @@ ggplot(data=decapods, aes(x=host_type,y=num_pathogens))+
   geom_boxplot()+
   labs(x="Taxon",y="Number of Pathogens",title="Decapod Crustacean Pathogens")+
   scale_x_discrete(labels=xlab_path)
-#these numbers aren't right
+#wild
+xlab_path_wild <- paste(levels(decapods_wild$host_type),"\n(n=",
+                   table(decapods_wild$host_type),")",sep="")
+ggplot(data=decapods_wild, aes(x=host_type,y=num_pathogens))+
+  geom_boxplot()+
+  labs(x="Taxon",y="Number of Pathogens",title="Decapod Crustacean Pathogens")+
+  scale_x_discrete(labels=xlab_path_wild)
 
 #1.5 Pathogens per taxon per citation (pathogen index)
 ggplot(data=decapods, aes(x=host_type,y=num_pathogens/num_results))+
@@ -70,6 +78,11 @@ ggplot(data=decapods, aes(x=host_type,y=num_pathogens/path_search_results))+
   geom_boxplot()+
   labs(x="Taxon",y="Pathogen Index 2.0",title="Decapod Crustacean Pathogens")+
   scale_x_discrete(labels=xlab_path)
+#wild
+ggplot(data=decapods_wild, aes(x=host_type,y=num_pathogens/path_search_results))+
+  geom_boxplot()+
+  labs(x="Taxon",y="Pathogen Index 2.0",title="Decapod Crustacean Pathogens")+
+  scale_x_discrete(labels=xlab_path_wild)
 
 ############
 #Path groups by taxon
@@ -286,12 +299,18 @@ ggplot(data=decapods, aes(x=longev_max,y=num_pathogens/path_search_results))+
   geom_point(shape=1)+
   labs(x="Longevity (years)", y="Pathogen Index")+
   facet_wrap(~host_type)
-#currently the index is adding a point way up high that is "Inf" because dividing by 0
-##this should change with new search terms when I do that
+
 
 #8-
 #scatterplot of num_viruses vs longev
 ggplot(data=decapods, aes(x=longev_max,y=num_viruses,shape=host_type))+
+  geom_point()+
+  labs(x="Longevity (years)", y="Number of Viruses")+
+  scale_shape_manual(values=shapes,name="Host Type")+
+  scale_x_continuous(limit=c(0,70))+
+  theme(legend.position=c(.55,.75),legend.title.align=0.5)
+#viruses, wild only
+ggplot(data=decapods_wild, aes(x=longev_max,y=num_viruses,shape=host_type))+
   geom_point()+
   labs(x="Longevity (years)", y="Number of Viruses")+
   scale_shape_manual(values=shapes,name="Host Type")+
