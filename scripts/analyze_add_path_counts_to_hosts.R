@@ -3,6 +3,7 @@ library(dplyr)
 decapod_hosts <- read.csv("clean_data/hosts_clean.csv")
 pathogen_hosts_clean <- read.csv("clean_data/path_hosts_clean.csv")
 pathogen <- read.csv("clean_data/pathogen_clean.csv") 
+path_hosts_wild <- read.csv("clean_data/path_hosts_clean_wild.csv")
 
 #Fill in columns for number of pathogens and viruses on decapod_hosts spreadsheet
 
@@ -201,6 +202,11 @@ decapod_hosts5 <- decapod_hosts4 %>%
 #limit to the 100 sp with pathogens
 decapod_hosts6 <- decapod_hosts5 %>% 
   filter(!is.na(num_pathogens))
+
+decapod_hosts5 %>% 
+  filter(is.na(num_pathogens)) %>% 
+  group_by(host_type) %>% 
+  count(host_type)
 
 #change sp with NA pathogens to 0 to include in 162 count
 decapod_hosts7 <- decapod_hosts5 %>% 
