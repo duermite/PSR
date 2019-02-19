@@ -11,11 +11,18 @@ library(ggplot2)
 library(dplyr)
 library(cowplot)
 library(reshape)
+library(scales)
 
 
 decapods <- read.csv("analyze_data/hosts_clean_pathcounts162.csv")
 path_hosts <- read.csv("clean_data/path_hosts_clean.csv")
 pathogens <- read.csv("clean_data/pathogen_clean.csv")
+path_hosts_wild <- read.csv("clean_data/path_hosts_clean_wild.csv")
+decapods_wild <- read.csv("analyze_data/hosts_clean_pathcounts162_wild.csv")
+
+path_hosts %>% 
+  group_by(in_wild) %>% 
+  count(in_wild)
 
 #Tasks
 #1-Graph total number of pathogens per taxa
@@ -58,7 +65,14 @@ ggplot(data=decapods, aes(x=host_type,y=num_pathogens))+
   geom_boxplot()+
   labs(x="Taxon",y="Number of Pathogens",title="Decapod Crustacean Pathogens")+
   scale_x_discrete(labels=xlab_path)
-#these numbers aren't right
+
+#wild
+xlab_path_wild<- paste(levels(decapods_wild$host_type),"\n(n=",
+                       table(decapods_wild$host_type),")",sep="")
+ggplot(data=decapods_wild, aes(x=host_type,y=num_pathogens))+
+  geom_boxplot()+
+  labs(x="Taxon",y="Number of Pathogens",title="Decapod Crustacean Pathogens")+
+  scale_x_discrete(labels=xlab_path_wild)
 
 #1.5 Pathogens per taxon per citation (pathogen index)
 ggplot(data=decapods, aes(x=host_type,y=num_pathogens/num_results))+
@@ -71,6 +85,11 @@ ggplot(data=decapods, aes(x=host_type,y=num_pathogens/path_search_results))+
   geom_boxplot()+
   labs(x="Taxon",y="Pathogen Index 2.0",title="Decapod Crustacean Pathogens")+
   scale_x_discrete(labels=xlab_path)
+#wild
+ggplot(data=decapods_wild, aes(x=host_type,y=num_pathogens/path_search_results))+
+  geom_boxplot()+
+  labs(x="Taxon",y="Pathogen Index 2.0",title="Decapod Crustacean Pathogens")+
+  scale_x_discrete(labels=xlab_path_wild)
 
 ############
 #Path groups by taxon
@@ -484,92 +503,3 @@ ggplot(data=decapods, aes(x=host_type,y=prop_macro))+
   labs(x="Taxon",y="Proportion Macro Parasites",title="Decapod Crustacean Parasite Tranmission Type")+
   scale_x_discrete(labels=xlab_pathsize)
 
-######################
-#Host Summary Graphs
-######################
-blank_theme <- theme_minimal()+
-  theme(
-    axis.title.x = element_blank(),
-    axis.title.y = element_blank(),
-    panel.border = element_blank(),
-    panel.grid=element_blank(),
-    axis.ticks = element_blank(),
-    plot.title=element_text(size=14, face="bold")
-  )
-
-#Host Type
-ggplot(decapods,aes(x=factor(1),fill=host_type))+
-  geom_bar(width=1)+
-  coord_polar("y")+
-  blank_theme+
-  theme(axis.text.x=element_blank(),
-        axis.text.y=element_blank())
-
-#geom_text(aes(y=host_type + c(0,cumsum(host_type)[length(host_type)]), label=length(host_type)))
-#needs labels!!
-#habitat
-ggplot(decapods,aes(x=factor(1),fill=aq_hab))+
-  geom_bar(width=1)+
-  coord_polar("y")+
-  blank_theme+
-  theme(axis.text.x=element_blank(),
-        axis.text.y=element_blank())
-
-#sociality
-ggplot(decapods,aes(x=factor(1),fill=fam_soc_score))+
-  geom_bar(width=1)+
-  coord_polar("y")+
-  blank_theme+
-  theme(axis.text.x=element_blank(),
-        axis.text.y=element_blank())
-
-#production type
-ggplot(decapods,aes(x=factor(1),fill=production_type))+
-  geom_bar(width=1)+
-  coord_polar("y")+
-  blank_theme+
-  theme(axis.text.x=element_blank(),
-        axis.text.y=element_blank())
-
-########################
-#Parasite summary graphs
-#######################
-#pathogen type
-ggplot(pathogens,aes(x=factor(1),fill=pathogen_type))+
-  geom_bar(width=1)+
-  coord_polar("y")+
-  blank_theme+
-  theme(axis.text.x=element_blank(),
-        axis.text.y=element_blank())
-
-#virus type
-virus <- pathogens %>% 
-  filter(pathogen_type=="virus")
-#54 viruses
-ggplot(virus,aes(x=factor(1),fill=virus_type))+
-  geom_bar(width=1)+
-  coord_polar("y")+
-  blank_theme+
-  theme(axis.text.x=element_blank(),
-        axis.text.y=element_blank())
-#transmission
-ggplot(pathogens,aes(x=factor(1),fill=transmission))+
-  geom_bar(width=1)+
-  coord_polar("y")+
-  blank_theme+
-  theme(axis.text.x=element_blank(),
-        axis.text.y=element_blank())
-#requirements
-ggplot(pathogens,aes(x=factor(1),fill=requirement))+
-  geom_bar(width=1)+
-  coord_polar("y")+
-  blank_theme+
-  theme(axis.text.x=element_blank(),
-        axis.text.y=element_blank())
-#size
-ggplot(pathogens,aes(x=factor(1),fill=size))+
-  geom_bar(width=1)+
-  coord_polar("y")+
-  blank_theme+
-  theme(axis.text.x=element_blank(),
-        axis.text.y=element_blank())
