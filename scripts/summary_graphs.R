@@ -8,7 +8,7 @@ library(wesanderson)
 ################
 #162
 ################
-decapods <- read.csv("analyze_data/hosts_clean_pathcounts162_wild.csv")
+decapods <- read.csv("analyze_data/hosts_clean_pathcounts162.csv")
 path_hosts <- read.csv("clean_data/path_hosts_clean.csv")
 pathogens <- read.csv("clean_data/pathogen_clean.csv")
 
@@ -43,6 +43,13 @@ ggplot(decapods,aes(x=host_type,fill=production_type))+
                     name="Fishery Production",
                     breaks=c("capture","aquaculture","both","neither"),
                     labels=c("Commercial capture","Aquaculture","Capture & Aquaculture","Neither"))+
+  labs(x="Taxon",y="Number of Species")
+
+ggplot(decapods,aes(x=host_type,fill=invasive))+
+  geom_histogram(stat="count")+
+  scale_fill_manual(values=wes_palette("Darjeeling2"),
+                    name="Invasion History",
+                    labels=c("Invasive","Not Invasive"))+
   labs(x="Taxon",y="Number of Species")
 ##########
 #Pie charts
@@ -136,6 +143,10 @@ ggplot(production_values,aes(x="",y=n,fill=production_type))+
 pathogen_value <- pathogens %>% 
   group_by(pathogen_type) %>% 
   count(pathogen_type) 
+write.csv(pathogen_value,"clean_data/pathogen_value.csv",
+          row.names=FALSE)
+#edit this in excel for now
+pathogen_value <- read.csv("clean_data/pathogen_value.csv")
 
 ggplot(pathogens,aes(x=pathogen_type))+
   geom_bar()
@@ -145,10 +156,16 @@ ggplot(pathogen_value,aes(x="",y=n,fill=pathogen_type))+
   coord_polar("y",start=0)+
   blank_theme+
   theme(axis.text.x=element_blank(),
-        axis.text.y=element_blank())+
-  geom_text(aes(label=paste0(n)),
-            position=position_stack(vjust=.5))
-
+        axis.text.y=element_blank())
+#alternative pie chart
+library(RColorBrewer)
+coul=brewer.pal(4,"BrBG")
+coul=colorRampPalette(coul)(25)
+pie(x=pathogen_value$n,labels=pathogen_value$pathogen_type,col=coul,
+    radius=1,cex=1,init.angle=145)
+    
+pie(rep(1,length(coul)),col=coul),main="",radius=1,cex=1)
+   
 #virus type
 virus <- pathogens %>% 
   filter(pathogen_type=="virus")
