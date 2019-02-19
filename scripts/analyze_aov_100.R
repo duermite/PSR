@@ -1,9 +1,9 @@
 library(dplyr)
 
-decapods <- read.csv("analyze_data/hosts_clean_pathcounts162.csv")
+decapods <- read.csv("analyze_data/hosts_clean_pathcounts100.csv")
 path_hosts <- read.csv("clean_data/path_hosts_clean.csv")
 pathogens <- read.csv("clean_data/pathogen_clean.csv")
-decapods_wild <- read.csv("analyze_data/hosts_clean_pathcounts162_wild.csv")
+decapods_wild <- read.csv("analyze_data/hosts_clean_pathcounts100_wild.csv")
 path_hosts_wild <- read.csv("clean_data/path_hosts_wild.csv")
 
 path_hosts %>% 
@@ -16,7 +16,14 @@ summary(path1)
 path2 <- aov((path_index)~host_type,
              data=decapods)
 summary(path2)
-#doesn't work bcuz of NaN NA and Inf...
+
+path_wild <- aov(num_pathogens~host_type,data=decapods_wild)
+summary(path_wild)
+
+path_wild2 <- aov((path_index)~host_type,
+             data=decapods_wild)
+summary(path_wild2)
+
 
 vir1 <- aov((num_viruses)~host_type,
             data=decapods)
@@ -27,6 +34,22 @@ vir2 <- aov((virus_index)~host_type,
             data=decapods)
 summary(vir2)
 TukeyHSD(vir2)
+
+vir_wild <- aov((num_viruses)~host_type,
+            data=decapods_wild)
+summary(vir_wild)
+TukeyHSD(vir_wild)
+decapods_wild %>% 
+  group_by(host_type) %>% 
+  summarize(mean(num_viruses))
+
+vir_wild2 <- aov((virus_index)~host_type,
+            data=decapods_wild)
+summary(vir_wild2)
+TukeyHSD(vir_wild2)
+decapods_wild %>% 
+  group_by(host_type) %>% 
+  summarize(mean(virus_index))
 
 iso1 <- aov((num_isopods)~host_type,
             data=decapods)
@@ -79,8 +102,15 @@ longev <- aov(longev_max~host_type,data=decapods)
 summary(longev)
 TukeyHSD(longev)
 
+longev_wild<- aov(longev_max~host_type,data=decapods_wild)
+summary(longev_wild)
+TukeyHSD(longev_wild)
+
 longev2 <- lm((num_pathogens)~(longev_max),data=decapods)
 summary(longev2)
+
+longev_wild2 <- lm((num_pathogens)~(longev_max),data=decapods_wild)
+summary(longev_wild2)
 
 longev3 <- lm(num_viruses~longev_max,data=decapods)
 summary(longev3)
