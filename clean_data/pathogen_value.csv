@@ -1,0 +1,19 @@
+pathogen_type,n,
+Barnacle,18,macro
+Isopod,30,macro
+Branchiobdellid,5,macro
+Cestode,18,macro
+Leech,4,macro
+Nematode,15,macro
+Nemertean,8,macro
+Trematode,31,macro
+Acanthocephalan,9,macro
+Apicomplexan,15,micro
+Bacteria (Extracellular),27,micro
+Bacteria (Intracellular),7,micro
+Ciliate,10,micro
+Fungi,21,micro
+Oomycete,8,micro
+Microsporidian,38,micro
+Virus,54,micro
+Other,18,
