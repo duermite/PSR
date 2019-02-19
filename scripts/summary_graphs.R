@@ -8,13 +8,45 @@ library(wesanderson)
 ################
 #162
 ################
-decapods <- read.csv("analyze_data/hosts_clean_pathcounts162.csv")
+decapods <- read.csv("analyze_data/hosts_clean_pathcounts162_wild.csv")
 path_hosts <- read.csv("clean_data/path_hosts_clean.csv")
 pathogens <- read.csv("clean_data/pathogen_clean.csv")
 
 ######################
 #Host Summary Graphs
 ######################
+
+###########
+#Stacked bar charts
+###########
+ggplot(decapods,aes(x=host_type,fill=aq_hab))+
+  geom_histogram(stat="count")+
+  scale_fill_manual(values=wes_palette("Darjeeling2")[c(1,2,4)],
+                    name="Salinity",
+                    breaks=c("fw","euryhaline","marine"),
+                    labels=c("Freshwater","Euryhaline","Marine"))+
+  labs(x="Taxon",y="Number of Species")
+
+ggplot(decapods,aes(x=host_type,fill=fam_soc_score))+
+  geom_histogram(stat="count")+
+  scale_fill_manual(values=wes_palette("Darjeeling2")[c(2,3,1,4)],
+                    name="Sociality",
+                    labels=c("Gregarious",
+                             "Ontogenetic aggregations",
+                             "Reproductive aggregations",
+                             "Solitary"))+
+  labs(x="Taxon",y="Number of Species")
+
+ggplot(decapods,aes(x=host_type,fill=production_type))+
+  geom_histogram(stat="count")+
+  scale_fill_manual(values=wes_palette("Darjeeling2")[c(3,2,4,1)],
+                    name="Fishery Production",
+                    breaks=c("capture","aquaculture","both","neither"),
+                    labels=c("Commercial capture","Aquaculture","Capture & Aquaculture","Neither"))+
+  labs(x="Taxon",y="Number of Species")
+##########
+#Pie charts
+##########
 blank_theme <- theme_minimal()+
   theme(
     axis.title.x = element_blank(),
@@ -176,3 +208,28 @@ ggplot(size_values,aes(x="",y=n,fill=size))+
                     values=wes_palette("Darjeeling2"),
                     breaks=c("macro","micro"),
                     labels=c("Macro","Micro"))
+
+################
+#Sunburst
+###############
+#not currently working
+library(rPython)
+library(ggsunburst)
+
+decapods_soc <- decapods %>% 
+  select(fam_soc_score,host_type) %>% 
+  mutate(level=2)%>% 
+  dplyr::rename(node=fam_soc_score,parent=host_type)
+decapods_soc2 <- decapods_soc %>% 
+  mutate(fam_soc_score="NA") %>% 
+  mutate(level="root") 
+decapods_soc3 <- decapods_soc %>% 
+  rbind(decapods_soc2) %>% 
+  dplyr::rename(node=fam_soc_score,parent=host_type)
+
+
+write.csv(decapods_soc2,"analyze_data/sb_soc.csv")
+sb_soc <- sunburst_data("analyze_data/sb_soc.csv",type="node_parent",sep=",")
+sunburst(sb_soc)
+
+
