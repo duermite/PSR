@@ -103,7 +103,23 @@ hosts4 <- hosts3 %>%
   rowwise() %>% 
   mutate(aq_hab=simple_hab(aq_hab))
 
+#4-Generic invasives column
+inv_gen <- function(impact){
+  if(is.na(impact)){
+    invasive <- "not invasive"
+  } else {
+  invasive <- "invasive"
+  }
+  return(invasive)
+}
+inv_gen(NA)
+inv_gen("High")
+
+hosts5 <- hosts4 %>% 
+  rowwise() %>% 
+  mutate(invasive=inv_gen(impact))
+
 ##final-save to clean data folder
-write.csv(hosts4,"clean_data/hosts_clean.csv",
+write.csv(hosts5,"clean_data/hosts_clean.csv",
           row.names=FALSE)
 
