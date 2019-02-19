@@ -90,6 +90,15 @@ path_hosts_clean2 <- semi_join(path_hosts_clean,fao_hosts,by="host_genus_species
 path_hosts_clean3 <- path_hosts_clean2 %>% 
   filter(in_wild!="lab")
 
+#create dataset with just wild and both relationships (no aquaculture)
+path_hosts_clean4 <- path_hosts_clean3 %>% 
+  filter(in_wild!="aquaculture")
+
+
 #save final file in clean_data folder
 write.csv(path_hosts_clean3,"clean_data/path_hosts_clean.csv",
           row.names=FALSE) #this line prevents adding a new column each time
+
+#save file without aquculture relationships
+write.csv(path_hosts_clean4,"clean_data/path_hosts_clean_wild.csv",
+          row.names=FALSE)
