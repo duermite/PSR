@@ -62,8 +62,8 @@ path_type_count
 xlab_path <- paste(levels(decapods$host_type),"\n(n=",
                    table(decapods$host_type),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=num_pathogens))+
-  geom_boxplot()+
-  labs(x="Taxon",y="Number of Pathogens",title="Decapod Crustacean Pathogens")+
+  geom_boxplot(fill="#046c9a",alpha=0.9)+
+  labs(x="Taxon",y="Number of Pathogens")+
   scale_x_discrete(labels=xlab_path)
 
 #wild
@@ -77,14 +77,21 @@ ggplot(data=decapods_wild, aes(x=host_type,y=num_pathogens))+
 #1.5 Pathogens per taxon per citation (pathogen index)
 ggplot(data=decapods, aes(x=host_type,y=num_pathogens/num_results))+
   geom_boxplot()+
-  labs(x="Taxon",y="Pathogen Index",title="Decapod Crustacean Pathogens")+
+  labs(x="Taxon",y="Pathogen Index")+
   scale_x_discrete(labels=xlab_path)
 
 #1.5.5 Try different index, divide by # pathogen citations instead
 ggplot(data=decapods, aes(x=host_type,y=num_pathogens/path_search_results))+
-  geom_boxplot()+
-  labs(x="Taxon",y="Pathogen Index 2.0",title="Decapod Crustacean Pathogens")+
+  geom_boxplot(fill="#046c9a",alpha=0.9)+
+  labs(x="Taxon",y="Pathogen Index")+
   scale_x_discrete(labels=xlab_path)
+
+path_index <- decapods %>% 
+  select(host_genus_species, num_pathogens,num_viruses,path_search_results) %>% 
+  mutate(path_index2=num_pathogens/path_search_results) %>% 
+  mutate(virus_index2=num_viruses/path_search_results) %>% 
+  arrange(desc(path_index2))
+
 #wild
 ggplot(data=decapods_wild, aes(x=host_type,y=num_pathogens/path_search_results))+
   geom_boxplot()+
@@ -102,14 +109,14 @@ ggplot(data=decapods_wild, aes(x=host_type,y=num_pathogens/path_search_results))
 xlab_vir <- paste(levels(decapods$host_type),"\n(n=",
                   table(decapods$host_type[decapods$num_viruses>0]),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=num_viruses))+
-  geom_boxplot()+
-  labs(x="Taxon",y="Number of Viruses",title="Decapod Crustacean Viruses")+
+  geom_boxplot(fill="#abddde",alpha=0.9)+
+  labs(x="Taxon",y="Number of Viruses")+
   scale_x_discrete(labels=xlab_vir)
 
 #2.5 virus index per host type
 ggplot(data=decapods, aes(x=host_type,y=(num_viruses/path_search_results)))+
-  geom_boxplot()+
-  labs(x="Taxon",y="Virus Index",title="Decapod Crustacean Viruses")+
+  geom_boxplot(fill="#abddde",alpha=0.9)+
+  labs(x="Taxon",y="Virus Index")+
   scale_x_discrete(labels=xlab_vir)
 
 #3-
@@ -360,8 +367,8 @@ levels(decapods$aq_hab)
 lab_hab <- paste(c("Freshwater","Euryhaline","Marine"),"\n(n=",
                    table(decapods$aq_hab),")",sep="")
 ggplot(data=decapods, aes(x=aq_hab,y=num_pathogens))+
-  geom_boxplot()+
-  labs(x="Habitat",y="Number of Pathogens",title="Decapod Crustacean Pathogens")+
+  geom_boxplot(fill=c("#046c9a","#eccbad","#abddde"),alpha=0.9)+
+  labs(x="Habitat",y="Number of Pathogens")+
   scale_x_discrete(labels=lab_hab,limits=c("fw","euryhaline","marine"))
 #pathogen index
 ggplot(data=decapods, aes(x=aq_hab,y=num_pathogens/path_search_results))+
@@ -398,8 +405,8 @@ ggplot(data=decapods, aes(x=as.factor(social_score),y=num_pathogens))+
 xlab_soc_fam_path <- paste(levels(decapods$social_score),
                            "\n(n=",table(decapods$fam_soc_score[decapods$num_pathogens>0]),")",sep="")
 ggplot(data=decapods, aes(x=as.factor(fam_soc_score),y=num_pathogens))+
-  geom_boxplot()+
-  labs(x="Sociality",y="Number of Pathogens",title="Decapod Crustacean Pathogens and Sociality")+
+  geom_boxplot(fill=c("#046c9a","#eccbad","#d69c4e","#abddde"),alpha=0.9)+
+  labs(x="Sociality",y="Number of Pathogens")+
   scale_x_discrete(labels=xlab_soc_path)
 #with path index instead of count
 ggplot(data=decapods, aes(x=as.factor(fam_soc_score),y=num_pathogens/path_search_results))+
