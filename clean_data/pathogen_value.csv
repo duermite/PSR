@@ -1,19 +1,19 @@
-pathogen_type,n,
-Barnacle,18,macro
-Isopod,30,macro
-Branchiobdellid,5,macro
-Cestode,18,macro
-Leech,4,macro
-Nematode,15,macro
-Nemertean,8,macro
-Trematode,31,macro
-Acanthocephalan,9,macro
-Apicomplexan,15,micro
-Bacteria (Extracellular),27,micro
-Bacteria (Intracellular),7,micro
-Ciliate,10,micro
-Fungi,21,micro
-Oomycete,8,micro
-Microsporidian,38,micro
-Virus,54,micro
-Other,18,
+pathogen_type,n,,
+Branchiobdellid,5,macro,direct
+Barnacle,18,macro,direct
+Isopod,30,macro,direct
+Leech,4,macro,direct
+Nemertean,8,macro,direct
+Nematode,15,macro,both
+Cestode,18,macro,complex
+Trematode,31,macro,complex
+Acanthocephalan,9,macro,complex
+Bacteria (Extracellular),27,micro,direct
+Bacteria (Intracellular),7,micro,direct
+Ciliate,10,micro,direct
+Fungi,21,micro,direct
+Oomycete,8,micro,direct
+Microsporidian,38,micro,direct
+Apicomplexan,15,micro,direct
+Virus,54,micro,direct
+Other,18,,direct
