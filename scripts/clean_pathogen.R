@@ -5,6 +5,7 @@ library(tidyr)
 pathogen <- read.csv("raw_data/pathogen.csv")
 path_transmission <- read.csv("raw_data/path_transmission.csv")
 path_hosts <- read.csv("clean_data/path_hosts_clean.csv")
+path_hosts_wild <- read.csv("clean_Data/path_hosts_clean_wild.csv")
 
 
 #Tasks
@@ -43,11 +44,15 @@ dup_search
 #5-Limit to only those pathogens that have hosts in fao_hosts
 pathogen3 <- semi_join(pathogen2,path_hosts,by="path_abbr")
 
+#6-pathogen sheet with those from wild only
+pathogen4 <- semi_join(pathogen2,path_hosts_wild,by="path_abbr")
 
 #final-
 #Save in clean data folder
 write.csv(pathogen3,"clean_data/pathogen_clean.csv",
           row.names=FALSE)
+
+write.csv(pathogen4,"clean_data/pathogen_clean_wild.csv")
 
 
 
