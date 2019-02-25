@@ -11,6 +11,7 @@ library(wesanderson)
 decapods <- read.csv("analyze_data/hosts_clean_pathcounts162.csv")
 path_hosts <- read.csv("clean_data/path_hosts_clean.csv")
 pathogens <- read.csv("clean_data/pathogen_clean.csv")
+path_wild <- read.csv("clean_data/pathogen_clean_wild.csv")
 
 ######################
 #Host Summary Graphs
@@ -148,6 +149,15 @@ write.csv(pathogen_value,"clean_data/pathogen_value.csv",
 #edit this in excel for now
 pathogen_value <- read.csv("clean_data/pathogen_value.csv")
 
+#wild
+path_wild_value <- path_wild %>% 
+  group_by(pathogen_type) %>% 
+  count(pathogen_type) 
+write.csv(path_wild_value,"clean_data/path_wild_value.csv",
+          row.names=FALSE)
+#EDIT IN EXCEL
+path_wild_value <- read.csv("clean_data/path_wild_value.csv")
+
 ggplot(pathogens,aes(x=pathogen_type))+
   geom_bar()
 
@@ -161,10 +171,10 @@ ggplot(pathogen_value,aes(x="",y=n,fill=pathogen_type))+
 library(RColorBrewer)
 coul=brewer.pal(4,"BrBG")
 coul=colorRampPalette(coul)(25)
-pie(x=pathogen_value$n,labels=pathogen_value$pathogen_type,col=coul,
+pie(x=path_wild_value$n,labels=path_wild_value$pathogen_type,col=coul,
     radius=1,cex=1,init.angle=145)
     
-pie(rep(1,length(coul)),col=coul),main="",radius=1,cex=1)
+
    
 #virus type
 virus <- pathogens %>% 
