@@ -1,0 +1,19 @@
+pathogen_type,n,,,,
+Branchiobdellid,5,macro,direct,,0.5
+Barnacle,17,macro,direct,,0.5
+Isopod,30,macro,direct,,0.742957746
+Leech,4,macro,direct,,0.204225352
+Nemertean,8,macro,direct,,
+Nematode,15,macro,both,,
+Cestode,18,macro,complex,,
+Trematode,31,macro,complex,,
+Acanthocephalan,9,macro,complex,,
+Bacteria (Extracellular),16,micro,direct,,
+Bacteria (Intracellular),5,micro,direct,,
+Ciliate,7,micro,direct,,
+Fungi,10,micro,direct,,
+Oomycete,6,micro,direct,,
+Microsporidian,34,micro,direct,,
+Apicomplexan,14,micro,direct,,
+Virus,37,micro,direct,,
+Other,18,,direct,,
