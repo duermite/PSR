@@ -354,7 +354,7 @@ ggplot(data=decapods, aes(x=longev_max,y=num_viruses/path_search_results))+
 xlab_long <- paste(levels(decapods$host_type),"\n(n=",
                    table(decapods$host_type[decapods$longev_max!="NA"]),")",sep="")
 ggplot(data=decapods,aes(x=host_type,y=longev_max))+
-  geom_boxplot()+
+  geom_boxplot(fill="#d69c4e",alpha=0.9)+
   scale_x_discrete(labels=xlab_long)+
   labs(x="Taxon",y="Longevity")
 
