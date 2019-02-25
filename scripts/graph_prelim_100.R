@@ -56,15 +56,15 @@ path_type_count <- pathogens %>%
 xlab_path <- paste(levels(decapods$host_type),"\n(n=",
                    table(decapods$host_type),")",sep="")
 ggplot(data=decapods, aes(x=host_type,y=num_pathogens))+
-  geom_boxplot()+
-  labs(x="Taxon",y="Number of Pathogens",title="Decapod Crustacean Pathogens")+
+  geom_boxplot(fill="#046c9a",alpha=0.9)+
+  labs(x="Taxon",y="Number of Pathogens")+
   scale_x_discrete(labels=xlab_path)
 #wild
 xlab_path_wild <- paste(levels(decapods_wild$host_type),"\n(n=",
                    table(decapods_wild$host_type),")",sep="")
 ggplot(data=decapods_wild, aes(x=host_type,y=num_pathogens))+
-  geom_boxplot()+
-  labs(x="Taxon",y="Number of Pathogens",title="Decapod Crustacean Pathogens")+
+  geom_boxplot(fill="#046c9a",alpha=0.9)+
+  labs(x="Taxon",y="Number of Wild Pathogens")+
   scale_x_discrete(labels=xlab_path_wild)
 
 #1.5 Pathogens per taxon per citation (pathogen index)
@@ -80,10 +80,15 @@ ggplot(data=decapods, aes(x=host_type,y=num_pathogens/path_search_results))+
   scale_x_discrete(labels=xlab_path)
 #wild
 ggplot(data=decapods_wild, aes(x=host_type,y=num_pathogens/path_search_results))+
-  geom_boxplot()+
-  labs(x="Taxon",y="Pathogen Index 2.0",title="Decapod Crustacean Pathogens")+
+  geom_boxplot(fill="#046c9a",alpha=0.9)+
+  labs(x="Taxon",y="Pathogen Index (Wild)")+
   scale_x_discrete(labels=xlab_path_wild)
 
+path_index <- decapods_wild %>% 
+  select(host_genus_species, num_pathogens,num_viruses,path_search_results) %>% 
+  mutate(path_index2=num_pathogens/path_search_results) %>% 
+  mutate(virus_index2=num_viruses/path_search_results) %>% 
+  arrange(desc(path_index2))
 ############
 #Path groups by taxon
 ############
@@ -97,14 +102,30 @@ xlab_vir <- paste(levels(decapods$host_type),"\n(n=",
 ggplot(data=decapods, aes(x=host_type,y=num_viruses))+
   geom_boxplot()+
   labs(x="Taxon",y="Number of Viruses",title="Decapod Crustacean Viruses")+
-  scale_x_discrete(labels=xlab_vir)
+  scale_x_discrete(labels=xlab_vir_wild)
+#wild
+xlab_vir_wild <- paste(levels(decapods_wild$host_type),"\n(n=",
+                        table(decapods_wild$host_type[decapods_wild$num_viruses>0]),")",sep="")
+ggplot(data=decapods_wild, aes(x=host_type,y=num_viruses))+
+  geom_boxplot(fill="#abddde",alpha=0.9)+
+  labs(x="Taxon",y="Number of Wild Viruses")+
+  scale_x_discrete(labels=xlab_path_wild)
 
 #2.5 virus index per host type
 ggplot(data=decapods, aes(x=host_type,y=(num_viruses/path_search_results)))+
   geom_boxplot()+
   labs(x="Taxon",y="Virus Index",title="Decapod Crustacean Viruses")+
   scale_x_discrete(labels=xlab_vir)
-
+#wild
+ggplot(data=decapods_wild, aes(x=host_type,y=(num_viruses/path_search_results)))+
+  geom_boxplot(fill="#abddde",alpha=0.9)+
+  labs(x="Taxon",y="Virus Index (Wild)")+
+  scale_x_discrete(labels=xlab_path_wild)
+vir_index <- decapods_wild %>% 
+  select(host_genus_species, num_pathogens,num_viruses,path_search_results) %>% 
+  mutate(path_index2=num_pathogens/path_search_results) %>% 
+  mutate(virus_index2=num_viruses/path_search_results) %>% 
+  arrange(desc(virus_index2))
 #3-
 #graph isopods per taxa
 #however plotting those with 0
@@ -247,10 +268,10 @@ ggplot(data=decapods, aes(x=host_type,y=num_nematode/path_search_results))+
 #graph # trematodes
 xlab_trematode <- paste(levels(decapods$host_type),"\n(N=",
                         table(decapods$host_type[decapods$num_trematode>0]),")",sep="")
-ggplot(data=decapods, aes(x=host_type,y=num_trematode))+
-  geom_boxplot()+
-  labs(x="Host Type",y="Number of trematode",title="Decapod Crustacean trematode Parasites")+
-  scale_x_discrete(labels=xlab_trematode)
+ggplot(data=decapods_wild, aes(x=host_type,y=(num_trematode/path_search_results)))+
+  geom_boxplot(fill="#abddde",alpha=0.9)+
+  labs(x="Taxon",y="Trematode Index")+
+  scale_x_discrete(labels=xlab_path_wild)
 #trematode index
 ggplot(data=decapods, aes(x=host_type,y=num_trematode/path_search_results))+
   geom_boxplot()+
@@ -265,40 +286,70 @@ ggplot(data=decapods, aes(x=host_type,y=num_trematode/path_search_results))+
 
 #symbol codes:
 bem_colors <- c("#D1800B","#694008","#1D6295","#84ACB6")
-shapes <- c(0,1,17,3)
+shapes <- c(22,21,24,23)
 #emoji crab: 1f980
 #emoji shrimp: 1f990
 #don't think there's lobster or hermit crab =(
 #emoji snail: 1f40c (for hermit crab??)
 
 #7-
-#scatterplot of num_pathogens vs longev
-ggplot(data=decapods, aes(x=longev_max,y=num_pathogens,shape=host_type))+
+#scatterplot of num_pathogens vs longev WILD
+ggplot(data=decapods_wild, aes(x=longev_max,y=num_pathogens,shape=host_type))+
   geom_point()+
   labs(x="Longevity (years)", y="Number of Pathogens")+
   scale_shape_manual(values=shapes,name="Taxon")+
   theme(legend.position=c(.55,.75),legend.title.align=0.5)+
   scale_x_continuous(limit=c(0,110))
 
+
 #Longev and path number individual taxon graphs
-ggplot(data=decapods, aes(x=longev_max,y=num_pathogens))+
+ggplot(data=decapods_wild, aes(x=longev_max,y=num_pathogens))+
   geom_point(shape=1)+
   labs(x="Longevity (years)", y="Number of Pathogens")+
   facet_wrap(~host_type)
 
 #7.5 Longev and pathogen index
-ggplot(data=decapods, aes(x=longev_max,y=num_pathogens/path_search_results,
-                          shape=host_type))+
-  geom_point()+
+ggplot(data=decapods_wild, aes(x=longev_max,y=num_pathogens/path_search_results,
+                          shape=host_type,fill=host_type))+
+  geom_point(size=3,alpha=0.8)+
   labs(x="Longevity (years)", y="Pathogen Index")+
-  scale_shape_manual(values=shapes,name="Host Type")+
-  theme(legend.position=c(.55,.75),legend.title.align=0.5)
+  scale_shape_manual(values=shapes,name="Taxon")+
+  theme(legend.position=c(.55,.75),legend.title.align=0.5)+
+  scale_fill_manual(values=c("#eccbad","#046c9a","#d69c4e","#abddde"),
+                    name="Taxon")
+  geom_abline(intercept=1.06493,slope=-0.03049)
+  
+#with color
+ggplot(data=decapods_wild, aes(x=longev_max,y=num_pathogens/path_search_results,
+                               fill=host_type))+
+  geom_point(pch=21,size=2,alpha=0.85)+
+  labs(x="Longevity (years)", y="Pathogen Index")+
+  theme(legend.position=c(.55,.75),legend.title.align=0.5)+
+  scale_fill_manual(values=bem_colors,name="Host Type")
 
 #Longev and path index individual taxon graphs
-ggplot(data=decapods, aes(x=longev_max,y=num_pathogens/path_search_results))+
+ggplot(data=decapods_wild, aes(x=longev_max,y=num_pathogens/path_search_results))+
   geom_point(shape=1)+
   labs(x="Longevity (years)", y="Pathogen Index")+
   facet_wrap(~host_type)
+
+ggplot(data=decapods_wild, aes(x=longev_max,y=num_pathogens/path_search_results,
+                               shape=host_type,fill=host_type))+
+  geom_point(size=2,alpha=0.8)+
+  labs(x="Longevity (years)", y="Pathogen Index")+
+  scale_x_continuous(limit=c(0,70))+
+  facet_wrap(~host_type)+
+  geom_abline(data=filter(decapods_wild,host_type=="Anomuran crab"),
+              aes(intercept=0.634431,slope=-0.009051))+
+  geom_abline(data=filter(decapods_wild,host_type=="Brachyuran crab"),
+              aes(intercept=1.75944,slope=-0.15575))+
+  geom_abline(data=filter(decapods_wild,host_type=="Lobster/Crayfish"),
+              aes(intercept=0.71210,slope=-0.01440))+
+  geom_abline(data=filter(decapods_wild,host_type=="Shrimp"),
+              aes(intercept=1.21185,slope=-0.09668))+
+  scale_shape_manual(values=shapes,name="Taxon")+
+  scale_fill_manual(values=c("#eccbad","#046c9a","#d69c4e","#abddde"),
+                    name="Taxon")
 
 
 #8-
@@ -310,18 +361,38 @@ ggplot(data=decapods, aes(x=longev_max,y=num_viruses,shape=host_type))+
   scale_x_continuous(limit=c(0,70))+
   theme(legend.position=c(.55,.75),legend.title.align=0.5)
 #viruses, wild only
-ggplot(data=decapods_wild, aes(x=longev_max,y=num_viruses,shape=host_type))+
+ggplot(data=decapods_wild, aes(x=longev_max,y=num_viruses/path_search_results,
+                               shape=host_type))+
   geom_point()+
   labs(x="Longevity (years)", y="Number of Viruses")+
   scale_shape_manual(values=shapes,name="Host Type")+
   scale_x_continuous(limit=c(0,70))+
   theme(legend.position=c(.55,.75),legend.title.align=0.5)
 #by taxon
-ggplot(data=decapods, aes(x=longev_max,y=num_viruses))+
-  geom_point(shape=1)+
+taxon_slopes=c(-0.009051,-0.15575,-0.01440,-0.09668)
+taxon_intercepts=c(0.634431,1.75944,0.71210,1.21185)
+taxon=c("Anomuran crab","Brachyuran crab","Lobster/Crayfish","Shrimp")
+taxon_data <- data.frame(taxon_slopes,taxon_intercepts,taxon)
+
+ggplot(data=decapods_wild, aes(x=longev_max,y=num_viruses,
+                               shape=host_type,fill=host_type))+
+  geom_point(size=2,alpha=0.8)+
   labs(x="Longevity (years)", y="Number of Viruses")+
   scale_x_continuous(limit=c(0,70))+
   facet_wrap(~host_type)
+#need to change values for viruses if using this
+  geom_abline(data=filter(decapods_wild,host_type=="Anomuran crab"),
+              aes(intercept=0.634431,slope=-0.009051))+
+  geom_abline(data=filter(decapods_wild,host_type=="Brachyuran crab"),
+              aes(intercept=1.75944,slope=-0.15575))+
+  geom_abline(data=filter(decapods_wild,host_type=="Lobster/Crayfish"),
+              aes(intercept=0.71210,slope=-0.01440))+
+  geom_abline(data=filter(decapods_wild,host_type=="Shrimp"),
+              aes(intercept=1.21185,slope=-0.09668))+
+  scale_shape_manual(values=shapes,name="Taxon")+
+  scale_fill_manual(values=c("#eccbad","#046c9a","#d69c4e","#abddde"),
+                    name="Taxon")
+  #this isn't working yet
 #How to Save a plot to main folder if I had a plot called long_vir_plot
 ggsave("outputs/bem2018_virus_longev_plot.png",plot=long_vir_plot,
        width=6,
@@ -343,12 +414,13 @@ ggplot(data=decapods, aes(x=longev_max,y=num_viruses/path_search_results))+
 
 #11-
 #Graph longevity by taxa (no pathogen info)
-xlab_long <- paste(levels(decapods$host_type),"\n(n=",
-                   table(decapods$host_type[decapods$longev_max!="NA"]),")",sep="")
-ggplot(data=decapods,aes(x=host_type,y=longev_max))+
-  geom_boxplot()+
+xlab_long <- paste(levels(decapods_wild$host_type),"\n(n=",
+                   table(decapods_wild$host_type[decapods_wild$longev_max!="NA"]),")",sep="")
+ggplot(data=decapods_wild,aes(x=host_type,y=longev_max))+
+  geom_boxplot(fill="#d69c4e",alpha=0.9)+
   scale_x_discrete(labels=xlab_long)+
-  labs(x="Taxon",y="Longevity")
+  labs(x="Taxon",y="Longevity")+
+  ylim(c(0,80))
 
 ################
 #Habitat
@@ -359,14 +431,26 @@ levels(decapods$aq_hab)
 lab_hab <- paste(c("Freshwater","Euryhaline","Marine"),"\n(n=",
                  table(decapods$aq_hab),")",sep="")
 ggplot(data=decapods, aes(x=aq_hab,y=num_pathogens))+
-  geom_boxplot()+
-  labs(x="Habitat",y="Number of Pathogens",title="Decapod Crustacean Pathogens")+
+  geom_boxplot(fill=c("#046c9a","#eccbad","#abddde"),alpha=0.9)+
+  labs(x="Habitat",y="Number of Pathogens")+
   scale_x_discrete(labels=lab_hab,limits=c("fw","euryhaline","marine"))
+#wild
+lab_hab_wild <- paste(c("Freshwater","Euryhaline","Marine"),"\n(n=",
+                 table(decapods_wild$aq_hab),")",sep="")
+ggplot(data=decapods_wild, aes(x=aq_hab,y=num_pathogens))+
+  geom_boxplot(fill=c("#046c9a","#eccbad","#abddde"),alpha=0.9)+
+  labs(x="Habitat",y="Number of Wild Pathogens")+
+  scale_x_discrete(labels=lab_hab_wild,limits=c("fw","euryhaline","marine"))
 #pathogen index
 ggplot(data=decapods, aes(x=aq_hab,y=num_pathogens/path_search_results))+
-  geom_boxplot()+
-  labs(x="Habitat",y="Pathogen Index",title="Decapod Crustacean Pathogens")+
+  geom_boxplot(fill=c("#046c9a","#eccbad","#abddde"),alpha=0.9)+
+  labs(x="Habitat",y="Pathogen Index")+
   scale_x_discrete(labels=lab_hab,limits=c("fw","euryhaline","marine"))
+#wild
+ggplot(data=decapods_wild, aes(x=aq_hab,y=num_pathogens/path_search_results))+
+  geom_boxplot(fill=c("#046c9a","#eccbad","#abddde"),alpha=0.9)+
+  labs(x="Habitat",y="Pathogen Index (Wild)")+
+  scale_x_discrete(labels=lab_hab_wild,limits=c("fw","euryhaline","marine"))
 
 #10-
 #boxplot of aq.hab vs num_viruses
@@ -374,11 +458,21 @@ ggplot(data=decapods, aes(x=aq_hab,y=num_viruses))+
   geom_boxplot()+
   labs(x="Habitat",y="Number of Viruses",title="Decapod Crustacean Pathogens")+
   scale_x_discrete(labels=lab_hab,limits=c("fw","euryhaline","marine"))
+#wild
+ggplot(data=decapods_wild, aes(x=aq_hab,y=num_viruses))+
+  geom_boxplot(fill=c("#046c9a","#eccbad","#abddde"),alpha=0.9)+
+  labs(x="Habitat",y="Number of Viruses (Wild)")+
+  scale_x_discrete(labels=lab_hab,limits=c("fw","euryhaline","marine"))
 #virus index
 ggplot(data=decapods, aes(x=aq_hab,y=num_viruses/path_search_results))+
   geom_boxplot()+
   labs(x="Habitat",y="Virus Index",title="Decapod Crustacean Pathogens")+
   scale_x_discrete(labels=lab_hab,limits=c("fw","euryhaline","marine"))
+#wild
+ggplot(data=decapods_wild, aes(x=aq_hab,y=num_viruses/path_search_results))+
+  geom_boxplot(fill=c("#046c9a","#eccbad","#abddde"),alpha=0.9)+
+  labs(x="Habitat",y="Virus Index (Wild)")+
+  scale_x_discrete(labels=lab_hab_wild,limits=c("fw","euryhaline","marine"))
 
 ##################
 #Sociality
@@ -400,12 +494,24 @@ ggplot(data=decapods, aes(x=as.factor(fam_soc_score),y=num_pathogens))+
   geom_boxplot()+
   labs(x="Sociality",y="Number of Pathogens",title="Decapod Crustacean Pathogens and Sociality")+
   scale_x_discrete(labels=xlab_soc_path)
+#wild
+xlab_soc_fam_path_wild <- paste(c("Gregarious","Ontogenetic aggregations",
+                                  "Reproductive aggregations","Solitary"),
+                           "\n(n=",table(decapods_wild$fam_soc_score[decapods_wild$num_pathogens>0]),")",sep="")
+ggplot(data=decapods_wild, aes(x=as.factor(fam_soc_score),y=num_pathogens))+
+  geom_boxplot(fill=c("#046c9a","#eccbad","#d69c4e","#abddde"),alpha=0.9)+
+  labs(x="Sociality",y="Number of Pathogens")+
+  scale_x_discrete(labels=xlab_soc_fam_path_wild)
 #with path index instead of count
 ggplot(data=decapods, aes(x=as.factor(fam_soc_score),y=num_pathogens/path_search_results))+
   geom_boxplot()+
   labs(x="Sociality",y="Pathogen Index",title="Decapod Crustacean Pathogens and Sociality")+
   scale_x_discrete(labels=xlab_soc_path)
-
+#wild
+ggplot(data=decapods_wild, aes(x=as.factor(fam_soc_score),y=num_pathogens/path_search_results))+
+  geom_boxplot(fill=c("#046c9a","#eccbad","#d69c4e","#abddde"),alpha=0.9)+
+  labs(x="Sociality",y="Pathogen Index (Wild)")+
+  scale_x_discrete(labels=xlab_soc_fam_path_wild)
 #13-
 #Graph number of viruses by sociality
 #extrapolated by family
