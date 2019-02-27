@@ -87,6 +87,9 @@ host_char2 <- host_char %>%
   select(longev_max,path_search_results,
          aquaculture,capture,max_size_mm,
          Anomuran:sociality)
+
+#bind all except the dummy vars for type and family
+
   
 #save new datasets
 write.csv(host_char2,"analyze_data/host_char_mult.csv",
