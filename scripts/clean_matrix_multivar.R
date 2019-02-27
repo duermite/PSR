@@ -7,15 +7,16 @@ pathogens <- read.csv("clean_data/pathogen_clean_wild.csv")
 
 #select needed variables into 2 new dataframes
 host_path <- hosts %>% 
-  select(host_genus_species,
-         num_pathogens,num_viruses,num_isopods,num_rhiz,num_bacteria,
+  select(num_pathogens,num_viruses,num_isopods,num_rhiz,num_bacteria,
          num_bacteria_extra,num_bacteria_intra,num_microsp, num_api,
          num_cestode,num_fungi,num_nematode,num_trematode,
          num_complex,num_direct,num_obligate,num_opportunist,
          num_macro,num_micro)
+colnames(host_path) <- gsub("num_","",colnames(host_path)) 
+
   
 host_char <- hosts %>% 
-  select(host_genus_species,family,host_type,
+  select(family,host_type,
          longev_max,aq_hab,path_search_results,aquaculture,capture,
          max_size_mm,invasive,fam_soc_score)
 
@@ -83,7 +84,7 @@ host_char2 <- host_char %>%
   mutate(sociality=dummy_social(fam_soc_score)) %>% 
   dplyr::rename(Anomuran="Anomuran crab") %>% 
   dplyr::rename(Brachyuran="Brachyuran crab") %>% 
-  select(host_genus_species,longev_max,path_search_results,
+  select(longev_max,path_search_results,
          aquaculture,capture,max_size_mm,
          Anomuran:sociality)
   
