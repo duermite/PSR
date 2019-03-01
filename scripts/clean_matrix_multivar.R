@@ -84,17 +84,24 @@ host_char2 <- host_char %>%
   mutate(sociality=dummy_social(fam_soc_score)) %>% 
   dplyr::rename(Anomuran="Anomuran crab") %>% 
   dplyr::rename(Brachyuran="Brachyuran crab") %>% 
-  select(longev_max,path_search_results,
-         aquaculture,capture,max_size_mm,
+  select(longev_max,
+         path_search_results:capture,max_size_mm,
          Anomuran:sociality)
 
 #bind all except the dummy vars for type and family
-
+host_char3 <- host_char %>%
+  cbind(host_char_dum3[1]) %>% 
+  rowwise() %>% 
+  mutate(habitat=dummy_hab(aq_hab)) %>% 
+  mutate(sociality=dummy_social(fam_soc_score)) %>% 
+  select(family:longev_max,path_search_results:max_size_mm,inv:sociality)
   
 #save new datasets
 write.csv(host_char2,"analyze_data/host_char_mult.csv",
           row.names=FALSE)
 write.csv(host_path,"analyze_data/host_path_mult.csv",
+          row.names=FALSE)
+write.csv(host_char3,"analyze_data/host_char_mult_cat.csv",
           row.names=FALSE)
 
   
