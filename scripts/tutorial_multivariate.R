@@ -31,3 +31,14 @@ plot(envfit(m, varechem))
 #select specific variables as constraints
 cca(varespec ~ Al + P + K, data=varechem)
 
+#
+m0 <- cca(dune ~ 1, dune.env)
+m1 <- cca(dune ~ ., dune.env)
+m <- step(m0, scope=formula(m1), test="p")
+m
+#tutorial said this stops too soon, but how to know? 
+##because <none> isn't the best model!
+
+mod <- varpart(dune, ~ Management, ~ A1 + Moisture, data = dune.env)
+mod
+plot(mod)
