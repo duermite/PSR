@@ -9,7 +9,7 @@ fao_hosts <- read.csv("raw_data/fao_hosts.csv")
 ##1-Dup check
 ##2-Make sure all path_abbr are in pathogen
 ##3-Verify all host_genus_species in fao_hosts, remove if not
-##4-complete in_wild to best of ability?? (NOT COMPLETED)
+##4-complete in_wild to best of ability?? 
 ##5-Look for potential dups when how has unknown sp and known sp from same genus
 #6-Limit to only those hosts in fao_hosts
 #7-remove passaged relationships
@@ -73,8 +73,8 @@ hosts_in_clean_path_hosts <- path_hosts_clean %>%
 setdiff(hosts_in_clean_path_hosts,hosts_in_fao_hosts)
 #empty!
 
-##4-complete in_wild to best of ability??
-#this is too much, not doing this right now
+##4-complete in_wild to best of ability
+#done in excel
 
 ##5
 #Look for potential dups when how has unknown sp and known sp from same genus
