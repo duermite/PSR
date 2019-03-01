@@ -18,3 +18,5 @@ source("scripts/analyze_add_path_counts_to_hosts.R")
 
 source("scripts/analyze_add_path_counts_inwildonly.R")
 
+source("scripts/clean_matrix_multivar.R")
+
