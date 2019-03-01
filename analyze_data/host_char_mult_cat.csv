@@ -1,98 +1,98 @@
-"family","host_type","longev_max","aquaculture","capture","max_size_mm","inv","habitat","sociality"
-"portunidae","Brachyuran crab",3.4,0,0,NA,0,2,0
-"portunidae","Brachyuran crab",2,0,0,77,0,2,0
-"penaeidae","Shrimp",1.3,0,1,22,0,2,2
-"astacidae","Lobster/Crayfish",10,1,1,NA,1,0,1
-"astacidae","Lobster/Crayfish",17.9,0,1,120,0,0,1
-"astacidae","Lobster/Crayfish",12,0,0,NA,0,0,1
-"portunidae","Brachyuran crab",4,0,0,NA,0,2,0
-"portunidae","Brachyuran crab",4.6,0,1,NA,1,1,0
-"portunidae","Brachyuran crab",5.8,0,0,NA,0,1,0
-"portunidae","Brachyuran crab",8,1,1,NA,1,1,0
-"cancridae","Brachyuran crab",8,0,1,NA,1,1,0
-"cancridae","Brachyuran crab",15,0,1,NA,0,2,1
-"cancridae","Brachyuran crab",5,0,1,NA,0,2,1
-"portunidae","Brachyuran crab",3,1,1,NA,0,2,0
-"portunidae","Brachyuran crab",6,1,1,NA,1,2,0
-"galatheidae","Anomuran crab",13,0,1,NA,0,2,2
-"portunidae","Brachyuran crab",1.58,0,0,NA,0,2,0
-"portunidae","Brachyuran crab",3.5,0,0,NA,1,2,0
-"portunidae","Brachyuran crab",3,0,0,NA,1,2,0
-"portunidae","Brachyuran crab",4,0,0,NA,1,2,1
-"parastacidae","Lobster/Crayfish",3,1,0,NA,1,0,1
-"parastacidae","Lobster/Crayfish",3.5,1,1,NA,0,0,2
-"majidae","Brachyuran crab",12,0,1,NA,0,2,1
-"majidae","Brachyuran crab",7.7,0,1,160,1,1,1
-"crangonidae","Shrimp",2,0,1,NA,1,2,2
-"crangonidae","Shrimp",1.5,0,0,NA,0,2,2
-"grapsidae","Brachyuran crab",5,1,1,NA,1,1,0
-"calappidae","Brachyuran crab",2.4,0,0,83,0,2,0
-"nephropidae","Lobster/Crayfish",50,0,1,NA,1,2,0
-"nephropidae","Lobster/Crayfish",72,0,1,NA,0,2,0
-"oregoniidae","Brachyuran crab",2,0,0,NA,0,2,1
-"lithodidae","Anomuran crab",14,0,1,NA,0,2,1
-"palaemonidae","Shrimp",4,0,0,NA,0,1,1
-"palaemonidae","Shrimp",3.3,1,1,80,1,1,2
-"majidae","Brachyuran crab",10,1,1,NA,0,2,2
-"xanthidae","Brachyuran crab",8,0,1,NA,0,2,0
-"cancridae","Brachyuran crab",8,0,1,NA,0,2,1
-"nephropidae","Lobster/Crayfish",15,0,1,NA,0,2,2
-"penaeidae","Shrimp",2,0,0,NA,0,2,1
-"penaeidae","Shrimp",1.4,0,0,65,1,1,2
-"penaeidae","Shrimp",1.8,0,0,NA,0,1,1
-"penaeidae","Shrimp",2,1,0,NA,0,2,2
-"penaeidae","Shrimp",3,1,1,NA,1,2,2
-"galatheidae","Anomuran crab",5,0,1,NA,0,2,2
-"portunidae","Brachyuran crab",5.6,0,1,NA,1,2,0
-"callianassidae","Lobster/Crayfish",10,0,0,NA,0,2,2
-"nephropidae","Lobster/Crayfish",15,0,1,NA,0,2,0
-"cambaridae","Lobster/Crayfish",2.52,0,0,NA,1,0,0
-"cambaridae","Lobster/Crayfish",4,0,0,NA,1,0,0
-"cambaridae","Lobster/Crayfish",2,0,0,NA,0,0,0
-"cambaridae","Lobster/Crayfish",3,0,0,NA,1,0,0
-"cambaridae","Lobster/Crayfish",1.5,0,0,NA,1,0,1
-"grapsidae","Brachyuran crab",4,0,0,NA,0,2,2
-"astacidae","Lobster/Crayfish",16.7,1,1,NA,1,1,1
-"palaemonidae","Shrimp",3.07,1,1,NA,1,2,2
-"palaemonidae","Shrimp",2,0,0,NA,1,1,0
-"palaemonidae","Shrimp",1.2,0,0,NA,0,2,2
-"palaemonidae","Shrimp",1,0,0,NA,0,1,2
-"pandalidae","Shrimp",11,0,1,NA,0,1,2
-"pandalidae","Shrimp",7,0,1,216,0,2,2
-"pandalidae","Shrimp",4,0,1,NA,0,2,2
-"palinuridae","Lobster/Crayfish",30,1,1,NA,0,2,2
-"lithodidae","Anomuran crab",23,0,1,NA,1,2,2
-"lithodidae","Anomuran crab",21,0,1,230,0,2,2
-"parastacidae","Lobster/Crayfish",5.5,0,0,NA,0,0,0
-"penaeidae","Shrimp",2,0,0,NA,0,2,1
-"penaeidae","Shrimp",9,0,1,NA,0,2,2
-"penaeidae","Shrimp",2.25,0,1,NA,1,2,2
-"penaeidae","Shrimp",2,0,1,NA,0,2,2
-"penaeidae","Shrimp",1.64,0,1,NA,0,2,2
-"penaeidae","Shrimp",1,1,1,NA,0,1,2
-"penaeidae","Shrimp",1.5,1,1,NA,1,2,2
-"penaeidae","Shrimp",2.6,1,1,NA,0,2,2
-"penaeidae","Shrimp",1.25,0,1,NA,0,2,2
-"penaeidae","Shrimp",1,0,0,NA,0,2,2
-"penaeidae","Shrimp",2,1,1,NA,1,1,2
-"penaeidae","Shrimp",2,1,1,NA,0,2,1
-"penaeidae","Shrimp",0.96,0,1,NA,0,2,2
-"penaeidae","Shrimp",2,1,1,NA,1,2,2
-"penaeidae","Shrimp",1.33,1,1,NA,0,1,2
-"penaeidae","Shrimp",1.7,1,1,NA,1,1,2
-"penaeidae","Shrimp",2.2,0,1,NA,1,2,2
-"penaeidae","Shrimp",1,1,1,NA,1,1,2
-"solenoceridae","Shrimp",2.15,0,1,NA,0,2,2
-"galatheidae","Anomuran crab",5,0,1,NA,0,2,2
-"astacidae","Lobster/Crayfish",7.4,1,1,NA,0,1,1
-"portunidae","Brachyuran crab",3,1,1,NA,1,2,0
-"portunidae","Brachyuran crab",4,1,1,NA,0,2,0
-"cambaridae","Lobster/Crayfish",3,0,0,NA,0,0,0
-"cambaridae","Lobster/Crayfish",6.5,1,1,NA,1,1,1
-"cambaridae","Lobster/Crayfish",4.4,0,0,NA,1,0,0
-"portunidae","Brachyuran crab",3.9,1,0,NA,0,1,0
-"portunidae","Brachyuran crab",4,1,1,NA,0,1,0
-"solenoceridae","Shrimp",2.5,0,0,114,0,2,2
-"ocypodidae","Brachyuran crab",17.6,0,0,NA,0,2,0
-"upogebiidae","Lobster/Crayfish",4,0,0,NA,0,1,0
-"penaeidae","Shrimp",2.12,0,1,NA,0,1,2
+"family","host_type","longev_max","path_search_results","aquaculture","capture","max_size_mm","inv","habitat","sociality"
+"portunidae","Brachyuran crab",3.4,1,0,0,NA,0,2,0
+"portunidae","Brachyuran crab",2,1,0,0,77,0,2,0
+"penaeidae","Shrimp",1.3,4,0,1,22,0,2,2
+"astacidae","Lobster/Crayfish",10,83,1,1,NA,1,0,1
+"astacidae","Lobster/Crayfish",17.9,72,0,1,120,0,0,1
+"astacidae","Lobster/Crayfish",12,11,0,0,NA,0,0,1
+"portunidae","Brachyuran crab",4,1,0,0,NA,0,2,0
+"portunidae","Brachyuran crab",4.6,3,0,1,NA,1,1,0
+"portunidae","Brachyuran crab",5.8,2,0,0,NA,0,1,0
+"portunidae","Brachyuran crab",8,179,1,1,NA,1,1,0
+"cancridae","Brachyuran crab",8,14,0,1,NA,1,1,0
+"cancridae","Brachyuran crab",15,57,0,1,NA,0,2,1
+"cancridae","Brachyuran crab",5,4,0,1,NA,0,2,1
+"portunidae","Brachyuran crab",3,38,1,1,NA,0,2,0
+"portunidae","Brachyuran crab",6,160,1,1,NA,1,2,0
+"galatheidae","Anomuran crab",13,2,0,1,NA,0,2,2
+"portunidae","Brachyuran crab",1.58,0.5,0,0,NA,0,2,0
+"portunidae","Brachyuran crab",3.5,7,0,0,NA,1,2,0
+"portunidae","Brachyuran crab",3,1,0,0,NA,1,2,0
+"portunidae","Brachyuran crab",4,13,0,0,NA,1,2,1
+"parastacidae","Lobster/Crayfish",3,17,1,0,NA,1,0,1
+"parastacidae","Lobster/Crayfish",3.5,93,1,1,NA,0,0,2
+"majidae","Brachyuran crab",12,21,0,1,NA,0,2,1
+"majidae","Brachyuran crab",7.7,30,0,1,160,1,1,1
+"crangonidae","Shrimp",2,21,0,1,NA,1,2,2
+"crangonidae","Shrimp",1.5,2,0,0,NA,0,2,2
+"grapsidae","Brachyuran crab",5,232,1,1,NA,1,1,0
+"calappidae","Brachyuran crab",2.4,0.5,0,0,83,0,2,0
+"nephropidae","Lobster/Crayfish",50,215,0,1,NA,1,2,0
+"nephropidae","Lobster/Crayfish",72,39,0,1,NA,0,2,0
+"oregoniidae","Brachyuran crab",2,1,0,0,NA,0,2,1
+"lithodidae","Anomuran crab",14,11,0,1,NA,0,2,1
+"palaemonidae","Shrimp",4,13,0,0,NA,0,1,1
+"palaemonidae","Shrimp",3.3,49,1,1,80,1,1,2
+"majidae","Brachyuran crab",10,2,1,1,NA,0,2,2
+"xanthidae","Brachyuran crab",8,6,0,1,NA,0,2,0
+"cancridae","Brachyuran crab",8,31,0,1,NA,0,2,1
+"nephropidae","Lobster/Crayfish",15,1,0,1,NA,0,2,2
+"penaeidae","Shrimp",2,0.5,0,0,NA,0,2,1
+"penaeidae","Shrimp",1.4,1,0,0,65,1,1,2
+"penaeidae","Shrimp",1.8,2,0,0,NA,0,1,1
+"penaeidae","Shrimp",2,10,1,0,NA,0,2,2
+"penaeidae","Shrimp",3,4,1,1,NA,1,2,2
+"galatheidae","Anomuran crab",5,1,0,1,NA,0,2,2
+"portunidae","Brachyuran crab",5.6,7,0,1,NA,1,2,0
+"callianassidae","Lobster/Crayfish",10,4,0,0,NA,0,2,2
+"nephropidae","Lobster/Crayfish",15,58,0,1,NA,0,2,0
+"cambaridae","Lobster/Crayfish",2.52,1,0,0,NA,1,0,0
+"cambaridae","Lobster/Crayfish",4,20,0,0,NA,1,0,0
+"cambaridae","Lobster/Crayfish",2,3,0,0,NA,0,0,0
+"cambaridae","Lobster/Crayfish",3,3,0,0,NA,1,0,0
+"cambaridae","Lobster/Crayfish",1.5,7,0,0,NA,1,0,1
+"grapsidae","Brachyuran crab",4,15,0,0,NA,0,2,2
+"astacidae","Lobster/Crayfish",16.7,82,1,1,NA,1,1,1
+"palaemonidae","Shrimp",3.07,5,1,1,NA,1,2,2
+"palaemonidae","Shrimp",2,3,0,0,NA,1,1,0
+"palaemonidae","Shrimp",1.2,2,0,0,NA,0,2,2
+"palaemonidae","Shrimp",1,6,0,0,NA,0,1,2
+"pandalidae","Shrimp",11,26,0,1,NA,0,1,2
+"pandalidae","Shrimp",7,1,0,1,216,0,2,2
+"pandalidae","Shrimp",4,2,0,1,NA,0,2,2
+"palinuridae","Lobster/Crayfish",30,57,1,1,NA,0,2,2
+"lithodidae","Anomuran crab",23,24,0,1,NA,1,2,2
+"lithodidae","Anomuran crab",21,10,0,1,230,0,2,2
+"parastacidae","Lobster/Crayfish",5.5,2,0,0,NA,0,0,0
+"penaeidae","Shrimp",2,5,0,0,NA,0,2,1
+"penaeidae","Shrimp",9,13,0,1,NA,0,2,2
+"penaeidae","Shrimp",2.25,25,0,1,NA,1,2,2
+"penaeidae","Shrimp",2,10,0,1,NA,0,2,2
+"penaeidae","Shrimp",1.64,23,0,1,NA,0,2,2
+"penaeidae","Shrimp",1,100,1,1,NA,0,1,2
+"penaeidae","Shrimp",1.5,113,1,1,NA,1,2,2
+"penaeidae","Shrimp",2.6,5,1,1,NA,0,2,2
+"penaeidae","Shrimp",1.25,6,0,1,NA,0,2,2
+"penaeidae","Shrimp",1,0.5,0,0,NA,0,2,2
+"penaeidae","Shrimp",2,47,1,1,NA,1,1,2
+"penaeidae","Shrimp",2,861,1,1,NA,0,2,1
+"penaeidae","Shrimp",0.96,4,0,1,NA,0,2,2
+"penaeidae","Shrimp",2,27,1,1,NA,1,2,2
+"penaeidae","Shrimp",1.33,28,1,1,NA,0,1,2
+"penaeidae","Shrimp",1.7,73,1,1,NA,1,1,2
+"penaeidae","Shrimp",2.2,3,0,1,NA,1,2,2
+"penaeidae","Shrimp",1,1274,1,1,NA,1,1,2
+"solenoceridae","Shrimp",2.15,5,0,1,NA,0,2,2
+"galatheidae","Anomuran crab",5,3,0,1,NA,0,2,2
+"astacidae","Lobster/Crayfish",7.4,56,1,1,NA,0,1,1
+"portunidae","Brachyuran crab",3,49,1,1,NA,1,2,0
+"portunidae","Brachyuran crab",4,118,1,1,NA,0,2,0
+"cambaridae","Lobster/Crayfish",3,0.5,0,0,NA,0,0,0
+"cambaridae","Lobster/Crayfish",6.5,119,1,1,NA,1,1,1
+"cambaridae","Lobster/Crayfish",4.4,6,0,0,NA,1,0,0
+"portunidae","Brachyuran crab",3.9,4,1,0,NA,0,1,0
+"portunidae","Brachyuran crab",4,102,1,1,NA,0,1,0
+"solenoceridae","Shrimp",2.5,1,0,0,114,0,2,2
+"ocypodidae","Brachyuran crab",17.6,23,0,0,NA,0,2,0
+"upogebiidae","Lobster/Crayfish",4,5,0,0,NA,0,1,0
+"penaeidae","Shrimp",2.12,2,0,1,NA,0,1,2
