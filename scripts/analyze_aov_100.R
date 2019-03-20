@@ -80,7 +80,7 @@ TukeyHSD(trematode)
 trem_list <- decapods_wild %>% 
   select(host_genus_species, host_type, num_trematode,path_search_results) %>% 
   mutate(trem_index=num_trematode/path_search_results) %>% 
-  arrange(desc(trem_index))
+  arrange(desc(trem_index)) #doesn't work
 
 fungi <- aov((num_fungi)~host_type,
              data=decapods)
