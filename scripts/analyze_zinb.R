@@ -133,14 +133,14 @@ shapiro.test(resid(virus_final))#normal
 plot(num_viruses~longev_max,data=hosts)
 plot(num_pathogens~longev_max,data=hosts)
 
-#bacteria
-bact <- lmer((num_bacteria)~host_type+longev_max+aq_hab+production_type+fam_soc_score+invasive+
+#bacteria_extra
+bact <- lmer((num_bacteria_extra)~host_type+longev_max+aq_hab+production_type+fam_soc_score+invasive+
                 (1|path_search_results),
               data=hosts)
 summary(bact)
 histogram(resid(bact))
 shapiro.test(resid(bact)) #not normal
-step(bact)
+step(bact) #doesn't work
 bact_final <- lmer((num_bacteria)~(longev_max)+invasive+(1|path_search_results),
                     data=hosts)
 summary(bact_final)
@@ -246,3 +246,4 @@ trematode_final <- lmer((num_trematode)~(1|path_search_results),
                   data=hosts)
 summary(trematode_final)
 shapiro.test(resid(trematode_final))
+
