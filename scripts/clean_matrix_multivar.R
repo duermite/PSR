@@ -6,17 +6,13 @@ hosts <- read.csv("analyze_data/hosts_clean_pathcounts100_wild.csv")
 pathogens <- read.csv("clean_data/pathogen_clean_wild.csv")
 
 #select needed variables into 2 new dataframes
+levels(pathogens$pathogen_type)
 host_path <- hosts %>% 
-  select(num_pathogens,num_viruses,num_isopods,num_rhiz,num_bacteria,
-         num_bacteria_extra,num_bacteria_intra,num_microsp, num_api,
-         num_cestode,num_fungi,num_nematode,num_trematode,
-         num_complex,num_direct,num_obligate,num_opportunist,
-         num_macro,num_micro)
+  dplyr::select(num_pathogens:num_micro)
 colnames(host_path) <- gsub("num_","",colnames(host_path)) 
 
-  
 host_char <- hosts %>% 
-  select(family,host_type,
+  dplyr::select(family,host_type,
          longev_max,aq_hab,path_search_results,aquaculture,capture,
          max_size_mm,invasive,fam_soc_score)
 
@@ -28,7 +24,6 @@ host_char_dum <- as.data.frame(model.matrix(~host_char$host_type+0))
 colnames(host_char_dum) <- gsub("host_char$host_type","",colnames(host_char_dum)) #doesn't work
 col_types <- c(levels(host_char$host_type))
 colnames(host_char_dum) <- col_types
-
 
 #family
 host_char_dum2 <- as.data.frame(model.matrix(~host_char$family+0))
@@ -84,7 +79,7 @@ host_char2 <- host_char %>%
   mutate(sociality=dummy_social(fam_soc_score)) %>% 
   dplyr::rename(Anomuran="Anomuran crab") %>% 
   dplyr::rename(Brachyuran="Brachyuran crab") %>% 
-  select(longev_max,
+  dplyr::select(longev_max,
          path_search_results:capture,max_size_mm,
          Anomuran:sociality)
 
@@ -94,7 +89,7 @@ host_char3 <- host_char %>%
   rowwise() %>% 
   mutate(habitat=dummy_hab(aq_hab)) %>% 
   mutate(sociality=dummy_social(fam_soc_score)) %>% 
-  select(family:longev_max,path_search_results:max_size_mm,inv:sociality)
+  dplyr::select(family:longev_max,path_search_results:max_size_mm,inv:sociality)
   
 #save new datasets
 write.csv(host_char2,"analyze_data/host_char_mult.csv",
