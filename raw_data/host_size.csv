@@ -8,7 +8,7 @@ Austropotamobius_torrentium,UTT,,,
 Callinectes_arcuatus,KLU,,,
 Callinectes_danae,CRZ,,,
 Callinectes_ornatus,KLO,,,
-Callinectes_sapidus,CRB,,,
+Callinectes_sapidus,CRB,227,CW,764
 Cancer_irroratus,CRK,,,
 Cancer_pagurus,CRE,,,
 Cancer_productus,ROC,,,
@@ -17,7 +17,7 @@ Carcinus_maenas,CRG,,,
 Cervimunida_johni,CZJ,,,
 Charybdis_bimaculata,YFB,,,
 Charybdis_feriata,KHF,,,
-Charybdis_hellerii,YVB,,,
+Charybdis_hellerii,YVB,78,CW,764
 Charybdis_japonica,YBJ,,,
 Cherax_destructor,CDT,,,
 Cherax_quadricarinatus,CRP,,,
@@ -35,7 +35,7 @@ Macrobrachium_amazonicum,MBA,,,
 Macrobrachium_nipponense,MNX,80,,689
 Maja_squinado,SCR,,,
 Menippe_mercenaria,STC,,,
-Metacarcinus_magister,DUN,,,
+Metacarcinus_magister,DUN,177,CW,764
 Metanephrops_challengeri,MEC,,,
 Metapenaeopsis_barbata,MJB,,,
 Metapenaeus_affinis,MTJ,65,TL,707
@@ -91,7 +91,7 @@ Procambarus_alleni,RQA,,,
 Procambarus_clarkii,RCW,,,
 Procambarus_fallax,RKX,,,
 Scylla_olivacea,YLW,,,
-Scylla_serrata,MUD,,,
+Scylla_serrata,MUD,216,CW,764
 Solenocera_choprai,SKK,114,TL,726
 Ucides_cordatus,UCC,,,
 Upogebia_pusilla,UPJ,,,
