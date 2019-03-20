@@ -53,6 +53,11 @@ num_bacteria_intra <- data.frame(table(
   path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="bacteria_intra"]))
 colnames(num_bacteria_intra) <- c("host_genus_species","num_bacteria_intra")
 
+#count both bacteria
+num_bacteria <- data.frame(table(
+  path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="bacteria_extra"|
+                                            path_type_join_hosts$pathogen_type=="bacteria_intra"]))
+colnames(num_bacteria) <- c("host_genus_species","num_bacteria")
 #count number of rhizocephalan barnacles per host
 num_rhiz <- data.frame(table(
   path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="barnacle"]))
@@ -184,6 +189,7 @@ decapod_hosts2 <- left_join(decapod_hosts,num_pathogen,by="host_genus_species") 
   left_join(num_api,by="host_genus_species") %>% 
   left_join(num_bacteria_extra,by="host_genus_species") %>% 
   left_join(num_bacteria_intra,by="host_genus_species") %>% 
+  left_join(num_bacteria,by="host_genus_species") %>% 
   left_join(num_rhiz,by="host_genus_species") %>%
   left_join(num_branch,by="host_genus_species") %>%
   left_join(num_cestode,by="host_genus_species") %>% 
@@ -232,7 +238,8 @@ if.na <- function(data){
 decapod_hosts4 <- decapod_hosts3 %>% 
   rowwise() %>% 
   mutate_at(c("num_acanth","num_amoeba","num_api","num_bacteria_extra",
-              "num_bacteria_intra","num_rhiz","num_branch","num_cestode",
+              "num_bacteria_intra","num_bacteria","num_rhiz","num_branch",
+              "num_cestode",
               "num_ciliate","num_copepod","num_dino","num_fungi",
               "num_haplo","num_isopods","num_leech",
               "num_meso","num_microsp","num_nematode","num_nematomorpha",
@@ -262,12 +269,20 @@ decapod_hosts5 <- decapod_hosts4 %>%
 #limit to the 96 sp with pathogens - also taking out the one with just a halacarid
 decapod_hosts6 <- decapod_hosts5 %>% 
   filter(!is.na(num_pathogens)) %>% 
-  filter(host_genus_species!="Maja_squinado")
+  filter(host_genus_species!="Maja_squinado") %>% 
+  dplyr::select(-num_bacteria_extra) %>% 
+  dplyr::select(-num_bacteria_intra)
 
 #change sp with NA pathogens to 0 to include in 162 count
 decapod_hosts7 <- decapod_hosts5 %>% 
   rowwise() %>% 
   mutate(num_pathogens=if.na(num_pathogens))
+
+#include bacteria split into intra and extra
+decapod_hosts8 <- decapod_hosts5 %>% 
+  filter(!is.na(num_pathogens)) %>% 
+  filter(host_genus_species!="Maja_squinado") %>% 
+  dplyr::select(-num_bacteria)
 
 #save 100 sp to new file name
 write.csv(decapod_hosts6,"analyze_data/hosts_clean_pathcounts100_wild.csv",
@@ -275,6 +290,10 @@ write.csv(decapod_hosts6,"analyze_data/hosts_clean_pathcounts100_wild.csv",
 
 #save 162 sp to new file name
 write.csv(decapod_hosts7,"analyze_data/hosts_clean_pathcounts162_wild.csv",
+          row.names=FALSE)
+
+#save 100 sp (96) to file name with bacteria split
+write.csv(decapod_hosts8,"analyze_data/hosts_clean_pathcounts100_wild_bactsplit.csv",
           row.names=FALSE)
 
 
