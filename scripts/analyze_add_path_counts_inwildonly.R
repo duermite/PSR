@@ -88,11 +88,6 @@ num_fungi <- data.frame(table(
   path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="fungi"]))
 colnames(num_fungi) <- c("host_genus_species","num_fungi")
 
-#count halacarid
-num_mite <- data.frame(table(
-  path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="halacarid"]))
-colnames(num_mite) <- c("host_genus_species","num_mite")
-
 #count haplosporidian
 num_haplo <- data.frame(table(
   path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="haplosporidian"]))
@@ -196,7 +191,6 @@ decapod_hosts2 <- left_join(decapod_hosts,num_pathogen,by="host_genus_species") 
   left_join(num_copepod,by="host_genus_species") %>%
   left_join(num_dino,by="host_genus_species") %>%
   left_join(num_fungi,by="host_genus_species") %>%
-  left_join(num_mite,by="host_genus_species") %>%
   left_join(num_haplo,by="host_genus_species") %>%
   left_join(num_isopods,by="host_genus_species") %>% 
   left_join(num_leech,by="host_genus_species") %>% 
@@ -240,7 +234,7 @@ decapod_hosts4 <- decapod_hosts3 %>%
   mutate_at(c("num_acanth","num_amoeba","num_api","num_bacteria_extra",
               "num_bacteria_intra","num_rhiz","num_branch","num_cestode",
               "num_ciliate","num_copepod","num_dino","num_fungi",
-              "num_mite","num_haplo","num_isopods","num_leech",
+              "num_haplo","num_isopods","num_leech",
               "num_meso","num_microsp","num_nematode","num_nematomorpha",
               "num_nemertean","num_oomycete","num_paramixid",
               "num_trematode","num_viruses","num_direct","num_complex",
@@ -265,9 +259,10 @@ decapod_hosts5 <- decapod_hosts4 %>%
   mutate(path_index=num_pathogens/path_search_results) %>% 
   mutate(virus_index=num_viruses/path_search_results)
 
-#limit to the 100 sp with pathogens
+#limit to the 96 sp with pathogens - also taking out the one with just a halacarid
 decapod_hosts6 <- decapod_hosts5 %>% 
-  filter(!is.na(num_pathogens))
+  filter(!is.na(num_pathogens)) %>% 
+  filter(host_genus_species!="Maja_squinado")
 
 #change sp with NA pathogens to 0 to include in 162 count
 decapod_hosts7 <- decapod_hosts5 %>% 
