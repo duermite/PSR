@@ -104,18 +104,25 @@ text(dd,display="species",col="red")
 #Constrained
 ee <- cca(host_path_smgrp,host_type_char2[2:7])
 ee
-plot(ee)
+plot(ee,scaling=-1) #scaling means species scores divided by sd so abundant and scarce species will be approximately as far away from origin
 host_path_cols <- colnames(host_path_smgrp)
-text(ee,display="species",col="black")
+text(ee,display="species",col="black",scaling=-1)
 colvec <- c("red","green","purple","orange")
-with(host_type_char2,points(ee,display="sites",col=colvec[host_type]),pch=21,
-     bg=colvec[host_type])
-with(host_type_char2,legend("topright",legend=levels(host_type),bty="n",
-                            col=colvec,pch=21,pt.bg=colvec))
 spenvcor(ee) #species-environment correlation, which is the corr btw LC (constraints) and WA (sp scores) for each axis
 plot(procrustes(b,ee)) #inspect to see if constraint help? not sure
 plot(b)
 plot(envfit(b,host_type_char2[2:7]))
+#Constrained and conditioned
+ee2 <- cca(host_path_smgrp~longev_max+aquaculture+capture+inv+habitat+
+             Condition(path_search_results),host_type_char2)
+plot(ee2)
+ee2
+with(host_type_char2,points(ee2,display="sites",col=colvec[host_type]),pch=21,
+     bg=colvec[host_type])
+with(host_type_char2,legend("topright",legend=levels(host_type),bty="n",
+                            col=colvec,pch=21,pt.bg=colvec))
+
+anova(ee2,perm.max=2000)
 #Model building and choosing best model
 ee1 <- cca(host_path_smgrp~.,host_type_char2[2:7]) #all env variables
 ee0 <- cca(host_path_smgrp~1,host_type_char2[2:7]) #no env variables
@@ -147,3 +154,69 @@ with(host_type_char2,points(ff,display="sites",col=colvec[host_type]),pch=21,
      bg=colvec[host_type])
 with(host_type_char2,legend("topright",legend=levels(host_type),bty="n",
                             col=colvec,pch=21,pt.bg=colvec))
+
+###################
+#Cluster Analysis 
+###################
+dist <- vegdist(host_path)
+head(dist)
+par(mfrow=c(1,3))
+#single linkage cluster
+csin <- hclust(dist, method="single")
+csin
+plot(csin,hang=-1)
+rect.hclust(csin, 4)
+#complete linkage
+ccom <- hclust(dist, method="complete")
+plot(ccom, hang=-1)
+rect.hclust(ccom, 4)
+#average linkage
+caver <- hclust(dist, method="aver")
+plot(caver, hang=-1)
+rect.hclust(caver, 4)
+par(mfrow=c(1,1))
+#moving forward with average linkage
+cl <- cutree(caver, 4)
+cl
+table(cl)
+#confusion matrix, lots of mismatches between methods
+table(cl, cutree(ccom, 4))
+table(cl, cutree(csin, 4))
+
+####################
+#Ordination
+###################
+ord <- cmdscale(dist)
+head(ord)
+ordiplot(ord)
+#different ways of plotting the groups (do ordiplot first)
+ordihull(ord, cl, lty=3) #for distinct, non-overlapping groups
+ordiplot(ord)
+ordispider(ord, cl, col="blue", label=TRUE) #for overlapping groups
+ordiplot(ord)
+ordiellipse(ord, cl, col="red") #if we're not interesting in indiv. point but averages and centroids
+ordiplot(ord, dis="si")
+ordihull(ord, cutree(caver, 3))
+ordiplot(ord, dis="si")
+ordicluster(ord, caver,prune=2) #i don't know what this is doing
+
+
+
+
+#################
+#ANOSIM & SIMPER
+################
+#host type
+path_dist <- vegdist(host_path_smgrp)
+path_ano <- anosim(path_dist,host_type_char2$host_type)
+summary(path_ano)
+plot(path_ano)
+
+path_sim <- simper(host_path_smgrp,host_type_char2$host_type)
+summary(path_sim)
+#I still don't know which groups are significantly different
+
+#habitat
+hab_ano <- anosim(path_dist,host_type_char2$habitat)
+summary(hab_ano)
+#groups are similar R=0.01
