@@ -85,7 +85,7 @@ colnames(num_copepod) <- c("host_genus_species","num_copepod")
 
 #count dinoflagellate
 num_dino <- data.frame(table(
-  path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="dino"]))
+  path_type_join_hosts$host_genus_species[path_type_join_hosts$pathogen_type=="dinoflagellate"]))
 colnames(num_dino) <- c("host_genus_species","num_dino")
 
 #count fungi
