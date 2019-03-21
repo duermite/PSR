@@ -90,6 +90,11 @@ host_char3 <- host_char %>%
   mutate(habitat=dummy_hab(aq_hab)) %>% 
   mutate(sociality=dummy_social(fam_soc_score)) %>% 
   dplyr::select(family:longev_max,path_search_results:max_size_mm,inv:sociality)
+
+host_char4 <- hosts %>% 
+  dplyr::select(family,host_type,
+                longev_max,aq_hab,path_search_results,production_type,
+                max_size_mm,invasive,fam_soc_score)
   
 #save new datasets
 write.csv(host_char2,"analyze_data/host_char_mult.csv",
@@ -97,6 +102,8 @@ write.csv(host_char2,"analyze_data/host_char_mult.csv",
 write.csv(host_path,"analyze_data/host_path_mult.csv",
           row.names=FALSE)
 write.csv(host_char3,"analyze_data/host_char_mult_cat.csv",
+          row.names=FALSE)
+write.csv(host_char4,"analyze_data/host_char_all_cat.csv",
           row.names=FALSE)
 
   
